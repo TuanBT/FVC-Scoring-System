@@ -29,10 +29,26 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDecMinusSec2Blue = new System.Windows.Forms.Button();
+            this.btnIncMinusSec2Blue = new System.Windows.Forms.Button();
+            this.btnDecMinusSec1Blue = new System.Windows.Forms.Button();
+            this.btnIncMinusSec1Blue = new System.Windows.Forms.Button();
+            this.btnDecSec2Blue = new System.Windows.Forms.Button();
+            this.btnIncSec2Blue = new System.Windows.Forms.Button();
+            this.btnDecSec1Blue = new System.Windows.Forms.Button();
+            this.btnIncSec1Blue = new System.Windows.Forms.Button();
+            this.btnDecMinusSec2Red = new System.Windows.Forms.Button();
+            this.btnIncMinusSec2Red = new System.Windows.Forms.Button();
+            this.btnDecMinusSec1Red = new System.Windows.Forms.Button();
+            this.btnIncMinusSec1Red = new System.Windows.Forms.Button();
+            this.btnDecSec2Red = new System.Windows.Forms.Button();
+            this.btnIncSec2Red = new System.Windows.Forms.Button();
+            this.btnDecSec1Red = new System.Windows.Forms.Button();
             this.btnIncSec1Red = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.lblRefereeName = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnReset = new System.Windows.Forms.Button();
@@ -79,32 +95,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblNumberMatch = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblClock = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.btnDecSec1Red = new System.Windows.Forms.Button();
-            this.btnDecSec2Red = new System.Windows.Forms.Button();
-            this.btnIncSec2Red = new System.Windows.Forms.Button();
-            this.btnDecMinusSec1Red = new System.Windows.Forms.Button();
-            this.btnIncMinusSec1Red = new System.Windows.Forms.Button();
-            this.btnDecMinusSec2Red = new System.Windows.Forms.Button();
-            this.btnIncMinusSec2Red = new System.Windows.Forms.Button();
-            this.btnDecSec1Blue = new System.Windows.Forms.Button();
-            this.btnIncSec1Blue = new System.Windows.Forms.Button();
-            this.btnDecSec2Blue = new System.Windows.Forms.Button();
-            this.btnIncSec2Blue = new System.Windows.Forms.Button();
-            this.btnDecMinusSec1Blue = new System.Windows.Forms.Button();
-            this.btnIncMinusSec1Blue = new System.Windows.Forms.Button();
-            this.btnDecMinusSec2Blue = new System.Windows.Forms.Button();
-            this.btnIncMinusSec2Blue = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.lblClock = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -116,6 +117,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label35);
+            this.panel1.Controls.Add(this.lblClock);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnDecMinusSec2Blue);
             this.panel1.Controls.Add(this.btnIncMinusSec2Blue);
             this.panel1.Controls.Add(this.btnDecMinusSec1Blue);
@@ -168,13 +172,221 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblNumberMatch);
             this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Controls.Add(this.lblClock);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.shapeContainer2);
             this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 0;
+            // 
+            // btnDecMinusSec2Blue
+            // 
+            this.btnDecMinusSec2Blue.BackColor = System.Drawing.Color.Blue;
+            this.btnDecMinusSec2Blue.FlatAppearance.BorderSize = 0;
+            this.btnDecMinusSec2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecMinusSec2Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecMinusSec2Blue.ForeColor = System.Drawing.Color.White;
+            this.btnDecMinusSec2Blue.Location = new System.Drawing.Point(791, 339);
+            this.btnDecMinusSec2Blue.Name = "btnDecMinusSec2Blue";
+            this.btnDecMinusSec2Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnDecMinusSec2Blue.TabIndex = 55;
+            this.btnDecMinusSec2Blue.Text = "˅";
+            this.btnDecMinusSec2Blue.UseVisualStyleBackColor = false;
+            // 
+            // btnIncMinusSec2Blue
+            // 
+            this.btnIncMinusSec2Blue.BackColor = System.Drawing.Color.Blue;
+            this.btnIncMinusSec2Blue.FlatAppearance.BorderSize = 0;
+            this.btnIncMinusSec2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncMinusSec2Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncMinusSec2Blue.ForeColor = System.Drawing.Color.White;
+            this.btnIncMinusSec2Blue.Location = new System.Drawing.Point(791, 320);
+            this.btnIncMinusSec2Blue.Name = "btnIncMinusSec2Blue";
+            this.btnIncMinusSec2Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnIncMinusSec2Blue.TabIndex = 54;
+            this.btnIncMinusSec2Blue.Text = "˄";
+            this.btnIncMinusSec2Blue.UseVisualStyleBackColor = false;
+            // 
+            // btnDecMinusSec1Blue
+            // 
+            this.btnDecMinusSec1Blue.BackColor = System.Drawing.Color.Blue;
+            this.btnDecMinusSec1Blue.FlatAppearance.BorderSize = 0;
+            this.btnDecMinusSec1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecMinusSec1Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecMinusSec1Blue.ForeColor = System.Drawing.Color.White;
+            this.btnDecMinusSec1Blue.Location = new System.Drawing.Point(791, 262);
+            this.btnDecMinusSec1Blue.Name = "btnDecMinusSec1Blue";
+            this.btnDecMinusSec1Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnDecMinusSec1Blue.TabIndex = 53;
+            this.btnDecMinusSec1Blue.Text = "˅";
+            this.btnDecMinusSec1Blue.UseVisualStyleBackColor = false;
+            // 
+            // btnIncMinusSec1Blue
+            // 
+            this.btnIncMinusSec1Blue.BackColor = System.Drawing.Color.Blue;
+            this.btnIncMinusSec1Blue.FlatAppearance.BorderSize = 0;
+            this.btnIncMinusSec1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncMinusSec1Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncMinusSec1Blue.ForeColor = System.Drawing.Color.White;
+            this.btnIncMinusSec1Blue.Location = new System.Drawing.Point(791, 243);
+            this.btnIncMinusSec1Blue.Name = "btnIncMinusSec1Blue";
+            this.btnIncMinusSec1Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnIncMinusSec1Blue.TabIndex = 52;
+            this.btnIncMinusSec1Blue.Text = "˄";
+            this.btnIncMinusSec1Blue.UseVisualStyleBackColor = false;
+            // 
+            // btnDecSec2Blue
+            // 
+            this.btnDecSec2Blue.BackColor = System.Drawing.Color.Blue;
+            this.btnDecSec2Blue.FlatAppearance.BorderSize = 0;
+            this.btnDecSec2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecSec2Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecSec2Blue.ForeColor = System.Drawing.Color.White;
+            this.btnDecSec2Blue.Location = new System.Drawing.Point(632, 339);
+            this.btnDecSec2Blue.Name = "btnDecSec2Blue";
+            this.btnDecSec2Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnDecSec2Blue.TabIndex = 51;
+            this.btnDecSec2Blue.Text = "˅";
+            this.btnDecSec2Blue.UseVisualStyleBackColor = false;
+            // 
+            // btnIncSec2Blue
+            // 
+            this.btnIncSec2Blue.BackColor = System.Drawing.Color.Blue;
+            this.btnIncSec2Blue.FlatAppearance.BorderSize = 0;
+            this.btnIncSec2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncSec2Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncSec2Blue.ForeColor = System.Drawing.Color.White;
+            this.btnIncSec2Blue.Location = new System.Drawing.Point(632, 320);
+            this.btnIncSec2Blue.Name = "btnIncSec2Blue";
+            this.btnIncSec2Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnIncSec2Blue.TabIndex = 50;
+            this.btnIncSec2Blue.Text = "˄";
+            this.btnIncSec2Blue.UseVisualStyleBackColor = false;
+            // 
+            // btnDecSec1Blue
+            // 
+            this.btnDecSec1Blue.BackColor = System.Drawing.Color.Blue;
+            this.btnDecSec1Blue.FlatAppearance.BorderSize = 0;
+            this.btnDecSec1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecSec1Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecSec1Blue.ForeColor = System.Drawing.Color.White;
+            this.btnDecSec1Blue.Location = new System.Drawing.Point(632, 262);
+            this.btnDecSec1Blue.Name = "btnDecSec1Blue";
+            this.btnDecSec1Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnDecSec1Blue.TabIndex = 49;
+            this.btnDecSec1Blue.Text = "˅";
+            this.btnDecSec1Blue.UseVisualStyleBackColor = false;
+            // 
+            // btnIncSec1Blue
+            // 
+            this.btnIncSec1Blue.BackColor = System.Drawing.Color.Blue;
+            this.btnIncSec1Blue.FlatAppearance.BorderSize = 0;
+            this.btnIncSec1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncSec1Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncSec1Blue.ForeColor = System.Drawing.Color.White;
+            this.btnIncSec1Blue.Location = new System.Drawing.Point(632, 243);
+            this.btnIncSec1Blue.Name = "btnIncSec1Blue";
+            this.btnIncSec1Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnIncSec1Blue.TabIndex = 48;
+            this.btnIncSec1Blue.Text = "˄";
+            this.btnIncSec1Blue.UseVisualStyleBackColor = false;
+            // 
+            // btnDecMinusSec2Red
+            // 
+            this.btnDecMinusSec2Red.BackColor = System.Drawing.Color.Red;
+            this.btnDecMinusSec2Red.FlatAppearance.BorderSize = 0;
+            this.btnDecMinusSec2Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecMinusSec2Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecMinusSec2Red.ForeColor = System.Drawing.Color.White;
+            this.btnDecMinusSec2Red.Location = new System.Drawing.Point(188, 339);
+            this.btnDecMinusSec2Red.Name = "btnDecMinusSec2Red";
+            this.btnDecMinusSec2Red.Size = new System.Drawing.Size(20, 20);
+            this.btnDecMinusSec2Red.TabIndex = 47;
+            this.btnDecMinusSec2Red.Text = "˅";
+            this.btnDecMinusSec2Red.UseVisualStyleBackColor = false;
+            // 
+            // btnIncMinusSec2Red
+            // 
+            this.btnIncMinusSec2Red.BackColor = System.Drawing.Color.Red;
+            this.btnIncMinusSec2Red.FlatAppearance.BorderSize = 0;
+            this.btnIncMinusSec2Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncMinusSec2Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncMinusSec2Red.ForeColor = System.Drawing.Color.White;
+            this.btnIncMinusSec2Red.Location = new System.Drawing.Point(188, 320);
+            this.btnIncMinusSec2Red.Name = "btnIncMinusSec2Red";
+            this.btnIncMinusSec2Red.Size = new System.Drawing.Size(20, 20);
+            this.btnIncMinusSec2Red.TabIndex = 46;
+            this.btnIncMinusSec2Red.Text = "˄";
+            this.btnIncMinusSec2Red.UseVisualStyleBackColor = false;
+            // 
+            // btnDecMinusSec1Red
+            // 
+            this.btnDecMinusSec1Red.BackColor = System.Drawing.Color.Red;
+            this.btnDecMinusSec1Red.FlatAppearance.BorderSize = 0;
+            this.btnDecMinusSec1Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecMinusSec1Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecMinusSec1Red.ForeColor = System.Drawing.Color.White;
+            this.btnDecMinusSec1Red.Location = new System.Drawing.Point(188, 262);
+            this.btnDecMinusSec1Red.Name = "btnDecMinusSec1Red";
+            this.btnDecMinusSec1Red.Size = new System.Drawing.Size(20, 20);
+            this.btnDecMinusSec1Red.TabIndex = 45;
+            this.btnDecMinusSec1Red.Text = "˅";
+            this.btnDecMinusSec1Red.UseVisualStyleBackColor = false;
+            // 
+            // btnIncMinusSec1Red
+            // 
+            this.btnIncMinusSec1Red.BackColor = System.Drawing.Color.Red;
+            this.btnIncMinusSec1Red.FlatAppearance.BorderSize = 0;
+            this.btnIncMinusSec1Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncMinusSec1Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncMinusSec1Red.ForeColor = System.Drawing.Color.White;
+            this.btnIncMinusSec1Red.Location = new System.Drawing.Point(188, 243);
+            this.btnIncMinusSec1Red.Name = "btnIncMinusSec1Red";
+            this.btnIncMinusSec1Red.Size = new System.Drawing.Size(20, 20);
+            this.btnIncMinusSec1Red.TabIndex = 44;
+            this.btnIncMinusSec1Red.Text = "˄";
+            this.btnIncMinusSec1Red.UseVisualStyleBackColor = false;
+            // 
+            // btnDecSec2Red
+            // 
+            this.btnDecSec2Red.BackColor = System.Drawing.Color.Red;
+            this.btnDecSec2Red.FlatAppearance.BorderSize = 0;
+            this.btnDecSec2Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecSec2Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecSec2Red.ForeColor = System.Drawing.Color.White;
+            this.btnDecSec2Red.Location = new System.Drawing.Point(350, 339);
+            this.btnDecSec2Red.Name = "btnDecSec2Red";
+            this.btnDecSec2Red.Size = new System.Drawing.Size(20, 20);
+            this.btnDecSec2Red.TabIndex = 43;
+            this.btnDecSec2Red.Text = "˅";
+            this.btnDecSec2Red.UseVisualStyleBackColor = false;
+            // 
+            // btnIncSec2Red
+            // 
+            this.btnIncSec2Red.BackColor = System.Drawing.Color.Red;
+            this.btnIncSec2Red.FlatAppearance.BorderSize = 0;
+            this.btnIncSec2Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncSec2Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncSec2Red.ForeColor = System.Drawing.Color.White;
+            this.btnIncSec2Red.Location = new System.Drawing.Point(350, 320);
+            this.btnIncSec2Red.Name = "btnIncSec2Red";
+            this.btnIncSec2Red.Size = new System.Drawing.Size(20, 20);
+            this.btnIncSec2Red.TabIndex = 42;
+            this.btnIncSec2Red.Text = "˄";
+            this.btnIncSec2Red.UseVisualStyleBackColor = false;
+            // 
+            // btnDecSec1Red
+            // 
+            this.btnDecSec1Red.BackColor = System.Drawing.Color.Red;
+            this.btnDecSec1Red.FlatAppearance.BorderSize = 0;
+            this.btnDecSec1Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecSec1Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecSec1Red.ForeColor = System.Drawing.Color.White;
+            this.btnDecSec1Red.Location = new System.Drawing.Point(350, 262);
+            this.btnDecSec1Red.Name = "btnDecSec1Red";
+            this.btnDecSec1Red.Size = new System.Drawing.Size(20, 20);
+            this.btnDecSec1Red.TabIndex = 41;
+            this.btnDecSec1Red.Text = "˅";
+            this.btnDecSec1Red.UseVisualStyleBackColor = false;
             // 
             // btnIncSec1Red
             // 
@@ -224,6 +436,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(250, 125);
             this.panel4.TabIndex = 33;
+            // 
+            // label14
+            // 
+            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(27, 4);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(196, 24);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "TRỌNG TÀI";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblRefereeName
             // 
@@ -805,27 +1028,6 @@
             this.lblTitle.Text = "THI ĐẤU \r\nĐỐI KHÁNG";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblClock
-            // 
-            this.lblClock.BackColor = System.Drawing.Color.White;
-            this.lblClock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClock.Location = new System.Drawing.Point(1, 63);
-            this.lblClock.Name = "lblClock";
-            this.lblClock.Size = new System.Drawing.Size(333, 63);
-            this.lblClock.TabIndex = 1;
-            this.lblClock.Text = "00:55";
-            this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 63);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // shapeContainer2
             // 
             this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
@@ -840,6 +1042,33 @@
             this.shapeContainer2.Size = new System.Drawing.Size(1000, 500);
             this.shapeContainer2.TabIndex = 40;
             this.shapeContainer2.TabStop = false;
+            // 
+            // lineShape6
+            // 
+            this.lineShape6.BorderColor = System.Drawing.Color.Silver;
+            this.lineShape6.Name = "lineShape6";
+            this.lineShape6.X1 = 963;
+            this.lineShape6.X2 = 27;
+            this.lineShape6.Y1 = 300;
+            this.lineShape6.Y2 = 300;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.BorderColor = System.Drawing.Color.Silver;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 591;
+            this.lineShape4.X2 = 402;
+            this.lineShape4.Y1 = 225;
+            this.lineShape4.Y2 = 225;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderColor = System.Drawing.Color.Silver;
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 500;
+            this.lineShape3.X2 = 500;
+            this.lineShape3.Y1 = 178;
+            this.lineShape3.Y2 = 221;
             // 
             // lineShape2
             // 
@@ -861,24 +1090,6 @@
             this.lineShape1.Y1 = 67;
             this.lineShape1.Y2 = 67;
             // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderColor = System.Drawing.Color.Silver;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 500;
-            this.lineShape3.X2 = 500;
-            this.lineShape3.Y1 = 178;
-            this.lineShape3.Y2 = 221;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderColor = System.Drawing.Color.Silver;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 591;
-            this.lineShape4.X2 = 402;
-            this.lineShape4.Y1 = 225;
-            this.lineShape4.Y2 = 225;
-            // 
             // lineShape5
             // 
             this.lineShape5.Name = "lineShape5";
@@ -898,235 +1109,39 @@
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
             // 
-            // lineShape6
+            // label35
             // 
-            this.lineShape6.BorderColor = System.Drawing.Color.Silver;
-            this.lineShape6.Name = "lineShape6";
-            this.lineShape6.X1 = 963;
-            this.lineShape6.X2 = 27;
-            this.lineShape6.Y1 = 300;
-            this.lineShape6.Y2 = 300;
+            this.label35.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.Red;
+            this.label35.Location = new System.Drawing.Point(1, 63);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(168, 59);
+            this.label35.TabIndex = 67;
+            this.label35.Text = "Cóc vương 2014";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnDecSec1Red
+            // lblClock
             // 
-            this.btnDecSec1Red.BackColor = System.Drawing.Color.Red;
-            this.btnDecSec1Red.FlatAppearance.BorderSize = 0;
-            this.btnDecSec1Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecSec1Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecSec1Red.ForeColor = System.Drawing.Color.White;
-            this.btnDecSec1Red.Location = new System.Drawing.Point(350, 262);
-            this.btnDecSec1Red.Name = "btnDecSec1Red";
-            this.btnDecSec1Red.Size = new System.Drawing.Size(20, 20);
-            this.btnDecSec1Red.TabIndex = 41;
-            this.btnDecSec1Red.Text = "˅";
-            this.btnDecSec1Red.UseVisualStyleBackColor = false;
+            this.lblClock.BackColor = System.Drawing.Color.White;
+            this.lblClock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClock.Location = new System.Drawing.Point(175, 63);
+            this.lblClock.Name = "lblClock";
+            this.lblClock.Size = new System.Drawing.Size(160, 63);
+            this.lblClock.TabIndex = 66;
+            this.lblClock.Text = "00:55";
+            this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnDecSec2Red
+            // pictureBox1
             // 
-            this.btnDecSec2Red.BackColor = System.Drawing.Color.Red;
-            this.btnDecSec2Red.FlatAppearance.BorderSize = 0;
-            this.btnDecSec2Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecSec2Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecSec2Red.ForeColor = System.Drawing.Color.White;
-            this.btnDecSec2Red.Location = new System.Drawing.Point(350, 339);
-            this.btnDecSec2Red.Name = "btnDecSec2Red";
-            this.btnDecSec2Red.Size = new System.Drawing.Size(20, 20);
-            this.btnDecSec2Red.TabIndex = 43;
-            this.btnDecSec2Red.Text = "˅";
-            this.btnDecSec2Red.UseVisualStyleBackColor = false;
-            // 
-            // btnIncSec2Red
-            // 
-            this.btnIncSec2Red.BackColor = System.Drawing.Color.Red;
-            this.btnIncSec2Red.FlatAppearance.BorderSize = 0;
-            this.btnIncSec2Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncSec2Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncSec2Red.ForeColor = System.Drawing.Color.White;
-            this.btnIncSec2Red.Location = new System.Drawing.Point(350, 320);
-            this.btnIncSec2Red.Name = "btnIncSec2Red";
-            this.btnIncSec2Red.Size = new System.Drawing.Size(20, 20);
-            this.btnIncSec2Red.TabIndex = 42;
-            this.btnIncSec2Red.Text = "˄";
-            this.btnIncSec2Red.UseVisualStyleBackColor = false;
-            // 
-            // btnDecMinusSec1Red
-            // 
-            this.btnDecMinusSec1Red.BackColor = System.Drawing.Color.Red;
-            this.btnDecMinusSec1Red.FlatAppearance.BorderSize = 0;
-            this.btnDecMinusSec1Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecMinusSec1Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecMinusSec1Red.ForeColor = System.Drawing.Color.White;
-            this.btnDecMinusSec1Red.Location = new System.Drawing.Point(188, 262);
-            this.btnDecMinusSec1Red.Name = "btnDecMinusSec1Red";
-            this.btnDecMinusSec1Red.Size = new System.Drawing.Size(20, 20);
-            this.btnDecMinusSec1Red.TabIndex = 45;
-            this.btnDecMinusSec1Red.Text = "˅";
-            this.btnDecMinusSec1Red.UseVisualStyleBackColor = false;
-            // 
-            // btnIncMinusSec1Red
-            // 
-            this.btnIncMinusSec1Red.BackColor = System.Drawing.Color.Red;
-            this.btnIncMinusSec1Red.FlatAppearance.BorderSize = 0;
-            this.btnIncMinusSec1Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncMinusSec1Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncMinusSec1Red.ForeColor = System.Drawing.Color.White;
-            this.btnIncMinusSec1Red.Location = new System.Drawing.Point(188, 243);
-            this.btnIncMinusSec1Red.Name = "btnIncMinusSec1Red";
-            this.btnIncMinusSec1Red.Size = new System.Drawing.Size(20, 20);
-            this.btnIncMinusSec1Red.TabIndex = 44;
-            this.btnIncMinusSec1Red.Text = "˄";
-            this.btnIncMinusSec1Red.UseVisualStyleBackColor = false;
-            // 
-            // btnDecMinusSec2Red
-            // 
-            this.btnDecMinusSec2Red.BackColor = System.Drawing.Color.Red;
-            this.btnDecMinusSec2Red.FlatAppearance.BorderSize = 0;
-            this.btnDecMinusSec2Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecMinusSec2Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecMinusSec2Red.ForeColor = System.Drawing.Color.White;
-            this.btnDecMinusSec2Red.Location = new System.Drawing.Point(188, 339);
-            this.btnDecMinusSec2Red.Name = "btnDecMinusSec2Red";
-            this.btnDecMinusSec2Red.Size = new System.Drawing.Size(20, 20);
-            this.btnDecMinusSec2Red.TabIndex = 47;
-            this.btnDecMinusSec2Red.Text = "˅";
-            this.btnDecMinusSec2Red.UseVisualStyleBackColor = false;
-            // 
-            // btnIncMinusSec2Red
-            // 
-            this.btnIncMinusSec2Red.BackColor = System.Drawing.Color.Red;
-            this.btnIncMinusSec2Red.FlatAppearance.BorderSize = 0;
-            this.btnIncMinusSec2Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncMinusSec2Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncMinusSec2Red.ForeColor = System.Drawing.Color.White;
-            this.btnIncMinusSec2Red.Location = new System.Drawing.Point(188, 320);
-            this.btnIncMinusSec2Red.Name = "btnIncMinusSec2Red";
-            this.btnIncMinusSec2Red.Size = new System.Drawing.Size(20, 20);
-            this.btnIncMinusSec2Red.TabIndex = 46;
-            this.btnIncMinusSec2Red.Text = "˄";
-            this.btnIncMinusSec2Red.UseVisualStyleBackColor = false;
-            // 
-            // btnDecSec1Blue
-            // 
-            this.btnDecSec1Blue.BackColor = System.Drawing.Color.Blue;
-            this.btnDecSec1Blue.FlatAppearance.BorderSize = 0;
-            this.btnDecSec1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecSec1Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecSec1Blue.ForeColor = System.Drawing.Color.White;
-            this.btnDecSec1Blue.Location = new System.Drawing.Point(632, 262);
-            this.btnDecSec1Blue.Name = "btnDecSec1Blue";
-            this.btnDecSec1Blue.Size = new System.Drawing.Size(20, 20);
-            this.btnDecSec1Blue.TabIndex = 49;
-            this.btnDecSec1Blue.Text = "˅";
-            this.btnDecSec1Blue.UseVisualStyleBackColor = false;
-            // 
-            // btnIncSec1Blue
-            // 
-            this.btnIncSec1Blue.BackColor = System.Drawing.Color.Blue;
-            this.btnIncSec1Blue.FlatAppearance.BorderSize = 0;
-            this.btnIncSec1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncSec1Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncSec1Blue.ForeColor = System.Drawing.Color.White;
-            this.btnIncSec1Blue.Location = new System.Drawing.Point(632, 243);
-            this.btnIncSec1Blue.Name = "btnIncSec1Blue";
-            this.btnIncSec1Blue.Size = new System.Drawing.Size(20, 20);
-            this.btnIncSec1Blue.TabIndex = 48;
-            this.btnIncSec1Blue.Text = "˄";
-            this.btnIncSec1Blue.UseVisualStyleBackColor = false;
-            // 
-            // btnDecSec2Blue
-            // 
-            this.btnDecSec2Blue.BackColor = System.Drawing.Color.Blue;
-            this.btnDecSec2Blue.FlatAppearance.BorderSize = 0;
-            this.btnDecSec2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecSec2Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecSec2Blue.ForeColor = System.Drawing.Color.White;
-            this.btnDecSec2Blue.Location = new System.Drawing.Point(632, 339);
-            this.btnDecSec2Blue.Name = "btnDecSec2Blue";
-            this.btnDecSec2Blue.Size = new System.Drawing.Size(20, 20);
-            this.btnDecSec2Blue.TabIndex = 51;
-            this.btnDecSec2Blue.Text = "˅";
-            this.btnDecSec2Blue.UseVisualStyleBackColor = false;
-            // 
-            // btnIncSec2Blue
-            // 
-            this.btnIncSec2Blue.BackColor = System.Drawing.Color.Blue;
-            this.btnIncSec2Blue.FlatAppearance.BorderSize = 0;
-            this.btnIncSec2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncSec2Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncSec2Blue.ForeColor = System.Drawing.Color.White;
-            this.btnIncSec2Blue.Location = new System.Drawing.Point(632, 320);
-            this.btnIncSec2Blue.Name = "btnIncSec2Blue";
-            this.btnIncSec2Blue.Size = new System.Drawing.Size(20, 20);
-            this.btnIncSec2Blue.TabIndex = 50;
-            this.btnIncSec2Blue.Text = "˄";
-            this.btnIncSec2Blue.UseVisualStyleBackColor = false;
-            // 
-            // btnDecMinusSec1Blue
-            // 
-            this.btnDecMinusSec1Blue.BackColor = System.Drawing.Color.Blue;
-            this.btnDecMinusSec1Blue.FlatAppearance.BorderSize = 0;
-            this.btnDecMinusSec1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecMinusSec1Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecMinusSec1Blue.ForeColor = System.Drawing.Color.White;
-            this.btnDecMinusSec1Blue.Location = new System.Drawing.Point(791, 262);
-            this.btnDecMinusSec1Blue.Name = "btnDecMinusSec1Blue";
-            this.btnDecMinusSec1Blue.Size = new System.Drawing.Size(20, 20);
-            this.btnDecMinusSec1Blue.TabIndex = 53;
-            this.btnDecMinusSec1Blue.Text = "˅";
-            this.btnDecMinusSec1Blue.UseVisualStyleBackColor = false;
-            // 
-            // btnIncMinusSec1Blue
-            // 
-            this.btnIncMinusSec1Blue.BackColor = System.Drawing.Color.Blue;
-            this.btnIncMinusSec1Blue.FlatAppearance.BorderSize = 0;
-            this.btnIncMinusSec1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncMinusSec1Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncMinusSec1Blue.ForeColor = System.Drawing.Color.White;
-            this.btnIncMinusSec1Blue.Location = new System.Drawing.Point(791, 243);
-            this.btnIncMinusSec1Blue.Name = "btnIncMinusSec1Blue";
-            this.btnIncMinusSec1Blue.Size = new System.Drawing.Size(20, 20);
-            this.btnIncMinusSec1Blue.TabIndex = 52;
-            this.btnIncMinusSec1Blue.Text = "˄";
-            this.btnIncMinusSec1Blue.UseVisualStyleBackColor = false;
-            // 
-            // btnDecMinusSec2Blue
-            // 
-            this.btnDecMinusSec2Blue.BackColor = System.Drawing.Color.Blue;
-            this.btnDecMinusSec2Blue.FlatAppearance.BorderSize = 0;
-            this.btnDecMinusSec2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecMinusSec2Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecMinusSec2Blue.ForeColor = System.Drawing.Color.White;
-            this.btnDecMinusSec2Blue.Location = new System.Drawing.Point(791, 339);
-            this.btnDecMinusSec2Blue.Name = "btnDecMinusSec2Blue";
-            this.btnDecMinusSec2Blue.Size = new System.Drawing.Size(20, 20);
-            this.btnDecMinusSec2Blue.TabIndex = 55;
-            this.btnDecMinusSec2Blue.Text = "˅";
-            this.btnDecMinusSec2Blue.UseVisualStyleBackColor = false;
-            // 
-            // btnIncMinusSec2Blue
-            // 
-            this.btnIncMinusSec2Blue.BackColor = System.Drawing.Color.Blue;
-            this.btnIncMinusSec2Blue.FlatAppearance.BorderSize = 0;
-            this.btnIncMinusSec2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncMinusSec2Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncMinusSec2Blue.ForeColor = System.Drawing.Color.White;
-            this.btnIncMinusSec2Blue.Location = new System.Drawing.Point(791, 320);
-            this.btnIncMinusSec2Blue.Name = "btnIncMinusSec2Blue";
-            this.btnIncMinusSec2Blue.Size = new System.Drawing.Size(20, 20);
-            this.btnIncMinusSec2Blue.TabIndex = 54;
-            this.btnIncMinusSec2Blue.Text = "˄";
-            this.btnIncMinusSec2Blue.UseVisualStyleBackColor = false;
-            // 
-            // label14
-            // 
-            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(27, 4);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(196, 24);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "TRỌNG TÀI";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::Client.Properties.Resources.fu_banner;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(334, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -1159,8 +1174,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNumberMatch;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblClock;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
@@ -1228,6 +1241,9 @@
         private System.Windows.Forms.Button btnDecSec1Blue;
         private System.Windows.Forms.Button btnIncSec1Blue;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label lblClock;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
