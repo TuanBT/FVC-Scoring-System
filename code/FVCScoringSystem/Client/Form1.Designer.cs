@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.lblClock = new System.Windows.Forms.Label();
             this.btnDecMinusSec2Blue = new System.Windows.Forms.Button();
             this.btnIncMinusSec2Blue = new System.Windows.Forms.Button();
             this.btnDecMinusSec1Blue = new System.Windows.Forms.Button();
@@ -103,8 +105,6 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.label35 = new System.Windows.Forms.Label();
-            this.lblClock = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -177,6 +177,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 0;
+            // 
+            // label35
+            // 
+            this.label35.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.Red;
+            this.label35.Location = new System.Drawing.Point(1, 63);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(168, 59);
+            this.label35.TabIndex = 67;
+            this.label35.Text = "Cóc vương 2014";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblClock
+            // 
+            this.lblClock.BackColor = System.Drawing.Color.White;
+            this.lblClock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClock.Location = new System.Drawing.Point(175, 63);
+            this.lblClock.Name = "lblClock";
+            this.lblClock.Size = new System.Drawing.Size(160, 63);
+            this.lblClock.TabIndex = 66;
+            this.lblClock.Text = "00:55";
+            this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnDecMinusSec2Blue
             // 
@@ -1108,29 +1131,6 @@
             this.shapeContainer1.Size = new System.Drawing.Size(1035, 518);
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
-            // 
-            // label35
-            // 
-            this.label35.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.Red;
-            this.label35.Location = new System.Drawing.Point(1, 63);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(168, 59);
-            this.label35.TabIndex = 67;
-            this.label35.Text = "Cóc vương 2014";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblClock
-            // 
-            this.lblClock.BackColor = System.Drawing.Color.White;
-            this.lblClock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClock.Location = new System.Drawing.Point(175, 63);
-            this.lblClock.Name = "lblClock";
-            this.lblClock.Size = new System.Drawing.Size(160, 63);
-            this.lblClock.TabIndex = 66;
-            this.lblClock.Text = "00:55";
-            this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
