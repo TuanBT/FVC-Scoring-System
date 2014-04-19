@@ -1,6 +1,6 @@
 ﻿namespace Server
 {
-    partial class Form1
+    partial class ServerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNameBlue = new System.Windows.Forms.Label();
             this.lblNameRed = new System.Windows.Forms.Label();
             this.lblTotalScoreBlue = new System.Windows.Forms.Label();
@@ -95,6 +96,7 @@
             this.lblIdRed = new System.Windows.Forms.Label();
             this.lblClassRed = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tmrServer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -115,7 +117,6 @@
             this.lblNameBlue.TabIndex = 35;
             this.lblNameBlue.Text = "Nguyễn Đặng Thành Trung";
             this.lblNameBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNameBlue.Click += new System.EventHandler(this.label16_Click);
             // 
             // lblNameRed
             // 
@@ -129,7 +130,6 @@
             this.lblNameRed.TabIndex = 34;
             this.lblNameRed.Text = "Nguyễn Đặng Thành Trung";
             this.lblNameRed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNameRed.Click += new System.EventHandler(this.label15_Click);
             // 
             // lblTotalScoreBlue
             // 
@@ -143,7 +143,6 @@
             this.lblTotalScoreBlue.TabIndex = 13;
             this.lblTotalScoreBlue.Text = "14";
             this.lblTotalScoreBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTotalScoreBlue.Click += new System.EventHandler(this.lblTotalScoreBlue_Click);
             // 
             // lblTotalScoreRed
             // 
@@ -890,7 +889,6 @@
             this.lblClassBlue.TabIndex = 39;
             this.lblClassBlue.Text = "SE0669";
             this.lblClassBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblClassBlue.Click += new System.EventHandler(this.label6_Click);
             // 
             // lblIdBlue
             // 
@@ -903,7 +901,6 @@
             this.lblIdBlue.TabIndex = 38;
             this.lblIdBlue.Text = "SE60824";
             this.lblIdBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblIdBlue.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblIdRed
             // 
@@ -940,7 +937,12 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // tmrServer
+            // 
+            this.tmrServer.Interval = 500;
+            this.tmrServer.Tick += new System.EventHandler(this.tmrServer_Tick);
+            // 
+            // ServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -948,8 +950,9 @@
             this.ClientSize = new System.Drawing.Size(1066, 524);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "Form1";
+            this.Name = "ServerForm";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ServerForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -1029,6 +1032,7 @@
         private System.Windows.Forms.Label lblPlusBlue;
         private System.Windows.Forms.Button btnSent;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Timer tmrServer;
 
     }
 }

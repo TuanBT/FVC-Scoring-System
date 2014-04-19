@@ -1,6 +1,6 @@
 ﻿namespace Client
 {
-    partial class Form1
+    partial class ClientForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label35 = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
@@ -106,6 +107,7 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.tmrClient = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -1143,7 +1145,12 @@
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
             // 
-            // Form1
+            // tmrClient
+            // 
+            this.tmrClient.Interval = 500;
+            this.tmrClient.Tick += new System.EventHandler(this.tmrClient_Tick);
+            // 
+            // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1151,7 +1158,7 @@
             this.ClientSize = new System.Drawing.Size(1035, 518);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.shapeContainer1);
-            this.Name = "Form1";
+            this.Name = "ClientForm";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1244,6 +1251,7 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label lblClock;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer tmrClient;
     }
 }
 
