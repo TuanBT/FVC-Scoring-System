@@ -45,7 +45,10 @@ namespace Server
                     Variable.SENTTEXT = getServerJsonString();
                     sv.SentText(Variable.SENTTEXT);
                 }
-                setFormFromClientJson(Variable.RECEIVETEXT);
+                setFormFromClientJson(Variable.RECEIVETEXT1);
+                setFormFromClientJson(Variable.RECEIVETEXT2);
+                setFormFromClientJson(Variable.RECEIVETEXT3);
+
 
                 lblClock.Text = DateTime.Now.Second.ToString();
             }
@@ -113,7 +116,7 @@ namespace Server
                     lblPlusBlueM1.Visible = true;
                 }
             }
-            else if (clientInfo.Computer == 2)
+            if (clientInfo.Computer == 2)
             {
                 ChangeStatus(lblStatusM2, true);
                 lblStatusScoreM2.Visible = true;
@@ -135,7 +138,7 @@ namespace Server
                     lblPlusBlueM2.Visible = true;
                 }
             }
-            else if (clientInfo.Computer == 3)
+            if (clientInfo.Computer == 3)
             {
                 ChangeStatus(lblStatusM3, true);
                 lblStatusScoreM3.Visible = true;

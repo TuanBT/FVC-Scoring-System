@@ -883,34 +883,34 @@
             // lblWinClass
             // 
             this.lblWinClass.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWinClass.ForeColor = System.Drawing.Color.Blue;
+            this.lblWinClass.ForeColor = System.Drawing.Color.Black;
             this.lblWinClass.Location = new System.Drawing.Point(369, 51);
             this.lblWinClass.Name = "lblWinClass";
             this.lblWinClass.Size = new System.Drawing.Size(80, 29);
             this.lblWinClass.TabIndex = 3;
-            this.lblWinClass.Text = "SE0669";
+            this.lblWinClass.Text = "-";
             this.lblWinClass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWinId
             // 
             this.lblWinId.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWinId.ForeColor = System.Drawing.Color.Blue;
+            this.lblWinId.ForeColor = System.Drawing.Color.Black;
             this.lblWinId.Location = new System.Drawing.Point(369, 1);
             this.lblWinId.Name = "lblWinId";
             this.lblWinId.Size = new System.Drawing.Size(80, 29);
             this.lblWinId.TabIndex = 2;
-            this.lblWinId.Text = "SE60824";
+            this.lblWinId.Text = "-";
             this.lblWinId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWinName
             // 
             this.lblWinName.Font = new System.Drawing.Font("Times New Roman", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWinName.ForeColor = System.Drawing.Color.Blue;
+            this.lblWinName.ForeColor = System.Drawing.Color.Black;
             this.lblWinName.Location = new System.Drawing.Point(100, 1);
             this.lblWinName.Name = "lblWinName";
             this.lblWinName.Size = new System.Drawing.Size(250, 79);
             this.lblWinName.TabIndex = 1;
-            this.lblWinName.Text = "Nguyễn Đặng Thành Trung";
+            this.lblWinName.Text = "-";
             this.lblWinName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label25

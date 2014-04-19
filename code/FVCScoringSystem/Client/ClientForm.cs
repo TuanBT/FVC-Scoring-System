@@ -48,7 +48,7 @@ namespace Client
 
             ClientInfo clientInfo = new ClientInfo
             {
-                Computer =  Int32.Parse(lblNumberClient.Text),
+                Computer = Int32.Parse(lblNumberClient.Text),
                 Math = Int32.Parse(lblNumberMatch.Text),
                 MinusBlueSec1 = Int32.Parse(lblMinusSec1Blue.Text),
                 MinusBlueSec2 = Int32.Parse(lblMinusSec2Blue.Text),
@@ -342,6 +342,22 @@ namespace Client
         }
 
         #endregion
+
+        private void btnHideSetting_Click(object sender, EventArgs e)
+        {
+            pnlSetting.Visible = false;
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            pnlSetting.Visible = true;
+        }
+
+        private void txtComputer_TextChanged(object sender, EventArgs e)
+        {
+            Variable.COMPUTER = Int32.Parse(txtComputer.Text);
+            lblNumberClient.Text = (Int32.Parse(txtComputer.Text)).ToString();
+        }
 
 
     }

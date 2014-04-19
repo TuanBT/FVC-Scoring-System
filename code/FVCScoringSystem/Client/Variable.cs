@@ -13,6 +13,7 @@ namespace Client
         public static int SEC { get; set; }
         public static int ENDMATH { get; set; }
         public static string WIN { get; set; }
+        public static int COMPUTER { get; set; }
         public static int PORT = 4569;
         public static string IP = "127.0.0.1";
     }

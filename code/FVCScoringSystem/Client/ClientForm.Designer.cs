@@ -109,17 +109,24 @@
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tmrClient = new System.Windows.Forms.Timer(this.components);
+            this.pnlSetting = new System.Windows.Forms.Panel();
+            this.txtComputer = new System.Windows.Forms.TextBox();
+            this.btnHideSetting = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnlSetting.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnSetting);
+            this.panel1.Controls.Add(this.pnlSetting);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label35);
             this.panel1.Controls.Add(this.lblClock);
@@ -1026,7 +1033,7 @@
             this.lblNumberClient.Name = "lblNumberClient";
             this.lblNumberClient.Size = new System.Drawing.Size(88, 49);
             this.lblNumberClient.TabIndex = 7;
-            this.lblNumberClient.Text = "2";
+            this.lblNumberClient.Text = "0";
             this.lblNumberClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWeight
@@ -1179,6 +1186,45 @@
             this.tmrClient.Interval = 500;
             this.tmrClient.Tick += new System.EventHandler(this.tmrClient_Tick);
             // 
+            // pnlSetting
+            // 
+            this.pnlSetting.Controls.Add(this.btnHideSetting);
+            this.pnlSetting.Controls.Add(this.txtComputer);
+            this.pnlSetting.Location = new System.Drawing.Point(175, 36);
+            this.pnlSetting.Name = "pnlSetting";
+            this.pnlSetting.Size = new System.Drawing.Size(422, 265);
+            this.pnlSetting.TabIndex = 69;
+            this.pnlSetting.Visible = false;
+            // 
+            // txtComputer
+            // 
+            this.txtComputer.Location = new System.Drawing.Point(44, 27);
+            this.txtComputer.Name = "txtComputer";
+            this.txtComputer.Size = new System.Drawing.Size(100, 20);
+            this.txtComputer.TabIndex = 0;
+            this.txtComputer.Text = "0";
+            this.txtComputer.TextChanged += new System.EventHandler(this.txtComputer_TextChanged);
+            // 
+            // btnHideSetting
+            // 
+            this.btnHideSetting.Location = new System.Drawing.Point(150, 24);
+            this.btnHideSetting.Name = "btnHideSetting";
+            this.btnHideSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnHideSetting.TabIndex = 1;
+            this.btnHideSetting.Text = "Close";
+            this.btnHideSetting.UseVisualStyleBackColor = true;
+            this.btnHideSetting.Click += new System.EventHandler(this.btnHideSetting_Click);
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.Location = new System.Drawing.Point(3, 21);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnSetting.TabIndex = 70;
+            this.btnSetting.Text = "Setting";
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1196,6 +1242,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.pnlSetting.ResumeLayout(false);
+            this.pnlSetting.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1282,6 +1330,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer tmrClient;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel pnlSetting;
+        private System.Windows.Forms.Button btnHideSetting;
+        private System.Windows.Forms.TextBox txtComputer;
+        private System.Windows.Forms.Button btnSetting;
     }
 }
 

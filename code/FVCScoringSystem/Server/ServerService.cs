@@ -60,7 +60,20 @@ namespace Server
         /// <param name="text"></param>
         private void SetText(string text)
         {
-            Variable.RECEIVETEXT = text;
+            //Variable.RECEIVETEXT = text;
+            //Console.WriteLine("---" + text);
+            ClientInfo clientInfo = new ClientInfo(text);
+            if(clientInfo.Computer == 1){
+                Variable.RECEIVETEXT1 = text;
+            }
+            if (clientInfo.Computer == 2)
+            {
+                Variable.RECEIVETEXT2 = text;
+            }
+            if (clientInfo.Computer == 3)
+            {
+                Variable.RECEIVETEXT3 = text;
+            }
         }
 
         #region Send/Receive Data From Scokets
@@ -71,19 +84,6 @@ namespace Server
             connectedClient.Client.Send(bt);
         }
 
-        /// <summary>
-        /// Function to Send Data to Client
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //private void btnSend_Click(object sender, EventArgs e)
-        //{
-           
-
-        //    rtbChat.SelectionColor = Color.IndianRed;
-        //    rtbChat.SelectedText = "\nMe:     " + txtMessage.Text;
-        //    txtMessage.Text = ""; 
-        //}
 
         /// <summary>
         /// Asynchronous Callback function which receives data from Server
@@ -116,6 +116,8 @@ namespace Server
                         // Display Text in Rich Text Box
                         content = state.sb.ToString();
                         SetText(content);
+                        
+                        
 
                         handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
                             new AsyncCallback(OnReceive), state);

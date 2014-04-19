@@ -8,6 +8,9 @@ namespace Server
     public static class Variable
     {
         public static string RECEIVETEXT { get; set; }
+        public static string RECEIVETEXT1 { get; set; }
+        public static string RECEIVETEXT2 { get; set; }
+        public static string RECEIVETEXT3 { get; set; }
         public static string SENTTEXT { get; set; }
         public static List<ServerService> SERVERSERVICES { get; set; }
         public static List<Thread> THREADS { get; set; }
