@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +16,9 @@ namespace Client
         public ClientForm()
         {
             InitializeComponent();
-            tcpClients.Connection();
-            tmrClient.Enabled = true;
+            //tcpClients.Connection();
+            SetClientInfoFromJson(getJsonString());
+            //tmrClient.Enabled = true;
         }
 
         private void tmrClient_Tick(object sender, EventArgs e)
@@ -27,9 +29,8 @@ namespace Client
             lblClock.Text = Variable.RECEIVETEXT;
         }
 
-        public void setJsonString()
+        public string getJsonString()
         {
-            //{"ClientInfo":{"WinForm":"TuyetDoi","Win":"Red","ScoreBlue":13.5,"Referee":"Nguyễn Hoàng Tùng","Weight":"51-54kg","Sec":2,"MinusBlue":1,"Sex":"Nam","ScoreRed":12.5,"Math":"T15","Computer":"M1","MinusRed":3}}
             string win = "Red";
             string winForm = "Score";
             
@@ -51,8 +52,13 @@ namespace Client
                 WinForm = winForm,
                 Referee = lblRefereeName.Text
             };
+            return clientInfo.getClientJson(clientInfo);
+        }
 
-            string json = "";
+        public ClientInfo SetClientInfoFromJson(string clientJson)
+        {
+            ClientInfo clientInfo = new ClientInfo(clientJson);
+            return clientInfo;
         }
     }
 }
