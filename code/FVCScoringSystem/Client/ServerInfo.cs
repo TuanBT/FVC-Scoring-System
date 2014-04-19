@@ -11,6 +11,7 @@ namespace Client
         public string Weight { get; set; }
         public string Sex { get; set; }
         public string Time { get; set; }
+        public int Sec { get; set; }
 
         public ServerInfo() { }
 
@@ -22,12 +23,13 @@ namespace Client
             Weight = (string)jClientInfo["Weight"];
             Sex = (string)jClientInfo["Sex"];
             Time = (string)jClientInfo["Time"];
+            Sec = (int)jClientInfo["Sec"];
         }
 
         public string getClientJson(ServerInfo serverInfo)
         {
             string serverJson = JsonConvert.SerializeObject(serverInfo);
-            serverJson = "{\"ClientInfo\":" + serverJson + "}";
+            serverJson = "{\"ServerInfo\":" + serverJson + "}";
             return serverJson;
         }
     }

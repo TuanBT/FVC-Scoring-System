@@ -9,7 +9,7 @@ namespace Client
 {
     public class ClientInfo
     {
-        public string Computer { get; set; }
+        public int Computer { get; set; }
         public int Math { get; set; }
         public string Weight { get; set; }
         public string Sex { get; set; }
@@ -21,9 +21,12 @@ namespace Client
         public int ScoreBlueSec2 { get; set; }
         public int MinusBlueSec1 { get; set; }
         public int MinusBlueSec2 { get; set; }
+        public int ScoreRed { get; set; }
+        public int ScoreBlue { get; set; }
         public string Win { get; set; }
         public string WinForm { get; set; }
         public string Referee { get; set; }
+        public int EndMath { get; set; } //1 la dang cham, 0 la xong roi
 
         public ClientInfo() { }
 
@@ -31,7 +34,7 @@ namespace Client
         {
             JObject jObject = JObject.Parse(json);
             JToken jClientInfo = jObject["ClientInfo"];
-            Computer = (string)jClientInfo["Computer"];
+            Computer = (int)jClientInfo["Computer"];
             Math = (int)jClientInfo["Math"];
             Weight = (string)jClientInfo["Weight"];
             Sex = (string)jClientInfo["Sex"];
@@ -43,9 +46,12 @@ namespace Client
             ScoreBlueSec2 = (int)jClientInfo["ScoreBlueSec2"];
             MinusBlueSec1 = (int)jClientInfo["MinusBlueSec1"];
             MinusBlueSec2 = (int)jClientInfo["MinusBlueSec2"];
+            ScoreRed = (int)jClientInfo["ScoreRed"];
+            ScoreBlue = (int)jClientInfo["ScoreBlue"];
             Win = (string)jClientInfo["Win"];
             WinForm = (string)jClientInfo["WinForm"];
             Referee = (string)jClientInfo["Referee"];
+            EndMath = (int)jClientInfo["EndMath"];
         }
 
         public string getClientJson(ClientInfo clientInfo)

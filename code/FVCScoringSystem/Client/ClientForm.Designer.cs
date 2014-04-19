@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -119,6 +120,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label35);
             this.panel1.Controls.Add(this.lblClock);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -180,6 +182,18 @@
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 0;
             // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(832, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 49);
+            this.label5.TabIndex = 68;
+            this.label5.Text = "Máy";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label35
             // 
             this.label35.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -200,7 +214,7 @@
             this.lblClock.Name = "lblClock";
             this.lblClock.Size = new System.Drawing.Size(160, 63);
             this.lblClock.TabIndex = 66;
-            this.lblClock.Text = "00:55";
+            this.lblClock.Text = "--:--";
             this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -227,6 +241,7 @@
             this.btnDecMinusSec2Blue.TabIndex = 55;
             this.btnDecMinusSec2Blue.Text = "˅";
             this.btnDecMinusSec2Blue.UseVisualStyleBackColor = false;
+            this.btnDecMinusSec2Blue.Click += new System.EventHandler(this.btnDecMinusSec2Blue_Click);
             // 
             // btnIncMinusSec2Blue
             // 
@@ -241,6 +256,7 @@
             this.btnIncMinusSec2Blue.TabIndex = 54;
             this.btnIncMinusSec2Blue.Text = "˄";
             this.btnIncMinusSec2Blue.UseVisualStyleBackColor = false;
+            this.btnIncMinusSec2Blue.Click += new System.EventHandler(this.btnIncMinusSec2Blue_Click);
             // 
             // btnDecMinusSec1Blue
             // 
@@ -255,6 +271,7 @@
             this.btnDecMinusSec1Blue.TabIndex = 53;
             this.btnDecMinusSec1Blue.Text = "˅";
             this.btnDecMinusSec1Blue.UseVisualStyleBackColor = false;
+            this.btnDecMinusSec1Blue.Click += new System.EventHandler(this.btnDecMinusSec1Blue_Click);
             // 
             // btnIncMinusSec1Blue
             // 
@@ -269,6 +286,7 @@
             this.btnIncMinusSec1Blue.TabIndex = 52;
             this.btnIncMinusSec1Blue.Text = "˄";
             this.btnIncMinusSec1Blue.UseVisualStyleBackColor = false;
+            this.btnIncMinusSec1Blue.Click += new System.EventHandler(this.btnIncMinusSec1Blue_Click);
             // 
             // btnDecSec2Blue
             // 
@@ -283,6 +301,7 @@
             this.btnDecSec2Blue.TabIndex = 51;
             this.btnDecSec2Blue.Text = "˅";
             this.btnDecSec2Blue.UseVisualStyleBackColor = false;
+            this.btnDecSec2Blue.Click += new System.EventHandler(this.btnDecSec2Blue_Click);
             // 
             // btnIncSec2Blue
             // 
@@ -297,6 +316,7 @@
             this.btnIncSec2Blue.TabIndex = 50;
             this.btnIncSec2Blue.Text = "˄";
             this.btnIncSec2Blue.UseVisualStyleBackColor = false;
+            this.btnIncSec2Blue.Click += new System.EventHandler(this.btnIncSec2Blue_Click);
             // 
             // btnDecSec1Blue
             // 
@@ -311,6 +331,7 @@
             this.btnDecSec1Blue.TabIndex = 49;
             this.btnDecSec1Blue.Text = "˅";
             this.btnDecSec1Blue.UseVisualStyleBackColor = false;
+            this.btnDecSec1Blue.Click += new System.EventHandler(this.btnDecSec1Blue_Click);
             // 
             // btnIncSec1Blue
             // 
@@ -325,6 +346,7 @@
             this.btnIncSec1Blue.TabIndex = 48;
             this.btnIncSec1Blue.Text = "˄";
             this.btnIncSec1Blue.UseVisualStyleBackColor = false;
+            this.btnIncSec1Blue.Click += new System.EventHandler(this.btnIncSec1Blue_Click);
             // 
             // btnDecMinusSec2Red
             // 
@@ -339,6 +361,7 @@
             this.btnDecMinusSec2Red.TabIndex = 47;
             this.btnDecMinusSec2Red.Text = "˅";
             this.btnDecMinusSec2Red.UseVisualStyleBackColor = false;
+            this.btnDecMinusSec2Red.Click += new System.EventHandler(this.btnDecMinusSec2Red_Click);
             // 
             // btnIncMinusSec2Red
             // 
@@ -353,6 +376,7 @@
             this.btnIncMinusSec2Red.TabIndex = 46;
             this.btnIncMinusSec2Red.Text = "˄";
             this.btnIncMinusSec2Red.UseVisualStyleBackColor = false;
+            this.btnIncMinusSec2Red.Click += new System.EventHandler(this.btnIncMinusSec2Red_Click);
             // 
             // btnDecMinusSec1Red
             // 
@@ -367,6 +391,7 @@
             this.btnDecMinusSec1Red.TabIndex = 45;
             this.btnDecMinusSec1Red.Text = "˅";
             this.btnDecMinusSec1Red.UseVisualStyleBackColor = false;
+            this.btnDecMinusSec1Red.Click += new System.EventHandler(this.btnDecMinusSec1Red_Click);
             // 
             // btnIncMinusSec1Red
             // 
@@ -381,6 +406,7 @@
             this.btnIncMinusSec1Red.TabIndex = 44;
             this.btnIncMinusSec1Red.Text = "˄";
             this.btnIncMinusSec1Red.UseVisualStyleBackColor = false;
+            this.btnIncMinusSec1Red.Click += new System.EventHandler(this.btnIncMinusSec1Red_Click);
             // 
             // btnDecSec2Red
             // 
@@ -395,6 +421,7 @@
             this.btnDecSec2Red.TabIndex = 43;
             this.btnDecSec2Red.Text = "˅";
             this.btnDecSec2Red.UseVisualStyleBackColor = false;
+            this.btnDecSec2Red.Click += new System.EventHandler(this.btnDecSec2Red_Click);
             // 
             // btnIncSec2Red
             // 
@@ -409,6 +436,7 @@
             this.btnIncSec2Red.TabIndex = 42;
             this.btnIncSec2Red.Text = "˄";
             this.btnIncSec2Red.UseVisualStyleBackColor = false;
+            this.btnIncSec2Red.Click += new System.EventHandler(this.btnIncSec2Red_Click);
             // 
             // btnDecSec1Red
             // 
@@ -423,6 +451,7 @@
             this.btnDecSec1Red.TabIndex = 41;
             this.btnDecSec1Red.Text = "˅";
             this.btnDecSec1Red.UseVisualStyleBackColor = false;
+            this.btnDecSec1Red.Click += new System.EventHandler(this.btnDecSec1Red_Click);
             // 
             // btnIncSec1Red
             // 
@@ -437,6 +466,7 @@
             this.btnIncSec1Red.TabIndex = 36;
             this.btnIncSec1Red.Text = "˄";
             this.btnIncSec1Red.UseVisualStyleBackColor = false;
+            this.btnIncSec1Red.Click += new System.EventHandler(this.btnIncSec1Red_Click);
             // 
             // label16
             // 
@@ -492,7 +522,7 @@
             this.lblRefereeName.Name = "lblRefereeName";
             this.lblRefereeName.Size = new System.Drawing.Size(240, 57);
             this.lblRefereeName.TabIndex = 1;
-            this.lblRefereeName.Text = "Nguyễn Đặng Thành Trung";
+            this.lblRefereeName.Text = "TuanBT";
             this.lblRefereeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
@@ -516,6 +546,7 @@
             this.btnReset.TabIndex = 1;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnSentResult
             // 
@@ -529,6 +560,7 @@
             this.btnSentResult.TabIndex = 0;
             this.btnSentResult.Text = "Gủi kết quả";
             this.btnSentResult.UseVisualStyleBackColor = false;
+            this.btnSentResult.Click += new System.EventHandler(this.btnSentResult_Click);
             // 
             // panel3
             // 
@@ -548,6 +580,7 @@
             // rdbWinPoint
             // 
             this.rdbWinPoint.AutoSize = true;
+            this.rdbWinPoint.Checked = true;
             this.rdbWinPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbWinPoint.Location = new System.Drawing.Point(21, 31);
             this.rdbWinPoint.Name = "rdbWinPoint";
@@ -565,7 +598,6 @@
             this.rdbWinAbsolute.Name = "rdbWinAbsolute";
             this.rdbWinAbsolute.Size = new System.Drawing.Size(85, 21);
             this.rdbWinAbsolute.TabIndex = 6;
-            this.rdbWinAbsolute.TabStop = true;
             this.rdbWinAbsolute.Text = "Tuyệt đối";
             this.rdbWinAbsolute.UseVisualStyleBackColor = true;
             // 
@@ -578,7 +610,6 @@
             this.rdbWinDisqualification.Name = "rdbWinDisqualification";
             this.rdbWinDisqualification.Size = new System.Drawing.Size(103, 21);
             this.rdbWinDisqualification.TabIndex = 5;
-            this.rdbWinDisqualification.TabStop = true;
             this.rdbWinDisqualification.Text = "Truất quyền";
             this.rdbWinDisqualification.UseVisualStyleBackColor = true;
             // 
@@ -590,7 +621,6 @@
             this.rdbWinGivingUp.Name = "rdbWinGivingUp";
             this.rdbWinGivingUp.Size = new System.Drawing.Size(77, 21);
             this.rdbWinGivingUp.TabIndex = 4;
-            this.rdbWinGivingUp.TabStop = true;
             this.rdbWinGivingUp.Text = "Bỏ cuộc";
             this.rdbWinGivingUp.UseVisualStyleBackColor = true;
             // 
@@ -603,7 +633,6 @@
             this.rdbWinKnock.Name = "rdbWinKnock";
             this.rdbWinKnock.Size = new System.Drawing.Size(71, 21);
             this.rdbWinKnock.TabIndex = 3;
-            this.rdbWinKnock.TabStop = true;
             this.rdbWinKnock.Text = "Đo ván";
             this.rdbWinKnock.UseVisualStyleBackColor = true;
             // 
@@ -616,7 +645,6 @@
             this.rdbWinStopping.Name = "rdbWinStopping";
             this.rdbWinStopping.Size = new System.Drawing.Size(89, 21);
             this.rdbWinStopping.TabIndex = 2;
-            this.rdbWinStopping.TabStop = true;
             this.rdbWinStopping.Text = "Dừng trận";
             this.rdbWinStopping.UseVisualStyleBackColor = true;
             // 
@@ -628,7 +656,6 @@
             this.rdbWinAdvantage.Name = "rdbWinAdvantage";
             this.rdbWinAdvantage.Size = new System.Drawing.Size(68, 21);
             this.rdbWinAdvantage.TabIndex = 1;
-            this.rdbWinAdvantage.TabStop = true;
             this.rdbWinAdvantage.Text = "Ưu thế";
             this.rdbWinAdvantage.UseVisualStyleBackColor = true;
             // 
@@ -656,7 +683,7 @@
             // btnWinBlue
             // 
             this.btnWinBlue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnWinBlue.BackColor = System.Drawing.Color.Blue;
+            this.btnWinBlue.BackColor = System.Drawing.Color.Silver;
             this.btnWinBlue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWinBlue.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWinBlue.ForeColor = System.Drawing.Color.White;
@@ -666,11 +693,12 @@
             this.btnWinBlue.TabIndex = 4;
             this.btnWinBlue.Text = "Xanh thắng";
             this.btnWinBlue.UseVisualStyleBackColor = false;
+            this.btnWinBlue.Click += new System.EventHandler(this.btnWinBlue_Click);
             // 
             // btnWinRed
             // 
             this.btnWinRed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnWinRed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnWinRed.BackColor = System.Drawing.Color.Silver;
             this.btnWinRed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWinRed.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWinRed.ForeColor = System.Drawing.Color.White;
@@ -680,6 +708,7 @@
             this.btnWinRed.TabIndex = 3;
             this.btnWinRed.Text = "Đỏ thắng";
             this.btnWinRed.UseVisualStyleBackColor = false;
+            this.btnWinRed.Click += new System.EventHandler(this.btnWinRed_Click);
             // 
             // lblSec2Blue
             // 
@@ -690,7 +719,7 @@
             this.lblSec2Blue.Name = "lblSec2Blue";
             this.lblSec2Blue.Size = new System.Drawing.Size(160, 72);
             this.lblSec2Blue.TabIndex = 31;
-            this.lblSec2Blue.Text = "10";
+            this.lblSec2Blue.Text = "0";
             this.lblSec2Blue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMinusSec1Blue
@@ -703,7 +732,7 @@
             this.lblMinusSec1Blue.Name = "lblMinusSec1Blue";
             this.lblMinusSec1Blue.Size = new System.Drawing.Size(152, 72);
             this.lblMinusSec1Blue.TabIndex = 30;
-            this.lblMinusSec1Blue.Text = "-3";
+            this.lblMinusSec1Blue.Text = "0";
             this.lblMinusSec1Blue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMinusSec2Blue
@@ -716,7 +745,7 @@
             this.lblMinusSec2Blue.Name = "lblMinusSec2Blue";
             this.lblMinusSec2Blue.Size = new System.Drawing.Size(152, 72);
             this.lblMinusSec2Blue.TabIndex = 29;
-            this.lblMinusSec2Blue.Text = "-2";
+            this.lblMinusSec2Blue.Text = "0";
             this.lblMinusSec2Blue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotalSec1Blue
@@ -729,7 +758,7 @@
             this.lblTotalSec1Blue.Name = "lblTotalSec1Blue";
             this.lblTotalSec1Blue.Size = new System.Drawing.Size(63, 72);
             this.lblTotalSec1Blue.TabIndex = 28;
-            this.lblTotalSec1Blue.Text = "6";
+            this.lblTotalSec1Blue.Text = "0";
             this.lblTotalSec1Blue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotalSec2Blue
@@ -742,7 +771,7 @@
             this.lblTotalSec2Blue.Name = "lblTotalSec2Blue";
             this.lblTotalSec2Blue.Size = new System.Drawing.Size(63, 72);
             this.lblTotalSec2Blue.TabIndex = 27;
-            this.lblTotalSec2Blue.Text = "8";
+            this.lblTotalSec2Blue.Text = "0";
             this.lblTotalSec2Blue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSec1Blue
@@ -754,7 +783,7 @@
             this.lblSec1Blue.Name = "lblSec1Blue";
             this.lblSec1Blue.Size = new System.Drawing.Size(160, 72);
             this.lblSec1Blue.TabIndex = 26;
-            this.lblSec1Blue.Text = "9";
+            this.lblSec1Blue.Text = "0";
             this.lblSec1Blue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotalSec2Red
@@ -767,7 +796,7 @@
             this.lblTotalSec2Red.Name = "lblTotalSec2Red";
             this.lblTotalSec2Red.Size = new System.Drawing.Size(62, 72);
             this.lblTotalSec2Red.TabIndex = 25;
-            this.lblTotalSec2Red.Text = "5";
+            this.lblTotalSec2Red.Text = "0";
             this.lblTotalSec2Red.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMinusSec1Red
@@ -780,7 +809,7 @@
             this.lblMinusSec1Red.Name = "lblMinusSec1Red";
             this.lblMinusSec1Red.Size = new System.Drawing.Size(152, 72);
             this.lblMinusSec1Red.TabIndex = 24;
-            this.lblMinusSec1Red.Text = "-3";
+            this.lblMinusSec1Red.Text = "0";
             this.lblMinusSec1Red.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMinusSec2Red
@@ -793,7 +822,7 @@
             this.lblMinusSec2Red.Name = "lblMinusSec2Red";
             this.lblMinusSec2Red.Size = new System.Drawing.Size(152, 72);
             this.lblMinusSec2Red.TabIndex = 23;
-            this.lblMinusSec2Red.Text = "-3";
+            this.lblMinusSec2Red.Text = "0";
             this.lblMinusSec2Red.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSec1Red
@@ -805,7 +834,7 @@
             this.lblSec1Red.Name = "lblSec1Red";
             this.lblSec1Red.Size = new System.Drawing.Size(161, 72);
             this.lblSec1Red.TabIndex = 22;
-            this.lblSec1Red.Text = "8";
+            this.lblSec1Red.Text = "0";
             this.lblSec1Red.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSec2Red
@@ -817,7 +846,7 @@
             this.lblSec2Red.Name = "lblSec2Red";
             this.lblSec2Red.Size = new System.Drawing.Size(161, 72);
             this.lblSec2Red.TabIndex = 21;
-            this.lblSec2Red.Text = "8";
+            this.lblSec2Red.Text = "0";
             this.lblSec2Red.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
@@ -921,7 +950,7 @@
             this.lblTotalScoreBlue.Name = "lblTotalScoreBlue";
             this.lblTotalScoreBlue.Size = new System.Drawing.Size(118, 48);
             this.lblTotalScoreBlue.TabIndex = 13;
-            this.lblTotalScoreBlue.Text = "14";
+            this.lblTotalScoreBlue.Text = "0";
             this.lblTotalScoreBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotalScoreRed
@@ -934,7 +963,7 @@
             this.lblTotalScoreRed.Name = "lblTotalScoreRed";
             this.lblTotalScoreRed.Size = new System.Drawing.Size(118, 48);
             this.lblTotalScoreRed.TabIndex = 12;
-            this.lblTotalScoreRed.Text = "10";
+            this.lblTotalScoreRed.Text = "0";
             this.lblTotalScoreRed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotalSec1Red
@@ -947,7 +976,7 @@
             this.lblTotalSec1Red.Name = "lblTotalSec1Red";
             this.lblTotalSec1Red.Size = new System.Drawing.Size(62, 72);
             this.lblTotalSec1Red.TabIndex = 11;
-            this.lblTotalSec1Red.Text = "5";
+            this.lblTotalSec1Red.Text = "0";
             this.lblTotalSec1Red.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -993,11 +1022,11 @@
             this.lblNumberClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblNumberClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumberClient.ForeColor = System.Drawing.Color.Red;
-            this.lblNumberClient.Location = new System.Drawing.Point(832, 73);
+            this.lblNumberClient.Location = new System.Drawing.Point(912, 73);
             this.lblNumberClient.Name = "lblNumberClient";
-            this.lblNumberClient.Size = new System.Drawing.Size(168, 49);
+            this.lblNumberClient.Size = new System.Drawing.Size(88, 49);
             this.lblNumberClient.TabIndex = 7;
-            this.lblNumberClient.Text = "Máy 2";
+            this.lblNumberClient.Text = "2";
             this.lblNumberClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWeight
@@ -1010,7 +1039,7 @@
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(80, 63);
             this.lblWeight.TabIndex = 6;
-            this.lblWeight.Text = "51-54Kg";
+            this.lblWeight.Text = "-";
             this.lblWeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSex
@@ -1023,7 +1052,7 @@
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(80, 49);
             this.lblSex.TabIndex = 5;
-            this.lblSex.Text = "Nam";
+            this.lblSex.Text = "-";
             this.lblSex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -1048,7 +1077,7 @@
             this.lblNumberMatch.Name = "lblNumberMatch";
             this.lblNumberMatch.Size = new System.Drawing.Size(94, 63);
             this.lblNumberMatch.TabIndex = 3;
-            this.lblNumberMatch.Text = "15";
+            this.lblNumberMatch.Text = "-";
             this.lblNumberMatch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitle
@@ -1252,6 +1281,7 @@
         private System.Windows.Forms.Label lblClock;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer tmrClient;
+        private System.Windows.Forms.Label label5;
     }
 }
 

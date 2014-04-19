@@ -42,6 +42,18 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDecBlueM3 = new System.Windows.Forms.Button();
+            this.btnIncBlueM3 = new System.Windows.Forms.Button();
+            this.btnDecBlueM2 = new System.Windows.Forms.Button();
+            this.btnIncBlueM2 = new System.Windows.Forms.Button();
+            this.btnDecBlueM1 = new System.Windows.Forms.Button();
+            this.btnIncBlueM1 = new System.Windows.Forms.Button();
+            this.btnDecRedM3 = new System.Windows.Forms.Button();
+            this.btnIncRedM3 = new System.Windows.Forms.Button();
+            this.btnDecRedM2 = new System.Windows.Forms.Button();
+            this.btnIncRedM2 = new System.Windows.Forms.Button();
+            this.btnDecRedM1 = new System.Windows.Forms.Button();
+            this.btnIncRedM1 = new System.Windows.Forms.Button();
             this.btnSent = new System.Windows.Forms.Button();
             this.lblPlusRed = new System.Windows.Forms.Label();
             this.lblPlusBlue = new System.Windows.Forms.Label();
@@ -79,15 +91,15 @@
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblRefereeM3 = new System.Windows.Forms.Label();
             this.lblScoreBlueM3 = new System.Windows.Forms.Label();
             this.lblScoreRedM3 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblRefereeM2 = new System.Windows.Forms.Label();
             this.lblScoreBlueM2 = new System.Windows.Forms.Label();
             this.lblScoreRedM2 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblRefereeM1 = new System.Windows.Forms.Label();
             this.lblScoreBlueM1 = new System.Windows.Forms.Label();
             this.lblScoreRedM1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -141,7 +153,7 @@
             this.lblTotalScoreBlue.Name = "lblTotalScoreBlue";
             this.lblTotalScoreBlue.Size = new System.Drawing.Size(80, 100);
             this.lblTotalScoreBlue.TabIndex = 13;
-            this.lblTotalScoreBlue.Text = "14";
+            this.lblTotalScoreBlue.Text = "0";
             this.lblTotalScoreBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotalScoreRed
@@ -154,7 +166,7 @@
             this.lblTotalScoreRed.Name = "lblTotalScoreRed";
             this.lblTotalScoreRed.Size = new System.Drawing.Size(80, 100);
             this.lblTotalScoreRed.TabIndex = 12;
-            this.lblTotalScoreRed.Text = "13";
+            this.lblTotalScoreRed.Text = "0";
             this.lblTotalScoreRed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -260,6 +272,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnDecBlueM3);
+            this.panel1.Controls.Add(this.btnIncBlueM3);
+            this.panel1.Controls.Add(this.btnDecBlueM2);
+            this.panel1.Controls.Add(this.btnIncBlueM2);
+            this.panel1.Controls.Add(this.btnDecBlueM1);
+            this.panel1.Controls.Add(this.btnIncBlueM1);
+            this.panel1.Controls.Add(this.btnDecRedM3);
+            this.panel1.Controls.Add(this.btnIncRedM3);
+            this.panel1.Controls.Add(this.btnDecRedM2);
+            this.panel1.Controls.Add(this.btnIncRedM2);
+            this.panel1.Controls.Add(this.btnDecRedM1);
+            this.panel1.Controls.Add(this.btnIncRedM1);
             this.panel1.Controls.Add(this.btnSent);
             this.panel1.Controls.Add(this.lblPlusRed);
             this.panel1.Controls.Add(this.lblPlusBlue);
@@ -280,15 +304,15 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.lblRefereeM3);
             this.panel1.Controls.Add(this.lblScoreBlueM3);
             this.panel1.Controls.Add(this.lblScoreRedM3);
             this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.lblRefereeM2);
             this.panel1.Controls.Add(this.lblScoreBlueM2);
             this.panel1.Controls.Add(this.lblScoreRedM2);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.lblRefereeM1);
             this.panel1.Controls.Add(this.lblScoreBlueM1);
             this.panel1.Controls.Add(this.lblScoreRedM1);
             this.panel1.Controls.Add(this.label7);
@@ -314,6 +338,186 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 1;
+            // 
+            // btnDecBlueM3
+            // 
+            this.btnDecBlueM3.BackColor = System.Drawing.Color.Blue;
+            this.btnDecBlueM3.FlatAppearance.BorderSize = 0;
+            this.btnDecBlueM3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecBlueM3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecBlueM3.ForeColor = System.Drawing.Color.White;
+            this.btnDecBlueM3.Location = new System.Drawing.Point(575, 349);
+            this.btnDecBlueM3.Name = "btnDecBlueM3";
+            this.btnDecBlueM3.Size = new System.Drawing.Size(20, 20);
+            this.btnDecBlueM3.TabIndex = 85;
+            this.btnDecBlueM3.Text = "˅";
+            this.btnDecBlueM3.UseVisualStyleBackColor = false;
+            this.btnDecBlueM3.Visible = false;
+            // 
+            // btnIncBlueM3
+            // 
+            this.btnIncBlueM3.BackColor = System.Drawing.Color.Blue;
+            this.btnIncBlueM3.FlatAppearance.BorderSize = 0;
+            this.btnIncBlueM3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncBlueM3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncBlueM3.ForeColor = System.Drawing.Color.White;
+            this.btnIncBlueM3.Location = new System.Drawing.Point(575, 330);
+            this.btnIncBlueM3.Name = "btnIncBlueM3";
+            this.btnIncBlueM3.Size = new System.Drawing.Size(20, 20);
+            this.btnIncBlueM3.TabIndex = 84;
+            this.btnIncBlueM3.Text = "˄";
+            this.btnIncBlueM3.UseVisualStyleBackColor = false;
+            this.btnIncBlueM3.Visible = false;
+            // 
+            // btnDecBlueM2
+            // 
+            this.btnDecBlueM2.BackColor = System.Drawing.Color.Blue;
+            this.btnDecBlueM2.FlatAppearance.BorderSize = 0;
+            this.btnDecBlueM2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecBlueM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecBlueM2.ForeColor = System.Drawing.Color.White;
+            this.btnDecBlueM2.Location = new System.Drawing.Point(575, 300);
+            this.btnDecBlueM2.Name = "btnDecBlueM2";
+            this.btnDecBlueM2.Size = new System.Drawing.Size(20, 20);
+            this.btnDecBlueM2.TabIndex = 83;
+            this.btnDecBlueM2.Text = "˅";
+            this.btnDecBlueM2.UseVisualStyleBackColor = false;
+            this.btnDecBlueM2.Visible = false;
+            // 
+            // btnIncBlueM2
+            // 
+            this.btnIncBlueM2.BackColor = System.Drawing.Color.Blue;
+            this.btnIncBlueM2.FlatAppearance.BorderSize = 0;
+            this.btnIncBlueM2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncBlueM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncBlueM2.ForeColor = System.Drawing.Color.White;
+            this.btnIncBlueM2.Location = new System.Drawing.Point(575, 281);
+            this.btnIncBlueM2.Name = "btnIncBlueM2";
+            this.btnIncBlueM2.Size = new System.Drawing.Size(20, 20);
+            this.btnIncBlueM2.TabIndex = 82;
+            this.btnIncBlueM2.Text = "˄";
+            this.btnIncBlueM2.UseVisualStyleBackColor = false;
+            this.btnIncBlueM2.Visible = false;
+            // 
+            // btnDecBlueM1
+            // 
+            this.btnDecBlueM1.BackColor = System.Drawing.Color.Blue;
+            this.btnDecBlueM1.FlatAppearance.BorderSize = 0;
+            this.btnDecBlueM1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecBlueM1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecBlueM1.ForeColor = System.Drawing.Color.White;
+            this.btnDecBlueM1.Location = new System.Drawing.Point(575, 251);
+            this.btnDecBlueM1.Name = "btnDecBlueM1";
+            this.btnDecBlueM1.Size = new System.Drawing.Size(20, 20);
+            this.btnDecBlueM1.TabIndex = 81;
+            this.btnDecBlueM1.Text = "˅";
+            this.btnDecBlueM1.UseVisualStyleBackColor = false;
+            this.btnDecBlueM1.Visible = false;
+            // 
+            // btnIncBlueM1
+            // 
+            this.btnIncBlueM1.BackColor = System.Drawing.Color.Blue;
+            this.btnIncBlueM1.FlatAppearance.BorderSize = 0;
+            this.btnIncBlueM1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncBlueM1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncBlueM1.ForeColor = System.Drawing.Color.White;
+            this.btnIncBlueM1.Location = new System.Drawing.Point(575, 232);
+            this.btnIncBlueM1.Name = "btnIncBlueM1";
+            this.btnIncBlueM1.Size = new System.Drawing.Size(20, 20);
+            this.btnIncBlueM1.TabIndex = 80;
+            this.btnIncBlueM1.Text = "˄";
+            this.btnIncBlueM1.UseVisualStyleBackColor = false;
+            this.btnIncBlueM1.Visible = false;
+            // 
+            // btnDecRedM3
+            // 
+            this.btnDecRedM3.BackColor = System.Drawing.Color.Red;
+            this.btnDecRedM3.FlatAppearance.BorderSize = 0;
+            this.btnDecRedM3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecRedM3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecRedM3.ForeColor = System.Drawing.Color.White;
+            this.btnDecRedM3.Location = new System.Drawing.Point(408, 350);
+            this.btnDecRedM3.Name = "btnDecRedM3";
+            this.btnDecRedM3.Size = new System.Drawing.Size(20, 20);
+            this.btnDecRedM3.TabIndex = 79;
+            this.btnDecRedM3.Text = "˅";
+            this.btnDecRedM3.UseVisualStyleBackColor = false;
+            this.btnDecRedM3.Visible = false;
+            // 
+            // btnIncRedM3
+            // 
+            this.btnIncRedM3.BackColor = System.Drawing.Color.Red;
+            this.btnIncRedM3.FlatAppearance.BorderSize = 0;
+            this.btnIncRedM3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncRedM3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncRedM3.ForeColor = System.Drawing.Color.White;
+            this.btnIncRedM3.Location = new System.Drawing.Point(408, 331);
+            this.btnIncRedM3.Name = "btnIncRedM3";
+            this.btnIncRedM3.Size = new System.Drawing.Size(20, 20);
+            this.btnIncRedM3.TabIndex = 78;
+            this.btnIncRedM3.Text = "˄";
+            this.btnIncRedM3.UseVisualStyleBackColor = false;
+            this.btnIncRedM3.Visible = false;
+            // 
+            // btnDecRedM2
+            // 
+            this.btnDecRedM2.BackColor = System.Drawing.Color.Red;
+            this.btnDecRedM2.FlatAppearance.BorderSize = 0;
+            this.btnDecRedM2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecRedM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecRedM2.ForeColor = System.Drawing.Color.White;
+            this.btnDecRedM2.Location = new System.Drawing.Point(408, 300);
+            this.btnDecRedM2.Name = "btnDecRedM2";
+            this.btnDecRedM2.Size = new System.Drawing.Size(20, 20);
+            this.btnDecRedM2.TabIndex = 77;
+            this.btnDecRedM2.Text = "˅";
+            this.btnDecRedM2.UseVisualStyleBackColor = false;
+            this.btnDecRedM2.Visible = false;
+            // 
+            // btnIncRedM2
+            // 
+            this.btnIncRedM2.BackColor = System.Drawing.Color.Red;
+            this.btnIncRedM2.FlatAppearance.BorderSize = 0;
+            this.btnIncRedM2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncRedM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncRedM2.ForeColor = System.Drawing.Color.White;
+            this.btnIncRedM2.Location = new System.Drawing.Point(408, 281);
+            this.btnIncRedM2.Name = "btnIncRedM2";
+            this.btnIncRedM2.Size = new System.Drawing.Size(20, 20);
+            this.btnIncRedM2.TabIndex = 76;
+            this.btnIncRedM2.Text = "˄";
+            this.btnIncRedM2.UseVisualStyleBackColor = false;
+            this.btnIncRedM2.Visible = false;
+            // 
+            // btnDecRedM1
+            // 
+            this.btnDecRedM1.BackColor = System.Drawing.Color.Red;
+            this.btnDecRedM1.FlatAppearance.BorderSize = 0;
+            this.btnDecRedM1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecRedM1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecRedM1.ForeColor = System.Drawing.Color.White;
+            this.btnDecRedM1.Location = new System.Drawing.Point(408, 250);
+            this.btnDecRedM1.Name = "btnDecRedM1";
+            this.btnDecRedM1.Size = new System.Drawing.Size(20, 20);
+            this.btnDecRedM1.TabIndex = 75;
+            this.btnDecRedM1.Text = "˅";
+            this.btnDecRedM1.UseVisualStyleBackColor = false;
+            this.btnDecRedM1.Visible = false;
+            // 
+            // btnIncRedM1
+            // 
+            this.btnIncRedM1.BackColor = System.Drawing.Color.Red;
+            this.btnIncRedM1.FlatAppearance.BorderSize = 0;
+            this.btnIncRedM1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncRedM1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncRedM1.ForeColor = System.Drawing.Color.White;
+            this.btnIncRedM1.Location = new System.Drawing.Point(408, 231);
+            this.btnIncRedM1.Name = "btnIncRedM1";
+            this.btnIncRedM1.Size = new System.Drawing.Size(20, 20);
+            this.btnIncRedM1.TabIndex = 74;
+            this.btnIncRedM1.Text = "˄";
+            this.btnIncRedM1.UseVisualStyleBackColor = false;
+            this.btnIncRedM1.Visible = false;
             // 
             // btnSent
             // 
@@ -368,6 +572,7 @@
             this.lblPlusRedM3.TabIndex = 70;
             this.lblPlusRedM3.Text = "+";
             this.lblPlusRedM3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPlusRedM3.Visible = false;
             // 
             // lblPlusRedM2
             // 
@@ -409,6 +614,7 @@
             this.lblPlusBlueM2.TabIndex = 67;
             this.lblPlusBlueM2.Text = "+";
             this.lblPlusBlueM2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPlusBlueM2.Visible = false;
             // 
             // lblPlusRedM1
             // 
@@ -460,6 +666,7 @@
             this.lblStatusScoreM3.TabIndex = 63;
             this.lblStatusScoreM3.Text = "Đã chấm";
             this.lblStatusScoreM3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatusScoreM3.Visible = false;
             // 
             // lblStatusScoreM2
             // 
@@ -472,6 +679,7 @@
             this.lblStatusScoreM2.TabIndex = 62;
             this.lblStatusScoreM2.Text = "Đã chấm";
             this.lblStatusScoreM2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatusScoreM2.Visible = false;
             // 
             // lblStatusScoreM1
             // 
@@ -484,6 +692,7 @@
             this.lblStatusScoreM1.TabIndex = 61;
             this.lblStatusScoreM1.Text = "Đang chấm";
             this.lblStatusScoreM1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatusScoreM1.Visible = false;
             // 
             // lblStatusM3
             // 
@@ -499,26 +708,26 @@
             // 
             // lblStatusM2
             // 
-            this.lblStatusM2.BackColor = System.Drawing.Color.Green;
+            this.lblStatusM2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblStatusM2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblStatusM2.ForeColor = System.Drawing.Color.White;
             this.lblStatusM2.Location = new System.Drawing.Point(0, 276);
             this.lblStatusM2.Name = "lblStatusM2";
             this.lblStatusM2.Size = new System.Drawing.Size(99, 50);
             this.lblStatusM2.TabIndex = 59;
-            this.lblStatusM2.Text = "Kết nối";
+            this.lblStatusM2.Text = "Chờ...";
             this.lblStatusM2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblStatusM1
             // 
-            this.lblStatusM1.BackColor = System.Drawing.Color.Green;
+            this.lblStatusM1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblStatusM1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblStatusM1.ForeColor = System.Drawing.Color.White;
             this.lblStatusM1.Location = new System.Drawing.Point(0, 226);
             this.lblStatusM1.Name = "lblStatusM1";
             this.lblStatusM1.Size = new System.Drawing.Size(99, 50);
             this.lblStatusM1.TabIndex = 58;
-            this.lblStatusM1.Text = "Kết nối";
+            this.lblStatusM1.Text = "Chờ...";
             this.lblStatusM1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
@@ -649,22 +858,26 @@
             // 
             this.btnWinBlue.BackColor = System.Drawing.Color.Blue;
             this.btnWinBlue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWinBlue.Font = new System.Drawing.Font("Times New Roman", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWinBlue.ForeColor = System.Drawing.Color.White;
             this.btnWinBlue.Location = new System.Drawing.Point(52, 38);
             this.btnWinBlue.Name = "btnWinBlue";
             this.btnWinBlue.Size = new System.Drawing.Size(40, 40);
             this.btnWinBlue.TabIndex = 6;
+            this.btnWinBlue.Text = "Xanh";
             this.btnWinBlue.UseVisualStyleBackColor = false;
             // 
             // btnWinRed
             // 
-            this.btnWinRed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnWinRed.BackColor = System.Drawing.Color.Silver;
             this.btnWinRed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWinRed.Font = new System.Drawing.Font("Times New Roman", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWinRed.ForeColor = System.Drawing.Color.White;
             this.btnWinRed.Location = new System.Drawing.Point(5, 38);
             this.btnWinRed.Name = "btnWinRed";
             this.btnWinRed.Size = new System.Drawing.Size(40, 40);
             this.btnWinRed.TabIndex = 5;
+            this.btnWinRed.Text = "Đỏ";
             this.btnWinRed.UseVisualStyleBackColor = false;
             // 
             // lblWinClass
@@ -740,16 +953,16 @@
             this.lineShape2.Y1 = 17;
             this.lineShape2.Y2 = 62;
             // 
-            // label17
+            // lblRefereeM3
             // 
-            this.label17.BackColor = System.Drawing.Color.Gainsboro;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(581, 326);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(320, 50);
-            this.label17.TabIndex = 54;
-            this.label17.Text = "Nguyễn Đặng Thành Trung";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRefereeM3.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblRefereeM3.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRefereeM3.Location = new System.Drawing.Point(581, 326);
+            this.lblRefereeM3.Name = "lblRefereeM3";
+            this.lblRefereeM3.Size = new System.Drawing.Size(320, 50);
+            this.lblRefereeM3.TabIndex = 54;
+            this.lblRefereeM3.Text = "-";
+            this.lblRefereeM3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblScoreBlueM3
             // 
@@ -760,7 +973,7 @@
             this.lblScoreBlueM3.Name = "lblScoreBlueM3";
             this.lblScoreBlueM3.Size = new System.Drawing.Size(80, 50);
             this.lblScoreBlueM3.TabIndex = 53;
-            this.lblScoreBlueM3.Text = "5";
+            this.lblScoreBlueM3.Text = "0";
             this.lblScoreBlueM3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblScoreRedM3
@@ -772,7 +985,7 @@
             this.lblScoreRedM3.Name = "lblScoreRedM3";
             this.lblScoreRedM3.Size = new System.Drawing.Size(80, 50);
             this.lblScoreRedM3.TabIndex = 52;
-            this.lblScoreRedM3.Text = "5";
+            this.lblScoreRedM3.Text = "0";
             this.lblScoreRedM3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label20
@@ -786,16 +999,16 @@
             this.label20.Text = "MÁY 3";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // lblRefereeM2
             // 
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(581, 276);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(320, 50);
-            this.label11.TabIndex = 49;
-            this.label11.Text = "Nguyễn Đặng Thành Trung";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRefereeM2.BackColor = System.Drawing.Color.White;
+            this.lblRefereeM2.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRefereeM2.Location = new System.Drawing.Point(581, 276);
+            this.lblRefereeM2.Name = "lblRefereeM2";
+            this.lblRefereeM2.Size = new System.Drawing.Size(320, 50);
+            this.lblRefereeM2.TabIndex = 49;
+            this.lblRefereeM2.Text = "-";
+            this.lblRefereeM2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblScoreBlueM2
             // 
@@ -806,7 +1019,7 @@
             this.lblScoreBlueM2.Name = "lblScoreBlueM2";
             this.lblScoreBlueM2.Size = new System.Drawing.Size(80, 50);
             this.lblScoreBlueM2.TabIndex = 48;
-            this.lblScoreBlueM2.Text = "5";
+            this.lblScoreBlueM2.Text = "0";
             this.lblScoreBlueM2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblScoreRedM2
@@ -818,7 +1031,7 @@
             this.lblScoreRedM2.Name = "lblScoreRedM2";
             this.lblScoreRedM2.Size = new System.Drawing.Size(80, 50);
             this.lblScoreRedM2.TabIndex = 47;
-            this.lblScoreRedM2.Text = "5";
+            this.lblScoreRedM2.Text = "0";
             this.lblScoreRedM2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
@@ -832,16 +1045,16 @@
             this.label14.Text = "MÁY 2";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // lblRefereeM1
             // 
-            this.label10.BackColor = System.Drawing.Color.Gainsboro;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(581, 226);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(320, 50);
-            this.label10.TabIndex = 44;
-            this.label10.Text = "Nguyễn Đặng Thành Trung";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRefereeM1.BackColor = System.Drawing.Color.Gainsboro;
+            this.lblRefereeM1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRefereeM1.Location = new System.Drawing.Point(581, 226);
+            this.lblRefereeM1.Name = "lblRefereeM1";
+            this.lblRefereeM1.Size = new System.Drawing.Size(320, 50);
+            this.lblRefereeM1.TabIndex = 44;
+            this.lblRefereeM1.Text = "-";
+            this.lblRefereeM1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblScoreBlueM1
             // 
@@ -852,7 +1065,7 @@
             this.lblScoreBlueM1.Name = "lblScoreBlueM1";
             this.lblScoreBlueM1.Size = new System.Drawing.Size(80, 50);
             this.lblScoreBlueM1.TabIndex = 43;
-            this.lblScoreBlueM1.Text = "4";
+            this.lblScoreBlueM1.Text = "0";
             this.lblScoreBlueM1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblScoreRedM1
@@ -864,7 +1077,7 @@
             this.lblScoreRedM1.Name = "lblScoreRedM1";
             this.lblScoreRedM1.Size = new System.Drawing.Size(80, 50);
             this.lblScoreRedM1.TabIndex = 42;
-            this.lblScoreRedM1.Text = "3";
+            this.lblScoreRedM1.Text = "0";
             this.lblScoreRedM1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
@@ -983,15 +1196,15 @@
         private System.Windows.Forms.Label lblIdBlue;
         private System.Windows.Forms.Label lblClassRed;
         private System.Windows.Forms.Label lblIdRed;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblRefereeM3;
         private System.Windows.Forms.Label lblScoreBlueM3;
         private System.Windows.Forms.Label lblScoreRedM3;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblRefereeM2;
         private System.Windows.Forms.Label lblScoreBlueM2;
         private System.Windows.Forms.Label lblScoreRedM2;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblRefereeM1;
         private System.Windows.Forms.Label lblScoreBlueM1;
         private System.Windows.Forms.Label lblScoreRedM1;
         private System.Windows.Forms.Label label7;
@@ -1033,6 +1246,18 @@
         private System.Windows.Forms.Button btnSent;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Timer tmrServer;
+        private System.Windows.Forms.Button btnDecRedM3;
+        private System.Windows.Forms.Button btnIncRedM3;
+        private System.Windows.Forms.Button btnDecRedM2;
+        private System.Windows.Forms.Button btnIncRedM2;
+        private System.Windows.Forms.Button btnDecRedM1;
+        private System.Windows.Forms.Button btnIncRedM1;
+        private System.Windows.Forms.Button btnDecBlueM3;
+        private System.Windows.Forms.Button btnIncBlueM3;
+        private System.Windows.Forms.Button btnDecBlueM2;
+        private System.Windows.Forms.Button btnIncBlueM2;
+        private System.Windows.Forms.Button btnDecBlueM1;
+        private System.Windows.Forms.Button btnIncBlueM1;
 
     }
 }
