@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -19,7 +20,19 @@ namespace Server
 
         public ServerForm()
         {
+            IPAddress[] localIPs = Dns.GetHostAddresses(Dns.GetHostName());
+            foreach (var ip in localIPs)
+            {
+                if (ip.ToString().IndexOf('.') > 0)
+                {
+                    Variable.IP = ip.ToString();
+                }
+            }
+
             InitializeComponent();
+
+            this.Text = "Máy chính: " + Variable.IP + ":" + Variable.PORT;
+
             tcpServers = new TcpServers(this);
             Variable.SERVERSERVICES = new List<ServerService>();
             Variable.THREADS = new List<Thread>();
@@ -38,6 +51,8 @@ namespace Server
 
         private void tmrServer_Tick(object sender, EventArgs e)
         {
+            lblClock.Text = DateTime.Now.Second.ToString();
+
             try
             {
                 foreach (var sv in Variable.SERVERSERVICES)
@@ -48,9 +63,6 @@ namespace Server
                 setFormFromClientJson(Variable.RECEIVETEXT1);
                 setFormFromClientJson(Variable.RECEIVETEXT2);
                 setFormFromClientJson(Variable.RECEIVETEXT3);
-
-
-                lblClock.Text = DateTime.Now.Second.ToString();
             }
             catch (Exception ex) { }
         }
@@ -241,6 +253,16 @@ namespace Server
                 lblWinId.Text = "";
                 lblWinClass.Text = "";
             }
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            pnlSetting.Visible = true;
+        }
+
+        private void btnHideSetting_Click(object sender, EventArgs e)
+        {
+            pnlSetting.Visible = false;
         }
 
     }

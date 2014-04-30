@@ -43,6 +43,20 @@
             this.lblClock = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDecBlueM3 = new System.Windows.Forms.Button();
+            this.pnlSetting = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtIpM1 = new System.Windows.Forms.TextBox();
+            this.txtIpM2 = new System.Windows.Forms.TextBox();
+            this.txtIpM3 = new System.Windows.Forms.TextBox();
+            this.txtPortM1 = new System.Windows.Forms.TextBox();
+            this.txtPortM2 = new System.Windows.Forms.TextBox();
+            this.txtPortM3 = new System.Windows.Forms.TextBox();
+            this.btnHideSetting = new System.Windows.Forms.Button();
             this.btnIncBlueM3 = new System.Windows.Forms.Button();
             this.btnDecBlueM2 = new System.Windows.Forms.Button();
             this.btnIncBlueM2 = new System.Windows.Forms.Button();
@@ -109,7 +123,10 @@
             this.lblClassRed = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tmrServer = new System.Windows.Forms.Timer(this.components);
+            this.btnSetting = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.pnlSetting.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -266,13 +283,14 @@
             this.lblClock.Name = "lblClock";
             this.lblClock.Size = new System.Drawing.Size(160, 63);
             this.lblClock.TabIndex = 1;
-            this.lblClock.Text = "00:55";
+            this.lblClock.Text = "--:--";
             this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnDecBlueM3);
+            this.panel1.Controls.Add(this.pnlSetting);
             this.panel1.Controls.Add(this.btnIncBlueM3);
             this.panel1.Controls.Add(this.btnDecBlueM2);
             this.panel1.Controls.Add(this.btnIncBlueM2);
@@ -353,6 +371,144 @@
             this.btnDecBlueM3.Text = "˅";
             this.btnDecBlueM3.UseVisualStyleBackColor = false;
             this.btnDecBlueM3.Visible = false;
+            // 
+            // pnlSetting
+            // 
+            this.pnlSetting.BackColor = System.Drawing.Color.White;
+            this.pnlSetting.Controls.Add(this.tableLayoutPanel1);
+            this.pnlSetting.Controls.Add(this.btnHideSetting);
+            this.pnlSetting.Location = new System.Drawing.Point(359, 27);
+            this.pnlSetting.Name = "pnlSetting";
+            this.pnlSetting.Size = new System.Drawing.Size(548, 248);
+            this.pnlSetting.TabIndex = 71;
+            this.pnlSetting.Visible = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtIpM1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtIpM2, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtIpM3, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtPortM1, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtPortM2, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtPortM3, 2, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 43);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.83784F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.16216F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(232, 123);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(54, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 22);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "IP";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(163, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 22);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "PORT";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 36);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Máy 1";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 58);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 34);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Máy 2";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 92);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 31);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Máy 3";
+            // 
+            // txtIpM1
+            // 
+            this.txtIpM1.Location = new System.Drawing.Point(54, 25);
+            this.txtIpM1.Name = "txtIpM1";
+            this.txtIpM1.Size = new System.Drawing.Size(100, 30);
+            this.txtIpM1.TabIndex = 5;
+            // 
+            // txtIpM2
+            // 
+            this.txtIpM2.Location = new System.Drawing.Point(54, 61);
+            this.txtIpM2.Name = "txtIpM2";
+            this.txtIpM2.Size = new System.Drawing.Size(100, 30);
+            this.txtIpM2.TabIndex = 6;
+            // 
+            // txtIpM3
+            // 
+            this.txtIpM3.Location = new System.Drawing.Point(54, 95);
+            this.txtIpM3.Name = "txtIpM3";
+            this.txtIpM3.Size = new System.Drawing.Size(100, 30);
+            this.txtIpM3.TabIndex = 7;
+            // 
+            // txtPortM1
+            // 
+            this.txtPortM1.Location = new System.Drawing.Point(163, 25);
+            this.txtPortM1.Name = "txtPortM1";
+            this.txtPortM1.Size = new System.Drawing.Size(65, 30);
+            this.txtPortM1.TabIndex = 8;
+            this.txtPortM1.Text = "4569";
+            // 
+            // txtPortM2
+            // 
+            this.txtPortM2.Location = new System.Drawing.Point(163, 61);
+            this.txtPortM2.Name = "txtPortM2";
+            this.txtPortM2.Size = new System.Drawing.Size(65, 30);
+            this.txtPortM2.TabIndex = 9;
+            this.txtPortM2.Text = "4569";
+            // 
+            // txtPortM3
+            // 
+            this.txtPortM3.Location = new System.Drawing.Point(163, 95);
+            this.txtPortM3.Name = "txtPortM3";
+            this.txtPortM3.Size = new System.Drawing.Size(65, 30);
+            this.txtPortM3.TabIndex = 10;
+            this.txtPortM3.Text = "4569";
+            // 
+            // btnHideSetting
+            // 
+            this.btnHideSetting.Location = new System.Drawing.Point(90, 4);
+            this.btnHideSetting.Name = "btnHideSetting";
+            this.btnHideSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnHideSetting.TabIndex = 1;
+            this.btnHideSetting.Text = "Close";
+            this.btnHideSetting.UseVisualStyleBackColor = true;
+            this.btnHideSetting.Click += new System.EventHandler(this.btnHideSetting_Click);
             // 
             // btnIncBlueM3
             // 
@@ -1155,18 +1311,32 @@
             this.tmrServer.Interval = 500;
             this.tmrServer.Tick += new System.EventHandler(this.tmrServer_Tick);
             // 
+            // btnSetting
+            // 
+            this.btnSetting.Location = new System.Drawing.Point(6, 8);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(55, 23);
+            this.btnSetting.TabIndex = 72;
+            this.btnSetting.Text = "Setting";
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
             // ServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1066, 524);
+            this.Controls.Add(this.btnSetting);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "ServerForm";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ServerForm_FormClosing);
             this.panel1.ResumeLayout(false);
+            this.pnlSetting.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1258,6 +1428,21 @@
         private System.Windows.Forms.Button btnIncBlueM2;
         private System.Windows.Forms.Button btnDecBlueM1;
         private System.Windows.Forms.Button btnIncBlueM1;
+        private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Panel pnlSetting;
+        private System.Windows.Forms.Button btnHideSetting;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtIpM1;
+        private System.Windows.Forms.TextBox txtIpM2;
+        private System.Windows.Forms.TextBox txtIpM3;
+        private System.Windows.Forms.TextBox txtPortM1;
+        private System.Windows.Forms.TextBox txtPortM2;
+        private System.Windows.Forms.TextBox txtPortM3;
 
     }
 }

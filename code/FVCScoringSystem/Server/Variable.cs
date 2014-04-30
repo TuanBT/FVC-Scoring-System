@@ -17,6 +17,6 @@ namespace Server
         public static string WIN { get; set; }
         public static int SEC { get; set; }
         public static int PORT = 4569;
-        public static string IP = "127.0.0.1";
+        public static string IP = "127.0.0.2";
     }
 }
