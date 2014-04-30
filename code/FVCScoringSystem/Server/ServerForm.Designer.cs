@@ -44,18 +44,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDecBlueM3 = new System.Windows.Forms.Button();
             this.pnlSetting = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtIpM1 = new System.Windows.Forms.TextBox();
-            this.txtIpM2 = new System.Windows.Forms.TextBox();
-            this.txtIpM3 = new System.Windows.Forms.TextBox();
-            this.txtPortM1 = new System.Windows.Forms.TextBox();
-            this.txtPortM2 = new System.Windows.Forms.TextBox();
-            this.txtPortM3 = new System.Windows.Forms.TextBox();
             this.btnHideSetting = new System.Windows.Forms.Button();
             this.btnIncBlueM3 = new System.Windows.Forms.Button();
             this.btnDecBlueM2 = new System.Windows.Forms.Button();
@@ -124,14 +112,40 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tmrServer = new System.Windows.Forms.Timer(this.components);
             this.btnSetting = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtNameRed = new System.Windows.Forms.TextBox();
+            this.txtIdRed = new System.Windows.Forms.TextBox();
+            this.txtClassRed = new System.Windows.Forms.TextBox();
+            this.txtNameBlue = new System.Windows.Forms.TextBox();
+            this.txtIdBlue = new System.Windows.Forms.TextBox();
+            this.txtClassBlue = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtWeight = new System.Windows.Forms.TextBox();
+            this.txtSex = new System.Windows.Forms.TextBox();
+            this.txtNumberMatch = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtRefereeMain = new System.Windows.Forms.TextBox();
+            this.txtSecretary = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.pnlSetting.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNameBlue
@@ -144,7 +158,7 @@
             this.lblNameBlue.Name = "lblNameBlue";
             this.lblNameBlue.Size = new System.Drawing.Size(320, 100);
             this.lblNameBlue.TabIndex = 35;
-            this.lblNameBlue.Text = "Nguyễn Đặng Thành Trung";
+            this.lblNameBlue.Text = "-";
             this.lblNameBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblNameRed
@@ -157,7 +171,7 @@
             this.lblNameRed.Name = "lblNameRed";
             this.lblNameRed.Size = new System.Drawing.Size(321, 100);
             this.lblNameRed.TabIndex = 34;
-            this.lblNameRed.Text = "Nguyễn Đặng Thành Trung";
+            this.lblNameRed.Text = "-";
             this.lblNameRed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotalScoreBlue
@@ -220,7 +234,7 @@
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(80, 63);
             this.lblWeight.TabIndex = 6;
-            this.lblWeight.Text = "51-54Kg";
+            this.lblWeight.Text = "-";
             this.lblWeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSex
@@ -233,7 +247,7 @@
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(80, 49);
             this.lblSex.TabIndex = 5;
-            this.lblSex.Text = "Nam";
+            this.lblSex.Text = "-";
             this.lblSex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -258,7 +272,7 @@
             this.lblNumberMatch.Name = "lblNumberMatch";
             this.lblNumberMatch.Size = new System.Drawing.Size(94, 122);
             this.lblNumberMatch.TabIndex = 3;
-            this.lblNumberMatch.Text = "15";
+            this.lblNumberMatch.Text = "-";
             this.lblNumberMatch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitle
@@ -289,8 +303,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnDecBlueM3);
             this.panel1.Controls.Add(this.pnlSetting);
+            this.panel1.Controls.Add(this.btnDecBlueM3);
             this.panel1.Controls.Add(this.btnIncBlueM3);
             this.panel1.Controls.Add(this.btnDecBlueM2);
             this.panel1.Controls.Add(this.btnIncBlueM2);
@@ -374,137 +388,22 @@
             // 
             // pnlSetting
             // 
-            this.pnlSetting.BackColor = System.Drawing.Color.White;
+            this.pnlSetting.BackColor = System.Drawing.Color.Olive;
+            this.pnlSetting.Controls.Add(this.panel7);
+            this.pnlSetting.Controls.Add(this.panel6);
             this.pnlSetting.Controls.Add(this.tableLayoutPanel1);
             this.pnlSetting.Controls.Add(this.btnHideSetting);
-            this.pnlSetting.Location = new System.Drawing.Point(359, 27);
+            this.pnlSetting.Location = new System.Drawing.Point(153, 14);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(548, 248);
+            this.pnlSetting.Size = new System.Drawing.Size(102, 46);
             this.pnlSetting.TabIndex = 71;
             this.pnlSetting.Visible = false;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtIpM1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtIpM2, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtIpM3, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtPortM1, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtPortM2, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtPortM3, 2, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 43);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.83784F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.16216F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(232, 123);
-            this.tableLayoutPanel1.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 22);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "IP";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(163, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 22);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "PORT";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 36);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Máy 1";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 58);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 34);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Máy 2";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 92);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 31);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Máy 3";
-            // 
-            // txtIpM1
-            // 
-            this.txtIpM1.Location = new System.Drawing.Point(54, 25);
-            this.txtIpM1.Name = "txtIpM1";
-            this.txtIpM1.Size = new System.Drawing.Size(100, 30);
-            this.txtIpM1.TabIndex = 5;
-            // 
-            // txtIpM2
-            // 
-            this.txtIpM2.Location = new System.Drawing.Point(54, 61);
-            this.txtIpM2.Name = "txtIpM2";
-            this.txtIpM2.Size = new System.Drawing.Size(100, 30);
-            this.txtIpM2.TabIndex = 6;
-            // 
-            // txtIpM3
-            // 
-            this.txtIpM3.Location = new System.Drawing.Point(54, 95);
-            this.txtIpM3.Name = "txtIpM3";
-            this.txtIpM3.Size = new System.Drawing.Size(100, 30);
-            this.txtIpM3.TabIndex = 7;
-            // 
-            // txtPortM1
-            // 
-            this.txtPortM1.Location = new System.Drawing.Point(163, 25);
-            this.txtPortM1.Name = "txtPortM1";
-            this.txtPortM1.Size = new System.Drawing.Size(65, 30);
-            this.txtPortM1.TabIndex = 8;
-            this.txtPortM1.Text = "4569";
-            // 
-            // txtPortM2
-            // 
-            this.txtPortM2.Location = new System.Drawing.Point(163, 61);
-            this.txtPortM2.Name = "txtPortM2";
-            this.txtPortM2.Size = new System.Drawing.Size(65, 30);
-            this.txtPortM2.TabIndex = 9;
-            this.txtPortM2.Text = "4569";
-            // 
-            // txtPortM3
-            // 
-            this.txtPortM3.Location = new System.Drawing.Point(163, 95);
-            this.txtPortM3.Name = "txtPortM3";
-            this.txtPortM3.Size = new System.Drawing.Size(65, 30);
-            this.txtPortM3.TabIndex = 10;
-            this.txtPortM3.Text = "4569";
-            // 
             // btnHideSetting
             // 
-            this.btnHideSetting.Location = new System.Drawing.Point(90, 4);
+            this.btnHideSetting.Location = new System.Drawing.Point(15, 6);
             this.btnHideSetting.Name = "btnHideSetting";
-            this.btnHideSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnHideSetting.Size = new System.Drawing.Size(75, 30);
             this.btnHideSetting.TabIndex = 1;
             this.btnHideSetting.Text = "Close";
             this.btnHideSetting.UseVisualStyleBackColor = true;
@@ -918,6 +817,7 @@
             this.btnOk.TabIndex = 35;
             this.btnOk.Text = "OK →";
             this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // panel4
             // 
@@ -935,7 +835,7 @@
             this.lblSecretary.Name = "lblSecretary";
             this.lblSecretary.Size = new System.Drawing.Size(150, 40);
             this.lblSecretary.TabIndex = 1;
-            this.lblSecretary.Text = "Nguyễn Đặng Thành Trung";
+            this.lblSecretary.Text = "-";
             this.lblSecretary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label23
@@ -964,7 +864,7 @@
             this.lblRefereeMain.Name = "lblRefereeMain";
             this.lblRefereeMain.Size = new System.Drawing.Size(132, 40);
             this.lblRefereeMain.TabIndex = 1;
-            this.lblRefereeMain.Text = "Nguyễn Đặng Thành Trung";
+            this.lblRefereeMain.Text = "-";
             this.lblRefereeMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label21
@@ -1012,7 +912,7 @@
             // 
             // btnWinBlue
             // 
-            this.btnWinBlue.BackColor = System.Drawing.Color.Blue;
+            this.btnWinBlue.BackColor = System.Drawing.Color.Silver;
             this.btnWinBlue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWinBlue.Font = new System.Drawing.Font("Times New Roman", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWinBlue.ForeColor = System.Drawing.Color.White;
@@ -1256,7 +1156,7 @@
             this.lblClassBlue.Name = "lblClassBlue";
             this.lblClassBlue.Size = new System.Drawing.Size(100, 50);
             this.lblClassBlue.TabIndex = 39;
-            this.lblClassBlue.Text = "SE0669";
+            this.lblClassBlue.Text = "-";
             this.lblClassBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblIdBlue
@@ -1268,7 +1168,7 @@
             this.lblIdBlue.Name = "lblIdBlue";
             this.lblIdBlue.Size = new System.Drawing.Size(100, 50);
             this.lblIdBlue.TabIndex = 38;
-            this.lblIdBlue.Text = "SE60824";
+            this.lblIdBlue.Text = "-";
             this.lblIdBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblIdRed
@@ -1280,7 +1180,7 @@
             this.lblIdRed.Name = "lblIdRed";
             this.lblIdRed.Size = new System.Drawing.Size(100, 50);
             this.lblIdRed.TabIndex = 40;
-            this.lblIdRed.Text = "SE60824";
+            this.lblIdRed.Text = "-";
             this.lblIdRed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblClassRed
@@ -1292,7 +1192,7 @@
             this.lblClassRed.Name = "lblClassRed";
             this.lblClassRed.Size = new System.Drawing.Size(100, 50);
             this.lblClassRed.TabIndex = 35;
-            this.lblClassRed.Text = "SE0669";
+            this.lblClassRed.Text = "-";
             this.lblClassRed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -1321,6 +1221,235 @@
             this.btnSetting.UseVisualStyleBackColor = true;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtNameRed, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtIdRed, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtClassRed, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtNameBlue, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtIdBlue, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtClassBlue, 3, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(68, 47);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(302, 152);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(78, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 22);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Tên";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(153, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 22);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "MSSV";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(228, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 22);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Lớp";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 22);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Đỏ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 100);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 22);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Xanh";
+            // 
+            // txtNameRed
+            // 
+            this.txtNameRed.Location = new System.Drawing.Point(78, 53);
+            this.txtNameRed.Name = "txtNameRed";
+            this.txtNameRed.Size = new System.Drawing.Size(69, 30);
+            this.txtNameRed.TabIndex = 5;
+            this.txtNameRed.Text = "Nguyễn Đặng Thành Trung";
+            // 
+            // txtIdRed
+            // 
+            this.txtIdRed.Location = new System.Drawing.Point(153, 53);
+            this.txtIdRed.Name = "txtIdRed";
+            this.txtIdRed.Size = new System.Drawing.Size(69, 30);
+            this.txtIdRed.TabIndex = 6;
+            this.txtIdRed.Text = "SE60824";
+            // 
+            // txtClassRed
+            // 
+            this.txtClassRed.Location = new System.Drawing.Point(228, 53);
+            this.txtClassRed.Name = "txtClassRed";
+            this.txtClassRed.Size = new System.Drawing.Size(71, 30);
+            this.txtClassRed.TabIndex = 7;
+            this.txtClassRed.Text = "SE0669";
+            // 
+            // txtNameBlue
+            // 
+            this.txtNameBlue.Location = new System.Drawing.Point(78, 103);
+            this.txtNameBlue.Name = "txtNameBlue";
+            this.txtNameBlue.Size = new System.Drawing.Size(69, 30);
+            this.txtNameBlue.TabIndex = 8;
+            this.txtNameBlue.Text = "Nguyễn Đặng Thành Trung";
+            // 
+            // txtIdBlue
+            // 
+            this.txtIdBlue.Location = new System.Drawing.Point(153, 103);
+            this.txtIdBlue.Name = "txtIdBlue";
+            this.txtIdBlue.Size = new System.Drawing.Size(69, 30);
+            this.txtIdBlue.TabIndex = 9;
+            this.txtIdBlue.Text = "SE60824";
+            // 
+            // txtClassBlue
+            // 
+            this.txtClassBlue.Location = new System.Drawing.Point(228, 103);
+            this.txtClassBlue.Name = "txtClassBlue";
+            this.txtClassBlue.Size = new System.Drawing.Size(71, 30);
+            this.txtClassBlue.TabIndex = 10;
+            this.txtClassBlue.Text = "SE0669";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.txtNumberMatch);
+            this.panel6.Controls.Add(this.txtSex);
+            this.panel6.Controls.Add(this.txtWeight);
+            this.panel6.Controls.Add(this.label12);
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Location = new System.Drawing.Point(391, 47);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 100);
+            this.panel6.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(4, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(83, 22);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Hạng cân";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 36);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(81, 22);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Giới tính";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 69);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 22);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Trận số";
+            // 
+            // txtWeight
+            // 
+            this.txtWeight.Location = new System.Drawing.Point(81, 10);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(100, 30);
+            this.txtWeight.TabIndex = 3;
+            this.txtWeight.Text = "51-54Kg";
+            // 
+            // txtSex
+            // 
+            this.txtSex.Location = new System.Drawing.Point(84, 37);
+            this.txtSex.Name = "txtSex";
+            this.txtSex.Size = new System.Drawing.Size(100, 30);
+            this.txtSex.TabIndex = 4;
+            this.txtSex.Text = "Nam";
+            // 
+            // txtNumberMatch
+            // 
+            this.txtNumberMatch.Location = new System.Drawing.Point(81, 69);
+            this.txtNumberMatch.Name = "txtNumberMatch";
+            this.txtNumberMatch.Size = new System.Drawing.Size(100, 30);
+            this.txtNumberMatch.TabIndex = 5;
+            this.txtNumberMatch.Text = "15";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.txtSecretary);
+            this.panel7.Controls.Add(this.txtRefereeMain);
+            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.label13);
+            this.panel7.Location = new System.Drawing.Point(68, 210);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(302, 91);
+            this.panel7.TabIndex = 4;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 4);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(120, 22);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Tổng trọng tài";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(9, 41);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(95, 22);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Ban thư ký";
+            // 
+            // txtRefereeMain
+            // 
+            this.txtRefereeMain.Location = new System.Drawing.Point(127, 4);
+            this.txtRefereeMain.Name = "txtRefereeMain";
+            this.txtRefereeMain.Size = new System.Drawing.Size(159, 30);
+            this.txtRefereeMain.TabIndex = 2;
+            this.txtRefereeMain.Text = "Nguyễn Đặng Thành Trung";
+            // 
+            // txtSecretary
+            // 
+            this.txtSecretary.Location = new System.Drawing.Point(130, 41);
+            this.txtSecretary.Name = "txtSecretary";
+            this.txtSecretary.Size = new System.Drawing.Size(156, 30);
+            this.txtSecretary.TabIndex = 3;
+            this.txtSecretary.Text = "Nguyễn Đặng Thành Trung";
+            // 
             // ServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1335,13 +1464,17 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ServerForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.pnlSetting.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1437,12 +1570,24 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtIpM1;
-        private System.Windows.Forms.TextBox txtIpM2;
-        private System.Windows.Forms.TextBox txtIpM3;
-        private System.Windows.Forms.TextBox txtPortM1;
-        private System.Windows.Forms.TextBox txtPortM2;
-        private System.Windows.Forms.TextBox txtPortM3;
+        private System.Windows.Forms.TextBox txtNameRed;
+        private System.Windows.Forms.TextBox txtIdRed;
+        private System.Windows.Forms.TextBox txtClassRed;
+        private System.Windows.Forms.TextBox txtNameBlue;
+        private System.Windows.Forms.TextBox txtIdBlue;
+        private System.Windows.Forms.TextBox txtClassBlue;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox txtSecretary;
+        private System.Windows.Forms.TextBox txtRefereeMain;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox txtNumberMatch;
+        private System.Windows.Forms.TextBox txtSex;
+        private System.Windows.Forms.TextBox txtWeight;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
 
     }
 }

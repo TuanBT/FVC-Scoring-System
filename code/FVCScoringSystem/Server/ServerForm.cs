@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading;
@@ -60,9 +59,18 @@ namespace Server
                     Variable.SENTTEXT = getServerJsonString();
                     sv.SentText(Variable.SENTTEXT);
                 }
-                setFormFromClientJson(Variable.RECEIVETEXT1);
-                setFormFromClientJson(Variable.RECEIVETEXT2);
-                setFormFromClientJson(Variable.RECEIVETEXT3);
+                if (Variable.RECEIVETEXT1 != null)
+                {
+                    setFormFromClientJson(Variable.RECEIVETEXT1);
+                }
+                if (Variable.RECEIVETEXT2 != null)
+                {
+                    setFormFromClientJson(Variable.RECEIVETEXT2);
+                }
+                if (Variable.RECEIVETEXT3 != null)
+                {
+                    setFormFromClientJson(Variable.RECEIVETEXT3);
+                }
             }
             catch (Exception ex) { }
         }
@@ -158,18 +166,18 @@ namespace Server
                 {
                     ChangeSatusMath(lblStatusScoreM3, true);
                 }
-                lblRefereeM2.Text = clientInfo.Referee;
+                lblRefereeM3.Text = clientInfo.Referee;
                 lblScoreRedM3.Text = clientInfo.ScoreRed.ToString();
                 lblScoreBlueM3.Text = clientInfo.ScoreBlue.ToString();
                 if (clientInfo.Win == "RED")
                 {
                     redWin++;
-                    lblPlusRedM2.Visible = true;
+                    lblPlusRedM3.Visible = true;
                 }
                 if (clientInfo.Win == "BLUE")
                 {
                     blueWin++;
-                    lblPlusBlueM2.Visible = true;
+                    lblPlusBlueM3.Visible = true;
                 }
             }
             if (redWin > blueWin)
@@ -263,7 +271,32 @@ namespace Server
         private void btnHideSetting_Click(object sender, EventArgs e)
         {
             pnlSetting.Visible = false;
+
+            setFormSetting();
         }
 
+        private void btnOk_Click(object sender, EventArgs e) 
+        {
+            //Lấy từ database trận đấu tiếp theo
+
+            setFormSetting();
+        }
+
+        public void setFormSetting()
+        {
+            lblRefereeMain.Text = txtRefereeMain.Text;
+            lblSecretary.Text = txtSecretary.Text;
+
+            lblWeight.Text = txtWeight.Text;
+            lblSex.Text = txtSex.Text;
+            lblNumberMatch.Text = txtNumberMatch.Text;
+
+            lblNameRed.Text = txtNameRed.Text;
+            lblIdRed.Text = txtIdRed.Text;
+            lblClassRed.Text = txtClassRed.Text;
+            lblNameBlue.Text = txtNameBlue.Text;
+            lblIdBlue.Text = txtIdBlue.Text;
+            lblClassBlue.Text = txtClassBlue.Text;
+        }
     }
 }
