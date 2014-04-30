@@ -15,16 +15,17 @@ namespace Client
         TcpClients tcpClients = new TcpClients();
         public ClientForm()
         {
-            if (tcpClients.Connection())
-            {
-                InitializeComponent();
-                resetNewMath();
-                tmrClient.Enabled = true;
-            }
-            else
-            {
-                InitializeComponent();
-            }
+            InitializeComponent();
+            //if (tcpClients.Connection())
+            //{
+            //    InitializeComponent();
+            //    resetNewMath();
+            //    tmrClient.Enabled = true;
+            //}
+            //else
+            //{
+            //    InitializeComponent();
+            //}
         }
 
         private void tmrClient_Tick(object sender, EventArgs e)
@@ -359,8 +360,8 @@ namespace Client
 
             lblRefereeName.Text = txtRefereeName.Text;
 
-            Variable.COMPUTER = Int32.Parse(txtComputer.Text);
-            lblNumberClient.Text = (Int32.Parse(txtComputer.Text)).ToString();
+            Variable.COMPUTER = Int32.Parse(nmrComputer.Text);
+            lblNumberClient.Text = (Int32.Parse(nmrComputer.Text)).ToString();
 
             if (tcpClients.Connection())
             {
@@ -378,6 +379,11 @@ namespace Client
         }
 
         private void pnlSetting_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtComputer_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -43,7 +43,6 @@
             this.txtPortServer = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.btnHideSetting = new System.Windows.Forms.Button();
-            this.txtComputer = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
@@ -123,6 +122,7 @@
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tmrClient = new System.Windows.Forms.Timer(this.components);
+            this.nmrComputer = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.pnlSetting.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -132,6 +132,7 @@
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -213,14 +214,14 @@
             // 
             // pnlSetting
             // 
+            this.pnlSetting.Controls.Add(this.nmrComputer);
             this.pnlSetting.Controls.Add(this.panel6);
             this.pnlSetting.Controls.Add(this.tableLayoutPanel1);
             this.pnlSetting.Controls.Add(this.label17);
             this.pnlSetting.Controls.Add(this.btnHideSetting);
-            this.pnlSetting.Controls.Add(this.txtComputer);
-            this.pnlSetting.Location = new System.Drawing.Point(67, 8);
+            this.pnlSetting.Location = new System.Drawing.Point(69, 5);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(503, 181);
+            this.pnlSetting.Size = new System.Drawing.Size(477, 188);
             this.pnlSetting.TabIndex = 69;
             this.pnlSetting.Visible = false;
             this.pnlSetting.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSetting_Paint);
@@ -256,7 +257,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label20, 0, 1);
@@ -282,7 +283,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(161, 0);
+            this.label19.Location = new System.Drawing.Point(160, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(37, 13);
             this.label19.TabIndex = 1;
@@ -307,7 +308,7 @@
             // 
             // txtPortServer
             // 
-            this.txtPortServer.Location = new System.Drawing.Point(161, 26);
+            this.txtPortServer.Location = new System.Drawing.Point(160, 26);
             this.txtPortServer.Name = "txtPortServer";
             this.txtPortServer.Size = new System.Drawing.Size(65, 20);
             this.txtPortServer.TabIndex = 8;
@@ -331,14 +332,6 @@
             this.btnHideSetting.Text = "Close";
             this.btnHideSetting.UseVisualStyleBackColor = true;
             this.btnHideSetting.Click += new System.EventHandler(this.btnHideSetting_Click);
-            // 
-            // txtComputer
-            // 
-            this.txtComputer.Location = new System.Drawing.Point(69, 67);
-            this.txtComputer.Name = "txtComputer";
-            this.txtComputer.Size = new System.Drawing.Size(29, 20);
-            this.txtComputer.TabIndex = 0;
-            this.txtComputer.Text = "-";
             // 
             // label5
             // 
@@ -1337,6 +1330,18 @@
             this.tmrClient.Interval = 500;
             this.tmrClient.Tick += new System.EventHandler(this.tmrClient_Tick);
             // 
+            // nmrComputer
+            // 
+            this.nmrComputer.Location = new System.Drawing.Point(68, 65);
+            this.nmrComputer.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.nmrComputer.Name = "nmrComputer";
+            this.nmrComputer.Size = new System.Drawing.Size(66, 20);
+            this.nmrComputer.TabIndex = 7;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1360,6 +1365,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1448,7 +1454,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel pnlSetting;
         private System.Windows.Forms.Button btnHideSetting;
-        private System.Windows.Forms.TextBox txtComputer;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -1460,6 +1465,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox txtRefereeName;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.NumericUpDown nmrComputer;
     }
 }
 
