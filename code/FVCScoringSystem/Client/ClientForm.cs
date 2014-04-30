@@ -33,10 +33,21 @@ namespace Client
             try
             {
                 setFormFromServerJson(Variable.RECEIVETEXT);
-                Console.WriteLine(Variable.RECEIVETEXT);
 
                 Variable.SENTTEXT = getClientJsonString();
                 tcpClients.Sent(Variable.SENTTEXT);
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show("Mất kết nối với Server. Click OK để kết nối lại!");
+            }
+        }
+
+        private void tmrClientReceive_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                setFormFromServerJson(Variable.RECEIVETEXT);
             }
             catch (Exception ex)
             {
@@ -291,9 +302,34 @@ namespace Client
 
         private void btnSentResult_Click(object sender, EventArgs e)
         {
-            //tcpClients.Disconnect();
-            Variable.ENDMATH = 0;
-            //tmrClient.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn thực sự muốn gửi kết quả", "Gửi kết quả", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //tcpClients.Disconnect();
+                pnlSetting.Visible = true;
+
+                //Kết thúc chấm điểm
+                Variable.ENDMATH = 0;
+
+                //Variable.SENTTEXT = getClientJsonString();
+               // tcpClients.Sent(Variable.SENTTEXT);
+
+                //tmrClient.Enabled = false;
+                //tmrClientReceive.Enabled = true;
+
+                lblSec1Red.Text = "0";
+                lblMinusSec1Red.Text = "0";
+                lblSec2Red.Text = "0";
+                lblMinusSec2Red.Text = "0";
+                lblMinusSec1Blue.Text = "0";
+                lblSec2Blue.Text = "0";
+                lblMinusSec2Blue.Text = "0";
+                lblSec1Blue.Text = "0";
+
+                UpdateScore();
+            }
+            else if (dialogResult == DialogResult.No) { }
+           
         }
 
         private void btnWinRed_Click(object sender, EventArgs e)
@@ -367,6 +403,7 @@ namespace Client
             {
                 resetNewMath();
                 tmrClient.Enabled = true;
+                tmrClientReceive.Enabled = false;
             }
             else
             {
@@ -387,6 +424,8 @@ namespace Client
         {
 
         }
+
+
 
 
     }

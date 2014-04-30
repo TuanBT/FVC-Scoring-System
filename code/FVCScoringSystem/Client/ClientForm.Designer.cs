@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
             this.pnlSetting = new System.Windows.Forms.Panel();
+            this.nmrComputer = new System.Windows.Forms.NumericUpDown();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtRefereeName = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -122,9 +123,10 @@
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tmrClient = new System.Windows.Forms.Timer(this.components);
-            this.nmrComputer = new System.Windows.Forms.NumericUpDown();
+            this.tmrClientReceive = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.pnlSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).BeginInit();
             this.panel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -132,7 +134,6 @@
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -221,16 +222,28 @@
             this.pnlSetting.Controls.Add(this.btnHideSetting);
             this.pnlSetting.Location = new System.Drawing.Point(69, 5);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(477, 188);
+            this.pnlSetting.Size = new System.Drawing.Size(301, 200);
             this.pnlSetting.TabIndex = 69;
             this.pnlSetting.Visible = false;
             this.pnlSetting.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSetting_Paint);
+            // 
+            // nmrComputer
+            // 
+            this.nmrComputer.Location = new System.Drawing.Point(147, 13);
+            this.nmrComputer.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.nmrComputer.Name = "nmrComputer";
+            this.nmrComputer.Size = new System.Drawing.Size(32, 20);
+            this.nmrComputer.TabIndex = 7;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.txtRefereeName);
             this.panel6.Controls.Add(this.label21);
-            this.panel6.Location = new System.Drawing.Point(264, 105);
+            this.panel6.Location = new System.Drawing.Point(18, 125);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 47);
             this.panel6.TabIndex = 6;
@@ -257,13 +270,13 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label20, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtPortServer, 2, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 106);
+            this.tableLayoutPanel1.Controls.Add(this.label20, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 58);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.83784F));
@@ -274,7 +287,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(53, 0);
+            this.label18.Location = new System.Drawing.Point(52, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(17, 13);
             this.label18.TabIndex = 0;
@@ -283,7 +296,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(160, 0);
+            this.label19.Location = new System.Drawing.Point(159, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(37, 13);
             this.label19.TabIndex = 1;
@@ -300,15 +313,15 @@
             // 
             // txtIpServer
             // 
-            this.txtIpServer.Location = new System.Drawing.Point(53, 26);
+            this.txtIpServer.Location = new System.Drawing.Point(52, 26);
             this.txtIpServer.Name = "txtIpServer";
             this.txtIpServer.Size = new System.Drawing.Size(100, 20);
             this.txtIpServer.TabIndex = 5;
-            this.txtIpServer.Text = "192.168.0.101";
+            this.txtIpServer.Text = "192.168.0.102";
             // 
             // txtPortServer
             // 
-            this.txtPortServer.Location = new System.Drawing.Point(160, 26);
+            this.txtPortServer.Location = new System.Drawing.Point(159, 26);
             this.txtPortServer.Name = "txtPortServer";
             this.txtPortServer.Size = new System.Drawing.Size(65, 20);
             this.txtPortServer.TabIndex = 8;
@@ -317,7 +330,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(20, 70);
+            this.label17.Location = new System.Drawing.Point(99, 18);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(42, 13);
             this.label17.TabIndex = 2;
@@ -709,7 +722,7 @@
             this.btnSentResult.Name = "btnSentResult";
             this.btnSentResult.Size = new System.Drawing.Size(127, 72);
             this.btnSentResult.TabIndex = 0;
-            this.btnSentResult.Text = "Gủi kết quả";
+            this.btnSentResult.Text = "Gửi kết quả";
             this.btnSentResult.UseVisualStyleBackColor = false;
             this.btnSentResult.Click += new System.EventHandler(this.btnSentResult_Click);
             // 
@@ -1330,17 +1343,10 @@
             this.tmrClient.Interval = 500;
             this.tmrClient.Tick += new System.EventHandler(this.tmrClient_Tick);
             // 
-            // nmrComputer
+            // tmrClientReceive
             // 
-            this.nmrComputer.Location = new System.Drawing.Point(68, 65);
-            this.nmrComputer.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.nmrComputer.Name = "nmrComputer";
-            this.nmrComputer.Size = new System.Drawing.Size(66, 20);
-            this.nmrComputer.TabIndex = 7;
+            this.tmrClientReceive.Interval = 500;
+            this.tmrClientReceive.Tick += new System.EventHandler(this.tmrClientReceive_Tick);
             // 
             // ClientForm
             // 
@@ -1355,6 +1361,7 @@
             this.panel1.ResumeLayout(false);
             this.pnlSetting.ResumeLayout(false);
             this.pnlSetting.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1365,7 +1372,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1466,6 +1472,7 @@
         private System.Windows.Forms.TextBox txtRefereeName;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.NumericUpDown nmrComputer;
+        private System.Windows.Forms.Timer tmrClientReceive;
     }
 }
 

@@ -378,9 +378,9 @@
             this.pnlSetting.Controls.Add(this.panel6);
             this.pnlSetting.Controls.Add(this.tableLayoutPanel1);
             this.pnlSetting.Controls.Add(this.btnHideSetting);
-            this.pnlSetting.Location = new System.Drawing.Point(153, 14);
+            this.pnlSetting.Location = new System.Drawing.Point(52, 0);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(102, 46);
+            this.pnlSetting.Size = new System.Drawing.Size(97, 46);
             this.pnlSetting.TabIndex = 71;
             this.pnlSetting.Visible = false;
             // 
@@ -819,6 +819,7 @@
             this.btnSent.TabIndex = 73;
             this.btnSent.Text = "Gửi";
             this.btnSent.UseVisualStyleBackColor = false;
+            this.btnSent.Visible = false;
             // 
             // lblPlusRed
             // 

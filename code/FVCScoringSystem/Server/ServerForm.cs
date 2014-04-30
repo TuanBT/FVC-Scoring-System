@@ -83,36 +83,43 @@ namespace Server
                 if (Variable.RECEIVETEXT1 != null)
                 {
                     ClientInfo clientInfo1 = new ClientInfo(Variable.RECEIVETEXT1);
-                    lblStatusScoreM1.Visible = true;
-                    lblRefereeM1.Text = clientInfo1.Referee;
-                    lblScoreRedM1.Text = clientInfo1.ScoreRed.ToString();
-                    lblScoreBlueM1.Text = clientInfo1.ScoreBlue.ToString();
-                    ChangeStatus(lblStatusM1, true);
+                    //Kiểm tra việc chấm xong
                     if (clientInfo1.EndMath == 1)
                     {
+                        //Đang chấm
                         ChangeSatusMath(lblStatusScoreM1, true);
+
+                        lblStatusScoreM1.Visible = true;
+                        lblRefereeM1.Text = clientInfo1.Referee;
+                        lblScoreRedM1.Text = clientInfo1.ScoreRed.ToString();
+                        lblScoreBlueM1.Text = clientInfo1.ScoreBlue.ToString();
+                        ChangeStatus(lblStatusM1, true);
+
+                        //Kiểm tra thắng
+                        if (clientInfo1.Win == "RED")
+                        {
+                            lblPlusRedM1.Visible = true;
+                            lblPlusBlueM1.Visible = false;
+                        }
+                        if (clientInfo1.Win == "BLUE")
+                        {
+                            lblPlusRedM1.Visible = false;
+                            lblPlusBlueM1.Visible = true;
+                        }
+                        Variable.RECEIVETEXT1 = null;
                     }
                     else
                     {
                         //Đã chấm xong
                         ChangeSatusMath(lblStatusScoreM1, false);
+
                         btnIncRedM1.Visible = true;
                         btnDecRedM1.Visible = true;
                         btnIncBlueM1.Visible = true;
                         btnDecBlueM1.Visible = true;
                     }
-                    if (clientInfo1.Win == "RED")
-                    {
-                        lblPlusRedM1.Visible = true;
-                        lblPlusBlueM1.Visible = false;
-                    }
-                    if (clientInfo1.Win == "BLUE")
-                    {
-                        lblPlusRedM1.Visible = false;
-                        lblPlusBlueM1.Visible = true;
-                    }
-                    Variable.RECEIVETEXT1 = null;
                 }
+                //Không nhận được dữ liệu nữa
                 else
                 {
                     ChangeStatus(lblStatusM1, false);
@@ -122,40 +129,42 @@ namespace Server
                     lblPlusRedM1.Visible = false;
                     lblPlusBlueM1.Visible = false;
                     lblStatusScoreM1.Visible = false;
-
-
                 }
+
+                //Máy 2
                 if (Variable.RECEIVETEXT2 != null)
                 {
                     ClientInfo clientInfo2 = new ClientInfo(Variable.RECEIVETEXT2);
-                    lblStatusScoreM2.Visible = true;
-                    lblRefereeM2.Text = clientInfo2.Referee;
-                    lblScoreRedM2.Text = clientInfo2.ScoreRed.ToString();
-                    lblScoreBlueM2.Text = clientInfo2.ScoreBlue.ToString();
-                    ChangeStatus(lblStatusM2, true);
                     if (clientInfo2.EndMath == 1)
                     {
                         ChangeSatusMath(lblStatusScoreM2, true);
+
+                        lblStatusScoreM2.Visible = true;
+                        lblRefereeM2.Text = clientInfo2.Referee;
+                        lblScoreRedM2.Text = clientInfo2.ScoreRed.ToString();
+                        lblScoreBlueM2.Text = clientInfo2.ScoreBlue.ToString();
+                        ChangeStatus(lblStatusM2, true);
+                        if (clientInfo2.Win == "RED")
+                        {
+                            lblPlusRedM2.Visible = true;
+                            lblPlusBlueM2.Visible = false;
+                        }
+                        if (clientInfo2.Win == "BLUE")
+                        {
+                            lblPlusRedM2.Visible = false;
+                            lblPlusBlueM2.Visible = true;
+                        }
+                        Variable.RECEIVETEXT2 = null;
                     }
                     else
                     {
                         ChangeSatusMath(lblStatusScoreM2, false);
+
                         btnIncRedM2.Visible = true;
                         btnDecRedM2.Visible = true;
                         btnIncBlueM2.Visible = true;
                         btnDecBlueM2.Visible = true;
                     }
-                    if (clientInfo2.Win == "RED")
-                    {
-                        lblPlusRedM2.Visible = true;
-                        lblPlusBlueM2.Visible = false;
-                    }
-                    if (clientInfo2.Win == "BLUE")
-                    {
-                        lblPlusRedM2.Visible = false;
-                        lblPlusBlueM2.Visible = true;
-                    }
-                    Variable.RECEIVETEXT2 = null;
                 }
                 else
                 {
@@ -167,17 +176,30 @@ namespace Server
                     lblPlusBlueM2.Visible = false;
                     lblStatusScoreM2.Visible = false;
                 }
+
+                //Máy 3
                 if (Variable.RECEIVETEXT3 != null)
                 {
                     ClientInfo clientInfo3 = new ClientInfo(Variable.RECEIVETEXT3);
-                    lblStatusScoreM3.Visible = true;
-                    lblRefereeM3.Text = clientInfo3.Referee;
-                    lblScoreRedM3.Text = clientInfo3.ScoreRed.ToString();
-                    lblScoreBlueM3.Text = clientInfo3.ScoreBlue.ToString();
-                    ChangeStatus(lblStatusM3, true);
                     if (clientInfo3.EndMath == 1)
                     {
                         ChangeSatusMath(lblStatusScoreM3, true);
+                        lblStatusScoreM3.Visible = true;
+                        lblRefereeM3.Text = clientInfo3.Referee;
+                        lblScoreRedM3.Text = clientInfo3.ScoreRed.ToString();
+                        lblScoreBlueM3.Text = clientInfo3.ScoreBlue.ToString();
+                        ChangeStatus(lblStatusM3, true);
+                        if (clientInfo3.Win == "RED")
+                        {
+                            lblPlusRedM3.Visible = true;
+                            lblPlusBlueM3.Visible = false;
+                        }
+                        if (clientInfo3.Win == "BLUE")
+                        {
+                            lblPlusRedM3.Visible = false;
+                            lblPlusBlueM3.Visible = true;
+                        }
+                        Variable.RECEIVETEXT3 = null;
                     }
                     else
                     {
@@ -187,17 +209,6 @@ namespace Server
                         btnIncBlueM3.Visible = true;
                         btnDecBlueM3.Visible = true;
                     }
-                    if (clientInfo3.Win == "RED")
-                    {
-                        lblPlusRedM3.Visible = true;
-                        lblPlusBlueM3.Visible = false;
-                    }
-                    if (clientInfo3.Win == "BLUE")
-                    {
-                        lblPlusRedM3.Visible = false;
-                        lblPlusBlueM3.Visible = true;
-                    }
-                    Variable.RECEIVETEXT3 = null;
                 }
                 else
                 {
