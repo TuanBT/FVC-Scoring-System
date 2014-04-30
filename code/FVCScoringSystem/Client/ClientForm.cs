@@ -23,6 +23,7 @@ namespace Client
             }
             else
             {
+                InitializeComponent();
             }
         }
 
@@ -346,6 +347,15 @@ namespace Client
         private void btnHideSetting_Click(object sender, EventArgs e)
         {
             pnlSetting.Visible = false;
+            Variable.IP = txtIpServer.Text;
+            if (tcpClients.Connection())
+            {
+                resetNewMath();
+                tmrClient.Enabled = true;
+            }
+            else
+            {
+            }
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -357,6 +367,11 @@ namespace Client
         {
             Variable.COMPUTER = Int32.Parse(txtComputer.Text);
             lblNumberClient.Text = (Int32.Parse(txtComputer.Text)).ToString();
+        }
+
+        private void pnlSetting_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 

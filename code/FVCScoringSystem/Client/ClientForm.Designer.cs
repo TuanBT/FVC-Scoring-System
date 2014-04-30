@@ -30,6 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSetting = new System.Windows.Forms.Button();
+            this.pnlSetting = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtIpServer = new System.Windows.Forms.TextBox();
+            this.txtPortServer = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnHideSetting = new System.Windows.Forms.Button();
+            this.txtComputer = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
@@ -109,17 +120,14 @@
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tmrClient = new System.Windows.Forms.Timer(this.components);
-            this.pnlSetting = new System.Windows.Forms.Panel();
-            this.txtComputer = new System.Windows.Forms.TextBox();
-            this.btnHideSetting = new System.Windows.Forms.Button();
-            this.btnSetting = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.pnlSetting.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pnlSetting.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -188,6 +196,119 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 0;
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.Location = new System.Drawing.Point(6, 8);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(55, 23);
+            this.btnSetting.TabIndex = 70;
+            this.btnSetting.Text = "Setting";
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
+            // pnlSetting
+            // 
+            this.pnlSetting.Controls.Add(this.tableLayoutPanel1);
+            this.pnlSetting.Controls.Add(this.label17);
+            this.pnlSetting.Controls.Add(this.btnHideSetting);
+            this.pnlSetting.Controls.Add(this.txtComputer);
+            this.pnlSetting.Location = new System.Drawing.Point(27, 8);
+            this.pnlSetting.Name = "pnlSetting";
+            this.pnlSetting.Size = new System.Drawing.Size(422, 265);
+            this.pnlSetting.TabIndex = 69;
+            this.pnlSetting.Visible = false;
+            this.pnlSetting.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSetting_Paint);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label20, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtPortServer, 2, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 106);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.83784F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.16216F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(232, 61);
+            this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(54, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(17, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "IP";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(163, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(37, 13);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "PORT";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 23);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(38, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Server";
+            // 
+            // txtIpServer
+            // 
+            this.txtIpServer.Location = new System.Drawing.Point(54, 26);
+            this.txtIpServer.Name = "txtIpServer";
+            this.txtIpServer.Size = new System.Drawing.Size(100, 20);
+            this.txtIpServer.TabIndex = 5;
+            this.txtIpServer.Text = "192.168.0.101";
+            // 
+            // txtPortServer
+            // 
+            this.txtPortServer.Location = new System.Drawing.Point(163, 26);
+            this.txtPortServer.Name = "txtPortServer";
+            this.txtPortServer.Size = new System.Drawing.Size(65, 20);
+            this.txtPortServer.TabIndex = 8;
+            this.txtPortServer.Text = "4569";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(20, 70);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(42, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Số máy";
+            // 
+            // btnHideSetting
+            // 
+            this.btnHideSetting.Location = new System.Drawing.Point(133, 64);
+            this.btnHideSetting.Name = "btnHideSetting";
+            this.btnHideSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnHideSetting.TabIndex = 1;
+            this.btnHideSetting.Text = "Close";
+            this.btnHideSetting.UseVisualStyleBackColor = true;
+            this.btnHideSetting.Click += new System.EventHandler(this.btnHideSetting_Click);
+            // 
+            // txtComputer
+            // 
+            this.txtComputer.Location = new System.Drawing.Point(69, 67);
+            this.txtComputer.Name = "txtComputer";
+            this.txtComputer.Size = new System.Drawing.Size(29, 20);
+            this.txtComputer.TabIndex = 0;
+            this.txtComputer.Text = "0";
+            this.txtComputer.TextChanged += new System.EventHandler(this.txtComputer_TextChanged);
             // 
             // label5
             // 
@@ -1186,45 +1307,6 @@
             this.tmrClient.Interval = 500;
             this.tmrClient.Tick += new System.EventHandler(this.tmrClient_Tick);
             // 
-            // pnlSetting
-            // 
-            this.pnlSetting.Controls.Add(this.btnHideSetting);
-            this.pnlSetting.Controls.Add(this.txtComputer);
-            this.pnlSetting.Location = new System.Drawing.Point(175, 36);
-            this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(422, 265);
-            this.pnlSetting.TabIndex = 69;
-            this.pnlSetting.Visible = false;
-            // 
-            // txtComputer
-            // 
-            this.txtComputer.Location = new System.Drawing.Point(44, 27);
-            this.txtComputer.Name = "txtComputer";
-            this.txtComputer.Size = new System.Drawing.Size(100, 20);
-            this.txtComputer.TabIndex = 0;
-            this.txtComputer.Text = "0";
-            this.txtComputer.TextChanged += new System.EventHandler(this.txtComputer_TextChanged);
-            // 
-            // btnHideSetting
-            // 
-            this.btnHideSetting.Location = new System.Drawing.Point(150, 24);
-            this.btnHideSetting.Name = "btnHideSetting";
-            this.btnHideSetting.Size = new System.Drawing.Size(75, 23);
-            this.btnHideSetting.TabIndex = 1;
-            this.btnHideSetting.Text = "Close";
-            this.btnHideSetting.UseVisualStyleBackColor = true;
-            this.btnHideSetting.Click += new System.EventHandler(this.btnHideSetting_Click);
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Location = new System.Drawing.Point(3, 21);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(75, 23);
-            this.btnSetting.TabIndex = 70;
-            this.btnSetting.Text = "Setting";
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
-            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1236,14 +1318,16 @@
             this.Name = "ClientForm";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
+            this.pnlSetting.ResumeLayout(false);
+            this.pnlSetting.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.pnlSetting.ResumeLayout(false);
-            this.pnlSetting.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1334,6 +1418,13 @@
         private System.Windows.Forms.Button btnHideSetting;
         private System.Windows.Forms.TextBox txtComputer;
         private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtIpServer;
+        private System.Windows.Forms.TextBox txtPortServer;
     }
 }
 
