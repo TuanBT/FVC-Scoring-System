@@ -32,6 +32,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
             this.pnlSetting = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtRefereeName = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -122,6 +125,7 @@
             this.tmrClient = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.pnlSetting.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -209,23 +213,50 @@
             // 
             // pnlSetting
             // 
+            this.pnlSetting.Controls.Add(this.panel6);
             this.pnlSetting.Controls.Add(this.tableLayoutPanel1);
             this.pnlSetting.Controls.Add(this.label17);
             this.pnlSetting.Controls.Add(this.btnHideSetting);
             this.pnlSetting.Controls.Add(this.txtComputer);
-            this.pnlSetting.Location = new System.Drawing.Point(27, 8);
+            this.pnlSetting.Location = new System.Drawing.Point(67, 8);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(422, 265);
+            this.pnlSetting.Size = new System.Drawing.Size(503, 181);
             this.pnlSetting.TabIndex = 69;
             this.pnlSetting.Visible = false;
             this.pnlSetting.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSetting_Paint);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.txtRefereeName);
+            this.panel6.Controls.Add(this.label21);
+            this.panel6.Location = new System.Drawing.Point(264, 105);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 47);
+            this.panel6.TabIndex = 6;
+            // 
+            // txtRefereeName
+            // 
+            this.txtRefereeName.Location = new System.Drawing.Point(62, 14);
+            this.txtRefereeName.Name = "txtRefereeName";
+            this.txtRefereeName.Size = new System.Drawing.Size(100, 20);
+            this.txtRefereeName.TabIndex = 1;
+            this.txtRefereeName.Text = "TuanBT";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(4, 15);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(49, 13);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Trọng tài";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label20, 0, 1);
@@ -242,7 +273,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(54, 0);
+            this.label18.Location = new System.Drawing.Point(53, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(17, 13);
             this.label18.TabIndex = 0;
@@ -251,7 +282,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(163, 0);
+            this.label19.Location = new System.Drawing.Point(161, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(37, 13);
             this.label19.TabIndex = 1;
@@ -268,7 +299,7 @@
             // 
             // txtIpServer
             // 
-            this.txtIpServer.Location = new System.Drawing.Point(54, 26);
+            this.txtIpServer.Location = new System.Drawing.Point(53, 26);
             this.txtIpServer.Name = "txtIpServer";
             this.txtIpServer.Size = new System.Drawing.Size(100, 20);
             this.txtIpServer.TabIndex = 5;
@@ -276,7 +307,7 @@
             // 
             // txtPortServer
             // 
-            this.txtPortServer.Location = new System.Drawing.Point(163, 26);
+            this.txtPortServer.Location = new System.Drawing.Point(161, 26);
             this.txtPortServer.Name = "txtPortServer";
             this.txtPortServer.Size = new System.Drawing.Size(65, 20);
             this.txtPortServer.TabIndex = 8;
@@ -293,7 +324,7 @@
             // 
             // btnHideSetting
             // 
-            this.btnHideSetting.Location = new System.Drawing.Point(133, 64);
+            this.btnHideSetting.Location = new System.Drawing.Point(18, 13);
             this.btnHideSetting.Name = "btnHideSetting";
             this.btnHideSetting.Size = new System.Drawing.Size(75, 23);
             this.btnHideSetting.TabIndex = 1;
@@ -307,8 +338,7 @@
             this.txtComputer.Name = "txtComputer";
             this.txtComputer.Size = new System.Drawing.Size(29, 20);
             this.txtComputer.TabIndex = 0;
-            this.txtComputer.Text = "0";
-            this.txtComputer.TextChanged += new System.EventHandler(this.txtComputer_TextChanged);
+            this.txtComputer.Text = "-";
             // 
             // label5
             // 
@@ -650,7 +680,7 @@
             this.lblRefereeName.Name = "lblRefereeName";
             this.lblRefereeName.Size = new System.Drawing.Size(240, 57);
             this.lblRefereeName.TabIndex = 1;
-            this.lblRefereeName.Text = "TuanBT";
+            this.lblRefereeName.Text = "-";
             this.lblRefereeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
@@ -1154,7 +1184,7 @@
             this.lblNumberClient.Name = "lblNumberClient";
             this.lblNumberClient.Size = new System.Drawing.Size(88, 49);
             this.lblNumberClient.TabIndex = 7;
-            this.lblNumberClient.Text = "0";
+            this.lblNumberClient.Text = "-";
             this.lblNumberClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWeight
@@ -1320,6 +1350,8 @@
             this.panel1.ResumeLayout(false);
             this.pnlSetting.ResumeLayout(false);
             this.pnlSetting.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1425,6 +1457,9 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtIpServer;
         private System.Windows.Forms.TextBox txtPortServer;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox txtRefereeName;
+        private System.Windows.Forms.Label label21;
     }
 }
 

@@ -39,7 +39,7 @@ namespace Client
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("Mất kết nối với Server. Click OK để kết nối lại!");
+                // MessageBox.Show("Mất kết nối với Server. Click OK để kết nối lại!");
             }
         }
 
@@ -310,7 +310,11 @@ namespace Client
                 lblMinusSec2Blue.Text = "0";
                 lblSec1Blue.Text = "0";
 
-                UpdateScore();
+                //UpdateScore();
+
+                Variable.WIN = "RED";
+                lblTotalScoreRed.Text = "0";
+                lblTotalScoreBlue.Text = "0";
 
                 rdbWinAdvantage.Checked = true;
                 btnWinRed.BackColor = Color.Red;
@@ -333,7 +337,10 @@ namespace Client
                 lblMinusSec2Blue.Text = "0";
                 lblSec1Blue.Text = "0";
 
-                UpdateScore();
+                //UpdateScore();
+                Variable.WIN = "BLUE";
+                lblTotalScoreRed.Text = "0";
+                lblTotalScoreBlue.Text = "0";
 
                 rdbWinAdvantage.Checked = true;
                 btnWinBlue.BackColor = Color.Blue;
@@ -347,7 +354,14 @@ namespace Client
         private void btnHideSetting_Click(object sender, EventArgs e)
         {
             pnlSetting.Visible = false;
+
             Variable.IP = txtIpServer.Text;
+
+            lblRefereeName.Text = txtRefereeName.Text;
+
+            Variable.COMPUTER = Int32.Parse(txtComputer.Text);
+            lblNumberClient.Text = (Int32.Parse(txtComputer.Text)).ToString();
+
             if (tcpClients.Connection())
             {
                 resetNewMath();
@@ -361,12 +375,6 @@ namespace Client
         private void btnSetting_Click(object sender, EventArgs e)
         {
             pnlSetting.Visible = true;
-        }
-
-        private void txtComputer_TextChanged(object sender, EventArgs e)
-        {
-            Variable.COMPUTER = Int32.Parse(txtComputer.Text);
-            lblNumberClient.Text = (Int32.Parse(txtComputer.Text)).ToString();
         }
 
         private void pnlSetting_Paint(object sender, PaintEventArgs e)
