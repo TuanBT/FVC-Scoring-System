@@ -29,21 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSetting = new System.Windows.Forms.Button();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlSetting = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
             this.nmrComputer = new System.Windows.Forms.NumericUpDown();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txtRefereeName = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txtIpServer = new System.Windows.Forms.TextBox();
             this.txtPortServer = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtPassAdmin = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtRefereeName = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.btnHideSetting = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
@@ -123,11 +127,14 @@
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tmrClient = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
+            this.lblSec = new System.Windows.Forms.Label();
+            this.pnlMain.SuspendLayout();
             this.pnlSetting.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).BeginInit();
-            this.panel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -135,99 +142,119 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlMain
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pnlSetting);
-            this.panel1.Controls.Add(this.btnSetting);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label35);
-            this.panel1.Controls.Add(this.lblClock);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.btnDecMinusSec2Blue);
-            this.panel1.Controls.Add(this.btnIncMinusSec2Blue);
-            this.panel1.Controls.Add(this.btnDecMinusSec1Blue);
-            this.panel1.Controls.Add(this.btnIncMinusSec1Blue);
-            this.panel1.Controls.Add(this.btnDecSec2Blue);
-            this.panel1.Controls.Add(this.btnIncSec2Blue);
-            this.panel1.Controls.Add(this.btnDecSec1Blue);
-            this.panel1.Controls.Add(this.btnIncSec1Blue);
-            this.panel1.Controls.Add(this.btnDecMinusSec2Red);
-            this.panel1.Controls.Add(this.btnIncMinusSec2Red);
-            this.panel1.Controls.Add(this.btnDecMinusSec1Red);
-            this.panel1.Controls.Add(this.btnIncMinusSec1Red);
-            this.panel1.Controls.Add(this.btnDecSec2Red);
-            this.panel1.Controls.Add(this.btnIncSec2Red);
-            this.panel1.Controls.Add(this.btnDecSec1Red);
-            this.panel1.Controls.Add(this.btnIncSec1Red);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.lblSec2Blue);
-            this.panel1.Controls.Add(this.lblMinusSec1Blue);
-            this.panel1.Controls.Add(this.lblMinusSec2Blue);
-            this.panel1.Controls.Add(this.lblTotalSec1Blue);
-            this.panel1.Controls.Add(this.lblTotalSec2Blue);
-            this.panel1.Controls.Add(this.lblSec1Blue);
-            this.panel1.Controls.Add(this.lblTotalSec2Red);
-            this.panel1.Controls.Add(this.lblMinusSec1Red);
-            this.panel1.Controls.Add(this.lblMinusSec2Red);
-            this.panel1.Controls.Add(this.lblSec1Red);
-            this.panel1.Controls.Add(this.lblSec2Red);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.lblTotalScoreBlue);
-            this.panel1.Controls.Add(this.lblTotalScoreRed);
-            this.panel1.Controls.Add(this.lblTotalSec1Red);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lblNumberClient);
-            this.panel1.Controls.Add(this.lblWeight);
-            this.panel1.Controls.Add(this.lblSex);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lblNumberMatch);
-            this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Controls.Add(this.shapeContainer2);
-            this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 500);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Location = new System.Drawing.Point(6, 8);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(55, 23);
-            this.btnSetting.TabIndex = 70;
-            this.btnSetting.Text = "Setting";
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Controls.Add(this.pnlSetting);
+            this.pnlMain.Controls.Add(this.btnSetting);
+            this.pnlMain.Controls.Add(this.lblSec);
+            this.pnlMain.Controls.Add(this.label5);
+            this.pnlMain.Controls.Add(this.label35);
+            this.pnlMain.Controls.Add(this.lblClock);
+            this.pnlMain.Controls.Add(this.pictureBox1);
+            this.pnlMain.Controls.Add(this.btnDecMinusSec2Blue);
+            this.pnlMain.Controls.Add(this.btnIncMinusSec2Blue);
+            this.pnlMain.Controls.Add(this.btnDecMinusSec1Blue);
+            this.pnlMain.Controls.Add(this.btnIncMinusSec1Blue);
+            this.pnlMain.Controls.Add(this.btnDecSec2Blue);
+            this.pnlMain.Controls.Add(this.btnIncSec2Blue);
+            this.pnlMain.Controls.Add(this.btnDecSec1Blue);
+            this.pnlMain.Controls.Add(this.btnIncSec1Blue);
+            this.pnlMain.Controls.Add(this.btnDecMinusSec2Red);
+            this.pnlMain.Controls.Add(this.btnIncMinusSec2Red);
+            this.pnlMain.Controls.Add(this.btnDecMinusSec1Red);
+            this.pnlMain.Controls.Add(this.btnIncMinusSec1Red);
+            this.pnlMain.Controls.Add(this.btnDecSec2Red);
+            this.pnlMain.Controls.Add(this.btnIncSec2Red);
+            this.pnlMain.Controls.Add(this.btnDecSec1Red);
+            this.pnlMain.Controls.Add(this.btnIncSec1Red);
+            this.pnlMain.Controls.Add(this.label16);
+            this.pnlMain.Controls.Add(this.label15);
+            this.pnlMain.Controls.Add(this.panel4);
+            this.pnlMain.Controls.Add(this.panel5);
+            this.pnlMain.Controls.Add(this.panel3);
+            this.pnlMain.Controls.Add(this.panel2);
+            this.pnlMain.Controls.Add(this.lblSec2Blue);
+            this.pnlMain.Controls.Add(this.lblMinusSec1Blue);
+            this.pnlMain.Controls.Add(this.lblMinusSec2Blue);
+            this.pnlMain.Controls.Add(this.lblTotalSec1Blue);
+            this.pnlMain.Controls.Add(this.lblTotalSec2Blue);
+            this.pnlMain.Controls.Add(this.lblSec1Blue);
+            this.pnlMain.Controls.Add(this.lblTotalSec2Red);
+            this.pnlMain.Controls.Add(this.lblMinusSec1Red);
+            this.pnlMain.Controls.Add(this.lblMinusSec2Red);
+            this.pnlMain.Controls.Add(this.lblSec1Red);
+            this.pnlMain.Controls.Add(this.lblSec2Red);
+            this.pnlMain.Controls.Add(this.label12);
+            this.pnlMain.Controls.Add(this.label11);
+            this.pnlMain.Controls.Add(this.label6);
+            this.pnlMain.Controls.Add(this.label7);
+            this.pnlMain.Controls.Add(this.label10);
+            this.pnlMain.Controls.Add(this.label9);
+            this.pnlMain.Controls.Add(this.label8);
+            this.pnlMain.Controls.Add(this.lblTotalScoreBlue);
+            this.pnlMain.Controls.Add(this.lblTotalScoreRed);
+            this.pnlMain.Controls.Add(this.lblTotalSec1Red);
+            this.pnlMain.Controls.Add(this.label4);
+            this.pnlMain.Controls.Add(this.label3);
+            this.pnlMain.Controls.Add(this.label1);
+            this.pnlMain.Controls.Add(this.lblNumberClient);
+            this.pnlMain.Controls.Add(this.lblWeight);
+            this.pnlMain.Controls.Add(this.lblSex);
+            this.pnlMain.Controls.Add(this.label2);
+            this.pnlMain.Controls.Add(this.lblNumberMatch);
+            this.pnlMain.Controls.Add(this.lblTitle);
+            this.pnlMain.Controls.Add(this.shapeContainer2);
+            this.pnlMain.Location = new System.Drawing.Point(4, 4);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1000, 500);
+            this.pnlMain.TabIndex = 0;
             // 
             // pnlSetting
             // 
-            this.pnlSetting.Controls.Add(this.nmrComputer);
+            this.pnlSetting.Controls.Add(this.panel7);
             this.pnlSetting.Controls.Add(this.panel6);
-            this.pnlSetting.Controls.Add(this.tableLayoutPanel1);
-            this.pnlSetting.Controls.Add(this.label17);
             this.pnlSetting.Controls.Add(this.btnHideSetting);
-            this.pnlSetting.Location = new System.Drawing.Point(8, 3);
+            this.pnlSetting.Location = new System.Drawing.Point(478, 29);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(970, 460);
+            this.pnlSetting.Size = new System.Drawing.Size(486, 311);
             this.pnlSetting.TabIndex = 69;
             this.pnlSetting.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSetting_Paint);
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.pnlAdmin);
+            this.panel7.Controls.Add(this.label22);
+            this.panel7.Controls.Add(this.txtPassAdmin);
+            this.panel7.Location = new System.Drawing.Point(18, 60);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(301, 159);
+            this.panel7.TabIndex = 11;
+            // 
+            // pnlAdmin
+            // 
+            this.pnlAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAdmin.Controls.Add(this.label17);
+            this.pnlAdmin.Controls.Add(this.nmrComputer);
+            this.pnlAdmin.Controls.Add(this.tableLayoutPanel1);
+            this.pnlAdmin.Enabled = false;
+            this.pnlAdmin.Location = new System.Drawing.Point(23, 31);
+            this.pnlAdmin.Name = "pnlAdmin";
+            this.pnlAdmin.Size = new System.Drawing.Size(263, 109);
+            this.pnlAdmin.TabIndex = 9;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(9, 6);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(42, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Số máy";
+            // 
             // nmrComputer
             // 
-            this.nmrComputer.Location = new System.Drawing.Point(147, 13);
+            this.nmrComputer.Location = new System.Drawing.Point(57, 1);
             this.nmrComputer.Maximum = new decimal(new int[] {
             3,
             0,
@@ -237,11 +264,91 @@
             this.nmrComputer.Size = new System.Drawing.Size(32, 20);
             this.nmrComputer.TabIndex = 7;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtPortServer, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label20, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 36);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.83784F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.16216F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(232, 61);
+            this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(50, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(17, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "IP";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(152, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(37, 13);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "PORT";
+            // 
+            // txtIpServer
+            // 
+            this.txtIpServer.Location = new System.Drawing.Point(50, 26);
+            this.txtIpServer.Name = "txtIpServer";
+            this.txtIpServer.Size = new System.Drawing.Size(96, 20);
+            this.txtIpServer.TabIndex = 5;
+            this.txtIpServer.Text = "127.0.0.1";
+            // 
+            // txtPortServer
+            // 
+            this.txtPortServer.Location = new System.Drawing.Point(152, 26);
+            this.txtPortServer.Name = "txtPortServer";
+            this.txtPortServer.Size = new System.Drawing.Size(65, 20);
+            this.txtPortServer.TabIndex = 8;
+            this.txtPortServer.Text = "4569";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 23);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(38, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Server";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(25, 7);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(62, 13);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "Pass Admin";
+            // 
+            // txtPassAdmin
+            // 
+            this.txtPassAdmin.Location = new System.Drawing.Point(93, 4);
+            this.txtPassAdmin.Name = "txtPassAdmin";
+            this.txtPassAdmin.PasswordChar = '●';
+            this.txtPassAdmin.Size = new System.Drawing.Size(100, 20);
+            this.txtPassAdmin.TabIndex = 8;
+            this.txtPassAdmin.TextChanged += new System.EventHandler(this.txtPassAdmin_TextChanged);
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.txtRefereeName);
             this.panel6.Controls.Add(this.label21);
-            this.panel6.Location = new System.Drawing.Point(18, 125);
+            this.panel6.Location = new System.Drawing.Point(19, 232);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 47);
             this.panel6.TabIndex = 6;
@@ -263,86 +370,29 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Trọng tài";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
-            this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtPortServer, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label20, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 58);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.83784F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.16216F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(232, 61);
-            this.tableLayoutPanel1.TabIndex = 5;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(51, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(17, 13);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "IP";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(156, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(37, 13);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "PORT";
-            // 
-            // txtIpServer
-            // 
-            this.txtIpServer.Location = new System.Drawing.Point(51, 26);
-            this.txtIpServer.Name = "txtIpServer";
-            this.txtIpServer.Size = new System.Drawing.Size(99, 20);
-            this.txtIpServer.TabIndex = 5;
-            this.txtIpServer.Text = "127.0.0.1";
-            // 
-            // txtPortServer
-            // 
-            this.txtPortServer.Location = new System.Drawing.Point(156, 26);
-            this.txtPortServer.Name = "txtPortServer";
-            this.txtPortServer.Size = new System.Drawing.Size(65, 20);
-            this.txtPortServer.TabIndex = 8;
-            this.txtPortServer.Text = "4569";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 23);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(38, 13);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Server";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(99, 18);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 13);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Số máy";
-            // 
             // btnHideSetting
             // 
-            this.btnHideSetting.Location = new System.Drawing.Point(18, 16);
+            this.btnHideSetting.BackColor = System.Drawing.Color.Green;
+            this.btnHideSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHideSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHideSetting.ForeColor = System.Drawing.Color.White;
+            this.btnHideSetting.Location = new System.Drawing.Point(19, 11);
             this.btnHideSetting.Name = "btnHideSetting";
-            this.btnHideSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnHideSetting.Size = new System.Drawing.Size(129, 42);
             this.btnHideSetting.TabIndex = 1;
             this.btnHideSetting.Text = "Chấm điểm";
-            this.btnHideSetting.UseVisualStyleBackColor = true;
+            this.btnHideSetting.UseVisualStyleBackColor = false;
             this.btnHideSetting.Click += new System.EventHandler(this.btnHideSetting_Click);
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.Location = new System.Drawing.Point(27, 21);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(55, 23);
+            this.btnSetting.TabIndex = 70;
+            this.btnSetting.Text = "Setting";
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // label5
             // 
@@ -358,11 +408,11 @@
             // 
             // label35
             // 
-            this.label35.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.Red;
-            this.label35.Location = new System.Drawing.Point(1, 63);
+            this.label35.Location = new System.Drawing.Point(217, 63);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(168, 59);
+            this.label35.Size = new System.Drawing.Size(230, 63);
             this.label35.TabIndex = 67;
             this.label35.Text = "Cóc vương 2014";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -372,20 +422,20 @@
             this.lblClock.BackColor = System.Drawing.Color.White;
             this.lblClock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClock.Location = new System.Drawing.Point(175, 63);
+            this.lblClock.Location = new System.Drawing.Point(69, 63);
             this.lblClock.Name = "lblClock";
-            this.lblClock.Size = new System.Drawing.Size(160, 63);
+            this.lblClock.Size = new System.Drawing.Size(148, 63);
             this.lblClock.TabIndex = 66;
-            this.lblClock.Text = "--:--";
+            this.lblClock.Text = "99:99";
             this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = global::Client.Properties.Resources.fu_banner;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(111, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 63);
+            this.pictureBox1.Size = new System.Drawing.Size(336, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 65;
             this.pictureBox1.TabStop = false;
@@ -1248,9 +1298,9 @@
             this.lblTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblTitle.Location = new System.Drawing.Point(333, 0);
+            this.lblTitle.Location = new System.Drawing.Point(446, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(333, 126);
+            this.lblTitle.Size = new System.Drawing.Size(220, 126);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "THI ĐẤU \r\nĐỐI KHÁNG";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1341,24 +1391,39 @@
             this.tmrClient.Interval = 500;
             this.tmrClient.Tick += new System.EventHandler(this.tmrClient_Tick);
             // 
+            // lblSec
+            // 
+            this.lblSec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSec.Location = new System.Drawing.Point(0, 63);
+            this.lblSec.Name = "lblSec";
+            this.lblSec.Size = new System.Drawing.Size(63, 63);
+            this.lblSec.TabIndex = 70;
+            this.lblSec.Text = "Hiệp 1";
+            this.lblSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1035, 518);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "ClientForm";
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.ClientForm_Load);
+            this.pnlMain.ResumeLayout(false);
             this.pnlSetting.ResumeLayout(false);
-            this.pnlSetting.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.pnlAdmin.ResumeLayout(false);
+            this.pnlAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -1371,7 +1436,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNumberClient;
         private System.Windows.Forms.Label lblWeight;
@@ -1465,6 +1530,11 @@
         private System.Windows.Forms.TextBox txtRefereeName;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.NumericUpDown nmrComputer;
+        private System.Windows.Forms.Panel pnlAdmin;
+        private System.Windows.Forms.TextBox txtPassAdmin;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label lblSec;
     }
 }
 

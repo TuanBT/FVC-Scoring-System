@@ -29,7 +29,7 @@ namespace Client
                 MessageBox.Show("Không thể kết nối");
                 return false;
             }
-            MessageBox.Show("Kết nối thành công");
+            //MessageBox.Show("Kết nối thành công");
             ns = server.GetStream();
             StateObject state = new StateObject();
             state.workSocket = server.Client;

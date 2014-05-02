@@ -45,6 +45,14 @@ namespace Server
             tmrServer.Enabled = true;
         }
 
+        private void ServerForm_Load(object sender, EventArgs e)
+        {
+            pnlSetting.Left = pnlMain.Location.X;
+            pnlSetting.Top = pnlMain.Location.Y;
+            pnlSetting.Width = pnlMain.Width;
+            pnlSetting.Height = pnlMain.Height;
+        }
+
         private void ServerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             tcpServers.StopServer();
@@ -104,6 +112,7 @@ namespace Server
                         lblRefereeM1.Text = clientInfo1.Referee;
                         lblScoreRedM1.Text = clientInfo1.ScoreRed.ToString();
                         lblScoreBlueM1.Text = clientInfo1.ScoreBlue.ToString();
+                        lblWinFormM1.Text = clientInfo1.WinForm;
                         ChangeStatus(lblStatusM1, true);
 
                         //Kiểm tra thắng
@@ -119,6 +128,7 @@ namespace Server
                         }
                         Variable.RECEIVETEXT1 = null;
                     }
+                    //clientInfo1.EndMath == 0
                     else
                     {
                         //Đã chấm xong
@@ -154,7 +164,9 @@ namespace Server
                         lblRefereeM2.Text = clientInfo2.Referee;
                         lblScoreRedM2.Text = clientInfo2.ScoreRed.ToString();
                         lblScoreBlueM2.Text = clientInfo2.ScoreBlue.ToString();
+                        lblWinFormM2.Text = clientInfo2.WinForm;
                         ChangeStatus(lblStatusM2, true);
+
                         if (clientInfo2.Win == "RED")
                         {
                             lblPlusRedM2.Visible = true;
@@ -199,7 +211,9 @@ namespace Server
                         lblRefereeM3.Text = clientInfo3.Referee;
                         lblScoreRedM3.Text = clientInfo3.ScoreRed.ToString();
                         lblScoreBlueM3.Text = clientInfo3.ScoreBlue.ToString();
+                        lblWinFormM3.Text = clientInfo3.WinForm;
                         ChangeStatus(lblStatusM3, true);
+
                         if (clientInfo3.Win == "RED")
                         {
                             lblPlusRedM3.Visible = true;
@@ -359,6 +373,7 @@ namespace Server
             lblScoreRedM1.Text = "0";
             lblScoreBlueM1.Text = "0";
             lblRefereeM1.Text = "-";
+            lblWinFormM1.Text = "-";
             lblPlusRedM1.Visible = false;
             lblPlusBlueM1.Visible = false;
             lblStatusScoreM1.Visible = false;
@@ -371,6 +386,7 @@ namespace Server
             lblScoreRedM2.Text = "0";
             lblScoreBlueM2.Text = "0";
             lblRefereeM2.Text = "-";
+            lblWinFormM2.Text = "-";
             lblPlusRedM2.Visible = false;
             lblPlusBlueM2.Visible = false;
             lblStatusScoreM2.Visible = false;
@@ -383,6 +399,7 @@ namespace Server
             lblScoreRedM3.Text = "0";
             lblScoreBlueM3.Text = "0";
             lblRefereeM3.Text = "-";
+            lblWinFormM3.Text = "-";
             lblPlusRedM3.Visible = false;
             lblPlusBlueM3.Visible = false;
             lblStatusScoreM3.Visible = false;
@@ -398,7 +415,7 @@ namespace Server
             //Tạm chưa cho máy con chấm điểm
             Variable.SEC = -1;
 
-            tmrServer.Enabled = true;
+            //tmrServer.Enabled = true;
         }
 
         //Từ khung setting, đổ các dữ liệu về lại form chính
@@ -475,5 +492,7 @@ namespace Server
 
             tmrServer.Enabled = false;
         }
+
+
     }
 }

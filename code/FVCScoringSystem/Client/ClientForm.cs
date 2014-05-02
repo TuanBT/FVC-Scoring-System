@@ -16,16 +16,14 @@ namespace Client
         public ClientForm()
         {
             InitializeComponent();
-            //if (tcpClients.Connection())
-            //{
-            //    InitializeComponent();
-            //    resetNewMath();
-            //    tmrClient.Enabled = true;
-            //}
-            //else
-            //{
-            //    InitializeComponent();
-            //}
+        }
+
+        private void ClientForm_Load(object sender, EventArgs e)
+        {
+            pnlSetting.Left = pnlMain.Location.X;
+            pnlSetting.Top = pnlMain.Location.Y;
+            pnlSetting.Width = pnlMain.Width;
+            pnlSetting.Height = pnlMain.Height;
         }
 
         private void tmrClient_Tick(object sender, EventArgs e)
@@ -41,12 +39,11 @@ namespace Client
             {
                 // MessageBox.Show("Mất kết nối với Server. Click OK để kết nối lại!");
             }
+            this.Text = "EndMath: " + Variable.ENDMATH;
         }
 
         public string getClientJsonString()
         {
-            string winForm = "Score";
-
             ClientInfo clientInfo = new ClientInfo
             {
                 Computer = Int32.Parse(lblNumberClient.Text),
@@ -64,7 +61,7 @@ namespace Client
                 Sex = lblSex.Text,
                 Weight = lblWeight.Text,
                 Win = Variable.WIN,
-                WinForm = winForm,
+                WinForm = getWinform(),
                 Referee = lblRefereeName.Text,
                 EndMath = Variable.ENDMATH
             };
@@ -75,14 +72,17 @@ namespace Client
         {
             ServerInfo serverInfo = new ServerInfo(serverJson);
             //Máy con đang được cấp phép chấm điểm trận
-            if (serverInfo.Sec == 1)
+            if (serverInfo.Sec != -1)
             {
                 btnHideSetting.Enabled = true;
+                btnHideSetting.BackColor = Color.Green;
 
                 lblClock.Text = serverInfo.Time;
                 lblWeight.Text = serverInfo.Weight;
                 lblSex.Text = serverInfo.Sex;
                 lblNumberMatch.Text = serverInfo.Math.ToString();
+                this.Text = "Trận số: " + serverInfo.Math.ToString();
+
                 if (serverInfo.Sec == 1)
                 {
                     EndSec2();
@@ -100,8 +100,11 @@ namespace Client
             //sec = -1. Ý nghĩa là không cho máy con không được chấm điểm lúc này
             else
             {
+                resetNewMath();
+                Variable.ENDMATH = 0; //Chưa chấm
                 pnlSetting.Visible = true;
                 btnHideSetting.Enabled = false;
+                btnHideSetting.BackColor = Color.Gray;
             }
         }
 
@@ -128,8 +131,52 @@ namespace Client
 
         public void resetNewMath()
         {
-            Variable.ENDMATH = 1;
+            lblSec1Red.Text = "0";
+            lblMinusSec1Red.Text = "0";
+            lblSec2Red.Text = "0";
+            lblMinusSec2Red.Text = "0";
+            lblMinusSec1Blue.Text = "0";
+            lblSec2Blue.Text = "0";
+            lblMinusSec2Blue.Text = "0";
+            lblSec1Blue.Text = "0";
+
+            //Variable.ENDMATH = 1;
             Variable.WIN = "";
+
+            UpdateScore(); 
+        }
+
+        public string getWinform()
+        {
+            if (rdbWinPoint.Checked)
+            {
+                return "Điểm";
+            }
+            if (rdbWinAdvantage.Checked)
+            {
+                return "Ưu thế";
+            }
+            if (rdbWinGivingUp.Checked)
+            {
+                return "Bỏ cuộc";
+            }
+            if (rdbWinAbsolute.Checked)
+            {
+                return "Tuyệt đối";
+            }
+            if (rdbWinKnock.Checked)
+            {
+                return "Đo ván";
+            }
+            if (rdbWinDisqualification.Checked)
+            {
+                return "Truất quyền";
+            }
+            if (rdbWinStopping.Checked)
+            {
+                return "Dừng trận";
+            }
+            return "";
         }
 
         #region event click button
@@ -315,16 +362,15 @@ namespace Client
                 //Kết thúc chấm điểm. Đã chấm.
                 Variable.ENDMATH = 0;
 
-                lblSec1Red.Text = "0";
-                lblMinusSec1Red.Text = "0";
-                lblSec2Red.Text = "0";
-                lblMinusSec2Red.Text = "0";
-                lblMinusSec1Blue.Text = "0";
-                lblSec2Blue.Text = "0";
-                lblMinusSec2Blue.Text = "0";
-                lblSec1Blue.Text = "0";
-
-                UpdateScore();
+                //lblSec1Red.Text = "0";
+                //lblMinusSec1Red.Text = "0";
+                //lblSec2Red.Text = "0";
+                //lblMinusSec2Red.Text = "0";
+                //lblMinusSec1Blue.Text = "0";
+                //lblSec2Blue.Text = "0";
+                //lblMinusSec2Blue.Text = "0";
+                //lblSec1Blue.Text = "0";
+                //UpdateScore();
             }
             else if (dialogResult == DialogResult.No) { }
            
@@ -399,7 +445,7 @@ namespace Client
 
             if (tcpClients.Connection())
             {
-                resetNewMath();
+                //resetNewMath();
                 //Bắt đầu chấm điểm
                 Variable.ENDMATH = 1;
                 tmrClient.Enabled = true;
@@ -423,6 +469,20 @@ namespace Client
         {
 
         }
+
+        private void txtPassAdmin_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPassAdmin.Text == Variable.PASSADMIN)
+            {
+                pnlAdmin.Enabled = true;
+            }
+            else
+            {
+                pnlAdmin.Enabled = false;
+            }
+        }
+
+
 
 
 

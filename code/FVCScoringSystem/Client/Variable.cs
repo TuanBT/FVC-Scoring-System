@@ -16,5 +16,6 @@ namespace Client
         public static int COMPUTER { get; set; }
         public static int PORT = 4569;
         public static string IP = "127.0.0.1";
+        public static string PASSADMIN = "1";
     }
 }
