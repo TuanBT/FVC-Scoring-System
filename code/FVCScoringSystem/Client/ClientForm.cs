@@ -455,10 +455,6 @@ namespace Client
             }
         }
 
-        private void btnSetting_Click(object sender, EventArgs e)
-        {
-            pnlSetting.Visible = true;
-        }
 
         private void pnlSetting_Paint(object sender, PaintEventArgs e)
         {
@@ -479,6 +475,20 @@ namespace Client
             else
             {
                 pnlAdmin.Enabled = false;
+            }
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            if (tcpClients.Connection())
+            {
+                MessageBox.Show("Kết nối tới trọng tài chính thành công!");
+                txtPassAdmin.Text = "";
+                pnlAdmin.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Kết nối tới trọng tài chính thất bại!");
             }
         }
 

@@ -47,10 +47,10 @@ namespace Server
 
         private void ServerForm_Load(object sender, EventArgs e)
         {
-            pnlSetting.Left = pnlMain.Location.X;
-            pnlSetting.Top = pnlMain.Location.Y;
             pnlSetting.Width = pnlMain.Width;
             pnlSetting.Height = pnlMain.Height;
+            pnlSetting.Left = pnlMain.Location.X;
+            pnlSetting.Top = pnlMain.Location.Y;
         }
 
         private void ServerForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -353,17 +353,7 @@ namespace Server
             }
         }
 
-        private void btnSetting_Click(object sender, EventArgs e)
-        {
-            pnlSetting.Visible = true;
-        }
 
-        private void btnHideSetting_Click(object sender, EventArgs e)
-        {
-            pnlSetting.Visible = false;
-
-            setFormSetting();
-        }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
@@ -493,6 +483,31 @@ namespace Server
             tmrServer.Enabled = false;
         }
 
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            pnlSetting.Visible = true;
+        }
 
+        private void btnHideSetting_Click(object sender, EventArgs e)
+        {
+            pnlSetting.Visible = false;
+
+            setFormSetting();
+        }
+
+        private void picSetting_Click(object sender, EventArgs e)
+        {
+            pnlSetting.Visible = true;
+        }
+
+        private void picHideSetting_Click(object sender, EventArgs e)
+        {
+            pnlSetting.Visible = false;
+        }
+
+        private void picSetting_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

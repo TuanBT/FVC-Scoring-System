@@ -47,11 +47,10 @@
             this.txtRefereeName = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.btnHideSetting = new System.Windows.Forms.Button();
-            this.btnSetting = new System.Windows.Forms.Button();
+            this.lblSec = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDecMinusSec2Blue = new System.Windows.Forms.Button();
             this.btnIncMinusSec2Blue = new System.Windows.Forms.Button();
             this.btnDecMinusSec1Blue = new System.Windows.Forms.Button();
@@ -127,7 +126,10 @@
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tmrClient = new System.Windows.Forms.Timer(this.components);
-            this.lblSec = new System.Windows.Forms.Label();
+            this.picSetting = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnConnect = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
             this.pnlSetting.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -135,18 +137,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
-            this.pnlMain.Controls.Add(this.pnlSetting);
-            this.pnlMain.Controls.Add(this.btnSetting);
+            this.pnlMain.Controls.Add(this.picSetting);
             this.pnlMain.Controls.Add(this.lblSec);
             this.pnlMain.Controls.Add(this.label5);
             this.pnlMain.Controls.Add(this.label35);
@@ -205,17 +208,19 @@
             this.pnlMain.Controls.Add(this.lblNumberMatch);
             this.pnlMain.Controls.Add(this.lblTitle);
             this.pnlMain.Controls.Add(this.shapeContainer2);
-            this.pnlMain.Location = new System.Drawing.Point(4, 4);
+            this.pnlMain.Location = new System.Drawing.Point(12, 15);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1000, 500);
             this.pnlMain.TabIndex = 0;
             // 
             // pnlSetting
             // 
+            this.pnlSetting.BackColor = System.Drawing.Color.White;
+            this.pnlSetting.Controls.Add(this.pictureBox2);
             this.pnlSetting.Controls.Add(this.panel7);
             this.pnlSetting.Controls.Add(this.panel6);
             this.pnlSetting.Controls.Add(this.btnHideSetting);
-            this.pnlSetting.Location = new System.Drawing.Point(478, 29);
+            this.pnlSetting.Location = new System.Drawing.Point(95, 5);
             this.pnlSetting.Name = "pnlSetting";
             this.pnlSetting.Size = new System.Drawing.Size(486, 311);
             this.pnlSetting.TabIndex = 69;
@@ -226,14 +231,15 @@
             this.panel7.Controls.Add(this.pnlAdmin);
             this.panel7.Controls.Add(this.label22);
             this.panel7.Controls.Add(this.txtPassAdmin);
-            this.panel7.Location = new System.Drawing.Point(18, 60);
+            this.panel7.Location = new System.Drawing.Point(115, 66);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(301, 159);
+            this.panel7.Size = new System.Drawing.Size(352, 159);
             this.panel7.TabIndex = 11;
             // 
             // pnlAdmin
             // 
             this.pnlAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAdmin.Controls.Add(this.btnConnect);
             this.pnlAdmin.Controls.Add(this.label17);
             this.pnlAdmin.Controls.Add(this.nmrComputer);
             this.pnlAdmin.Controls.Add(this.tableLayoutPanel1);
@@ -269,7 +275,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
             this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
@@ -295,7 +301,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(152, 0);
+            this.label19.Location = new System.Drawing.Point(150, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(37, 13);
             this.label19.TabIndex = 1;
@@ -305,13 +311,13 @@
             // 
             this.txtIpServer.Location = new System.Drawing.Point(50, 26);
             this.txtIpServer.Name = "txtIpServer";
-            this.txtIpServer.Size = new System.Drawing.Size(96, 20);
+            this.txtIpServer.Size = new System.Drawing.Size(94, 20);
             this.txtIpServer.TabIndex = 5;
             this.txtIpServer.Text = "127.0.0.1";
             // 
             // txtPortServer
             // 
-            this.txtPortServer.Location = new System.Drawing.Point(152, 26);
+            this.txtPortServer.Location = new System.Drawing.Point(150, 26);
             this.txtPortServer.Name = "txtPortServer";
             this.txtPortServer.Size = new System.Drawing.Size(65, 20);
             this.txtPortServer.TabIndex = 8;
@@ -348,7 +354,7 @@
             // 
             this.panel6.Controls.Add(this.txtRefereeName);
             this.panel6.Controls.Add(this.label21);
-            this.panel6.Location = new System.Drawing.Point(19, 232);
+            this.panel6.Location = new System.Drawing.Point(116, 238);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 47);
             this.panel6.TabIndex = 6;
@@ -376,7 +382,7 @@
             this.btnHideSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHideSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHideSetting.ForeColor = System.Drawing.Color.White;
-            this.btnHideSetting.Location = new System.Drawing.Point(19, 11);
+            this.btnHideSetting.Location = new System.Drawing.Point(116, 17);
             this.btnHideSetting.Name = "btnHideSetting";
             this.btnHideSetting.Size = new System.Drawing.Size(129, 42);
             this.btnHideSetting.TabIndex = 1;
@@ -384,15 +390,16 @@
             this.btnHideSetting.UseVisualStyleBackColor = false;
             this.btnHideSetting.Click += new System.EventHandler(this.btnHideSetting_Click);
             // 
-            // btnSetting
+            // lblSec
             // 
-            this.btnSetting.Location = new System.Drawing.Point(27, 21);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(55, 23);
-            this.btnSetting.TabIndex = 70;
-            this.btnSetting.Text = "Setting";
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            this.lblSec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSec.Location = new System.Drawing.Point(0, 63);
+            this.lblSec.Name = "lblSec";
+            this.lblSec.Size = new System.Drawing.Size(63, 63);
+            this.lblSec.TabIndex = 70;
+            this.lblSec.Text = "Hiệp 1";
+            this.lblSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -428,17 +435,6 @@
             this.lblClock.TabIndex = 66;
             this.lblClock.Text = "99:99";
             this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = global::Client.Properties.Resources.fu_banner;
-            this.pictureBox1.Location = new System.Drawing.Point(111, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(336, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 65;
-            this.pictureBox1.TabStop = false;
             // 
             // btnDecMinusSec2Blue
             // 
@@ -1391,16 +1387,46 @@
             this.tmrClient.Interval = 500;
             this.tmrClient.Tick += new System.EventHandler(this.tmrClient_Tick);
             // 
-            // lblSec
+            // picSetting
             // 
-            this.lblSec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSec.Location = new System.Drawing.Point(0, 63);
-            this.lblSec.Name = "lblSec";
-            this.lblSec.Size = new System.Drawing.Size(63, 63);
-            this.lblSec.TabIndex = 70;
-            this.lblSec.Text = "Hiệp 1";
-            this.lblSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.picSetting.Image = global::Client.Properties.Resources.Menu;
+            this.picSetting.Location = new System.Drawing.Point(25, 3);
+            this.picSetting.Name = "picSetting";
+            this.picSetting.Size = new System.Drawing.Size(60, 60);
+            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSetting.TabIndex = 92;
+            this.picSetting.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::Client.Properties.Resources.fu_banner;
+            this.pictureBox1.Location = new System.Drawing.Point(111, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(336, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Client.Properties.Resources.Menu;
+            this.pictureBox2.Location = new System.Drawing.Point(26, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 93;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(169, 4);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(75, 23);
+            this.btnConnect.TabIndex = 11;
+            this.btnConnect.Text = "Kết nối";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // ClientForm
             // 
@@ -1408,6 +1434,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1035, 518);
+            this.Controls.Add(this.pnlSetting);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "ClientForm";
@@ -1424,12 +1451,14 @@
             this.tableLayoutPanel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1518,7 +1547,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel pnlSetting;
         private System.Windows.Forms.Button btnHideSetting;
-        private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label18;
@@ -1535,6 +1563,9 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label lblSec;
+        private System.Windows.Forms.PictureBox picSetting;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnConnect;
     }
 }
 

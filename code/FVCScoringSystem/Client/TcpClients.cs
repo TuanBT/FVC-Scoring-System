@@ -26,7 +26,7 @@ namespace Client
             }
             catch (SocketException)
             {
-                MessageBox.Show("Không thể kết nối");
+                //MessageBox.Show("Không thể kết nối");
                 return false;
             }
             //MessageBox.Show("Kết nối thành công");
@@ -49,7 +49,7 @@ namespace Client
 
         public void Disconnect()
         {
-            MessageBox.Show("Disconnecting from server...");
+            MessageBox.Show("Ngắt kết nối với máy chủ...");
             ns.Close();
             server.Close();
         }
