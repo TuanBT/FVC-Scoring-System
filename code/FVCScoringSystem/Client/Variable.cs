@@ -11,7 +11,7 @@ namespace Client
         public static string SENTTEXT { get; set; }
         public static string LASTSCORE { get; set; }
         public static int SEC { get; set; }
-        public static int ENDMATH { get; set; }
+        public static int ENDMATH { get; set; } //0 chấm xong, 1 đang chấm, -1 chưa chấm
         public static string WIN { get; set; }
         public static int COMPUTER { get; set; }
         public static int PORT = 4569;

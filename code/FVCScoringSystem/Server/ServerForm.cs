@@ -28,6 +28,8 @@ namespace Server
                 }
             }
 
+            Variable.IP = "127.0.0.1";
+
             InitializeComponent();
 
             this.Text = "Máy chính: " + Variable.IP + ":" + Variable.PORT;
@@ -52,6 +54,16 @@ namespace Server
         {
             lblClock.Text = DateTime.Now.Second.ToString();
 
+            //Nếu máy con chưa được cấp quyền chấm điểm
+            if (Variable.SEC == -1)
+            {
+                btnSent.Visible = true;
+            }
+            else
+            {
+                btnSent.Visible = false;
+            }
+
             setFormFromClientJson();
         }
 
@@ -63,9 +75,8 @@ namespace Server
                 Sex = lblSex.Text,
                 Time = DateTime.Now.Second.ToString(),
                 Weight = lblWeight.Text,
-                Sec = 2
+                Sec = Variable.SEC
             };
-            Variable.SEC = serverInfo.Sec;
             return serverInfo.getClientJson(serverInfo);
         }
 
@@ -83,7 +94,7 @@ namespace Server
                 if (Variable.RECEIVETEXT1 != null)
                 {
                     ClientInfo clientInfo1 = new ClientInfo(Variable.RECEIVETEXT1);
-                    //Kiểm tra việc chấm xong
+                    //Kiểm tra việc có đang chấm hay không?
                     if (clientInfo1.EndMath == 1)
                     {
                         //Đang chấm
@@ -113,10 +124,10 @@ namespace Server
                         //Đã chấm xong
                         ChangeSatusMath(lblStatusScoreM1, false);
 
-                        btnIncRedM1.Visible = true;
-                        btnDecRedM1.Visible = true;
-                        btnIncBlueM1.Visible = true;
-                        btnDecBlueM1.Visible = true;
+                        // btnIncRedM1.Visible = true;
+                        //btnDecRedM1.Visible = true;
+                        // btnIncBlueM1.Visible = true;
+                        // btnDecBlueM1.Visible = true;
                     }
                 }
                 //Không nhận được dữ liệu nữa
@@ -160,10 +171,10 @@ namespace Server
                     {
                         ChangeSatusMath(lblStatusScoreM2, false);
 
-                        btnIncRedM2.Visible = true;
-                        btnDecRedM2.Visible = true;
-                        btnIncBlueM2.Visible = true;
-                        btnDecBlueM2.Visible = true;
+                        // btnIncRedM2.Visible = true;
+                        //  btnDecRedM2.Visible = true;
+                        //  btnIncBlueM2.Visible = true;
+                        // btnDecBlueM2.Visible = true;
                     }
                 }
                 else
@@ -204,10 +215,11 @@ namespace Server
                     else
                     {
                         ChangeSatusMath(lblStatusScoreM3, false);
-                        btnIncRedM3.Visible = true;
-                        btnDecRedM3.Visible = true;
-                        btnIncBlueM3.Visible = true;
-                        btnDecBlueM3.Visible = true;
+
+                        //btnIncRedM3.Visible = true;
+                        //btnDecRedM3.Visible = true;
+                        //btnIncBlueM3.Visible = true;
+                        //btnDecBlueM3.Visible = true;
                     }
                 }
                 else
@@ -343,7 +355,50 @@ namespace Server
         {
             //Lấy từ database trận đấu tiếp theo
 
+            //ChangeStatus(lblStatusM1, false);
+            lblScoreRedM1.Text = "0";
+            lblScoreBlueM1.Text = "0";
+            lblRefereeM1.Text = "-";
+            lblPlusRedM1.Visible = false;
+            lblPlusBlueM1.Visible = false;
+            lblStatusScoreM1.Visible = false;
+            //btnIncRedM1.Visible = false;
+            //btnDecRedM1.Visible = false;
+            //btnIncBlueM1.Visible = false;
+            //btnDecBlueM1.Visible = false;
+
+            //ChangeStatus(lblStatusM2, false);
+            lblScoreRedM2.Text = "0";
+            lblScoreBlueM2.Text = "0";
+            lblRefereeM2.Text = "-";
+            lblPlusRedM2.Visible = false;
+            lblPlusBlueM2.Visible = false;
+            lblStatusScoreM2.Visible = false;
+            //btnIncRedM2.Visible = false;
+            //btnDecRedM2.Visible = false;
+            //btnIncBlueM2.Visible = false;
+            //btnDecBlueM2.Visible = false;
+
+            //ChangeStatus(lblStatusM3, false);
+            lblScoreRedM3.Text = "0";
+            lblScoreBlueM3.Text = "0";
+            lblRefereeM3.Text = "-";
+            lblPlusRedM3.Visible = false;
+            lblPlusBlueM3.Visible = false;
+            lblStatusScoreM3.Visible = false;
+            //btnIncRedM3.Visible = false;
+            //btnDecRedM3.Visible = false;
+            //btnIncBlueM3.Visible = false;
+            //btnDecBlueM3.Visible = false;
+
+            UpdateScore();
+
             setFormSetting();
+
+            //Tạm chưa cho máy con chấm điểm
+            Variable.SEC = -1;
+
+            tmrServer.Enabled = true;
         }
 
         //Từ khung setting, đổ các dữ liệu về lại form chính
@@ -386,6 +441,39 @@ namespace Server
         {
             lblScoreBlueM1.Text = (Int32.Parse(lblScoreBlueM1.Text) - 1).ToString();
             UpdateScore();
+        }
+
+        private void btnSent_Click(object sender, EventArgs e)
+        {
+            Variable.SEC = 1;
+        }
+
+        private void btnWinBlue_Click(object sender, EventArgs e)
+        {
+            btnWinRed.BackColor = Color.Silver;
+            btnWinBlue.BackColor = Color.Blue;
+            lblWinName.Text = lblNameBlue.Text;
+            lblWinId.Text = lblIdBlue.Text;
+            lblWinClass.Text = lblClassBlue.Text;
+            lblWinName.ForeColor = Color.Blue;
+            lblWinId.ForeColor = Color.Blue;
+            lblWinClass.ForeColor = Color.Blue;
+
+            tmrServer.Enabled = false;
+        }
+
+        private void btnWinRed_Click(object sender, EventArgs e)
+        {
+            btnWinRed.BackColor = Color.Red;
+            btnWinBlue.BackColor = Color.Silver;
+            lblWinName.Text = lblNameRed.Text;
+            lblWinId.Text = lblIdRed.Text;
+            lblWinClass.Text = lblClassRed.Text;
+            lblWinName.ForeColor = Color.Red;
+            lblWinId.ForeColor = Color.Red;
+            lblWinClass.ForeColor = Color.Red;
+
+            tmrServer.Enabled = false;
         }
     }
 }

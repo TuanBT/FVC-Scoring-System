@@ -39,9 +39,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.txtIpServer = new System.Windows.Forms.TextBox();
             this.txtPortServer = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.btnHideSetting = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -123,7 +123,6 @@
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tmrClient = new System.Windows.Forms.Timer(this.components);
-            this.tmrClientReceive = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.pnlSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).BeginInit();
@@ -139,8 +138,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnSetting);
             this.panel1.Controls.Add(this.pnlSetting);
+            this.panel1.Controls.Add(this.btnSetting);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label35);
             this.panel1.Controls.Add(this.lblClock);
@@ -220,11 +219,10 @@
             this.pnlSetting.Controls.Add(this.tableLayoutPanel1);
             this.pnlSetting.Controls.Add(this.label17);
             this.pnlSetting.Controls.Add(this.btnHideSetting);
-            this.pnlSetting.Location = new System.Drawing.Point(69, 5);
+            this.pnlSetting.Location = new System.Drawing.Point(8, 3);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(301, 200);
+            this.pnlSetting.Size = new System.Drawing.Size(970, 460);
             this.pnlSetting.TabIndex = 69;
-            this.pnlSetting.Visible = false;
             this.pnlSetting.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSetting_Paint);
             // 
             // nmrComputer
@@ -270,7 +268,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
             this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
@@ -287,7 +285,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(52, 0);
+            this.label18.Location = new System.Drawing.Point(51, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(17, 13);
             this.label18.TabIndex = 0;
@@ -296,11 +294,27 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(159, 0);
+            this.label19.Location = new System.Drawing.Point(156, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(37, 13);
             this.label19.TabIndex = 1;
             this.label19.Text = "PORT";
+            // 
+            // txtIpServer
+            // 
+            this.txtIpServer.Location = new System.Drawing.Point(51, 26);
+            this.txtIpServer.Name = "txtIpServer";
+            this.txtIpServer.Size = new System.Drawing.Size(99, 20);
+            this.txtIpServer.TabIndex = 5;
+            this.txtIpServer.Text = "127.0.0.1";
+            // 
+            // txtPortServer
+            // 
+            this.txtPortServer.Location = new System.Drawing.Point(156, 26);
+            this.txtPortServer.Name = "txtPortServer";
+            this.txtPortServer.Size = new System.Drawing.Size(65, 20);
+            this.txtPortServer.TabIndex = 8;
+            this.txtPortServer.Text = "4569";
             // 
             // label20
             // 
@@ -310,22 +324,6 @@
             this.label20.Size = new System.Drawing.Size(38, 13);
             this.label20.TabIndex = 2;
             this.label20.Text = "Server";
-            // 
-            // txtIpServer
-            // 
-            this.txtIpServer.Location = new System.Drawing.Point(52, 26);
-            this.txtIpServer.Name = "txtIpServer";
-            this.txtIpServer.Size = new System.Drawing.Size(100, 20);
-            this.txtIpServer.TabIndex = 5;
-            this.txtIpServer.Text = "192.168.0.102";
-            // 
-            // txtPortServer
-            // 
-            this.txtPortServer.Location = new System.Drawing.Point(159, 26);
-            this.txtPortServer.Name = "txtPortServer";
-            this.txtPortServer.Size = new System.Drawing.Size(65, 20);
-            this.txtPortServer.TabIndex = 8;
-            this.txtPortServer.Text = "4569";
             // 
             // label17
             // 
@@ -338,11 +336,11 @@
             // 
             // btnHideSetting
             // 
-            this.btnHideSetting.Location = new System.Drawing.Point(18, 13);
+            this.btnHideSetting.Location = new System.Drawing.Point(18, 16);
             this.btnHideSetting.Name = "btnHideSetting";
             this.btnHideSetting.Size = new System.Drawing.Size(75, 23);
             this.btnHideSetting.TabIndex = 1;
-            this.btnHideSetting.Text = "Close";
+            this.btnHideSetting.Text = "Chấm điểm";
             this.btnHideSetting.UseVisualStyleBackColor = true;
             this.btnHideSetting.Click += new System.EventHandler(this.btnHideSetting_Click);
             // 
@@ -770,7 +768,7 @@
             this.rdbWinDisqualification.AutoSize = true;
             this.rdbWinDisqualification.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdbWinDisqualification.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbWinDisqualification.Location = new System.Drawing.Point(138, 61);
+            this.rdbWinDisqualification.Location = new System.Drawing.Point(123, 61);
             this.rdbWinDisqualification.Name = "rdbWinDisqualification";
             this.rdbWinDisqualification.Size = new System.Drawing.Size(103, 21);
             this.rdbWinDisqualification.TabIndex = 5;
@@ -793,7 +791,7 @@
             this.rdbWinKnock.AutoSize = true;
             this.rdbWinKnock.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdbWinKnock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbWinKnock.Location = new System.Drawing.Point(170, 35);
+            this.rdbWinKnock.Location = new System.Drawing.Point(155, 35);
             this.rdbWinKnock.Name = "rdbWinKnock";
             this.rdbWinKnock.Size = new System.Drawing.Size(71, 21);
             this.rdbWinKnock.TabIndex = 3;
@@ -805,7 +803,7 @@
             this.rdbWinStopping.AutoSize = true;
             this.rdbWinStopping.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdbWinStopping.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbWinStopping.Location = new System.Drawing.Point(152, 88);
+            this.rdbWinStopping.Location = new System.Drawing.Point(137, 88);
             this.rdbWinStopping.Name = "rdbWinStopping";
             this.rdbWinStopping.Size = new System.Drawing.Size(89, 21);
             this.rdbWinStopping.TabIndex = 2;
@@ -827,7 +825,7 @@
             // 
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(29, 4);
+            this.label13.Location = new System.Drawing.Point(27, 4);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(196, 24);
             this.label13.TabIndex = 0;
@@ -1343,11 +1341,6 @@
             this.tmrClient.Interval = 500;
             this.tmrClient.Tick += new System.EventHandler(this.tmrClient_Tick);
             // 
-            // tmrClientReceive
-            // 
-            this.tmrClientReceive.Interval = 500;
-            this.tmrClientReceive.Tick += new System.EventHandler(this.tmrClientReceive_Tick);
-            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1472,7 +1465,6 @@
         private System.Windows.Forms.TextBox txtRefereeName;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.NumericUpDown nmrComputer;
-        private System.Windows.Forms.Timer tmrClientReceive;
     }
 }
 

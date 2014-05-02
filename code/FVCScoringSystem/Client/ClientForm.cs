@@ -43,18 +43,6 @@ namespace Client
             }
         }
 
-        private void tmrClientReceive_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                setFormFromServerJson(Variable.RECEIVETEXT);
-            }
-            catch (Exception ex)
-            {
-                // MessageBox.Show("Mất kết nối với Server. Click OK để kết nối lại!");
-            }
-        }
-
         public string getClientJsonString()
         {
             string winForm = "Score";
@@ -86,18 +74,34 @@ namespace Client
         public void setFormFromServerJson(string serverJson)
         {
             ServerInfo serverInfo = new ServerInfo(serverJson);
-            lblClock.Text = serverInfo.Time;
-            lblWeight.Text = serverInfo.Weight;
-            lblSex.Text = serverInfo.Sex;
-            lblNumberMatch.Text = serverInfo.Math.ToString();
-            if (serverInfo.Sec == 2)
+            //Máy con đang được cấp phép chấm điểm trận
+            if (serverInfo.Sec == 1)
             {
-                EndSec1();
+                btnHideSetting.Enabled = true;
+
+                lblClock.Text = serverInfo.Time;
+                lblWeight.Text = serverInfo.Weight;
+                lblSex.Text = serverInfo.Sex;
+                lblNumberMatch.Text = serverInfo.Math.ToString();
+                if (serverInfo.Sec == 1)
+                {
+                    EndSec2();
+                }
+                else if (serverInfo.Sec == 2)
+                {
+                    EndSec1();
+                }
+                else if (serverInfo.Sec == 0)
+                {
+                    EndSec1();
+                    EndSec2();
+                }
             }
-            else if (serverInfo.Sec == 3)
+            //sec = -1. Ý nghĩa là không cho máy con không được chấm điểm lúc này
+            else
             {
-                EndSec1();
-                EndSec2();
+                pnlSetting.Visible = true;
+                btnHideSetting.Enabled = false;
             }
         }
 
@@ -308,14 +312,8 @@ namespace Client
                 //tcpClients.Disconnect();
                 pnlSetting.Visible = true;
 
-                //Kết thúc chấm điểm
+                //Kết thúc chấm điểm. Đã chấm.
                 Variable.ENDMATH = 0;
-
-                //Variable.SENTTEXT = getClientJsonString();
-               // tcpClients.Sent(Variable.SENTTEXT);
-
-                //tmrClient.Enabled = false;
-                //tmrClientReceive.Enabled = true;
 
                 lblSec1Red.Text = "0";
                 lblMinusSec1Red.Text = "0";
@@ -402,8 +400,9 @@ namespace Client
             if (tcpClients.Connection())
             {
                 resetNewMath();
+                //Bắt đầu chấm điểm
+                Variable.ENDMATH = 1;
                 tmrClient.Enabled = true;
-                tmrClientReceive.Enabled = false;
             }
             else
             {
