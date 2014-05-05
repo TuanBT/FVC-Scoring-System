@@ -29,28 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.pnlSetting = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.nmrComputer = new System.Windows.Forms.NumericUpDown();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtIpServer = new System.Windows.Forms.TextBox();
-            this.txtPortServer = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtPassAdmin = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txtRefereeName = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.btnHideSetting = new System.Windows.Forms.Button();
+            this.picSetting = new System.Windows.Forms.PictureBox();
             this.lblSec = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDecMinusSec2Blue = new System.Windows.Forms.Button();
             this.btnIncMinusSec2Blue = new System.Windows.Forms.Button();
             this.btnDecMinusSec1Blue = new System.Windows.Forms.Button();
@@ -123,26 +109,38 @@
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.pnlSetting = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.nmrComputer = new System.Windows.Forms.NumericUpDown();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtIpServer = new System.Windows.Forms.TextBox();
+            this.txtPortServer = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtPassAdmin = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtRefereeName = new System.Windows.Forms.TextBox();
+            this.btnHideSetting = new System.Windows.Forms.Button();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tmrClient = new System.Windows.Forms.Timer(this.components);
-            this.picSetting = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnConnect = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
-            this.pnlSetting.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.pnlAdmin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlSetting.SuspendLayout();
+            this.pnlAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -213,182 +211,16 @@
             this.pnlMain.Size = new System.Drawing.Size(1000, 500);
             this.pnlMain.TabIndex = 0;
             // 
-            // pnlSetting
+            // picSetting
             // 
-            this.pnlSetting.BackColor = System.Drawing.Color.White;
-            this.pnlSetting.Controls.Add(this.pictureBox2);
-            this.pnlSetting.Controls.Add(this.panel7);
-            this.pnlSetting.Controls.Add(this.panel6);
-            this.pnlSetting.Controls.Add(this.btnHideSetting);
-            this.pnlSetting.Location = new System.Drawing.Point(95, 5);
-            this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(486, 311);
-            this.pnlSetting.TabIndex = 69;
-            this.pnlSetting.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSetting_Paint);
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.pnlAdmin);
-            this.panel7.Controls.Add(this.label22);
-            this.panel7.Controls.Add(this.txtPassAdmin);
-            this.panel7.Location = new System.Drawing.Point(115, 66);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(352, 159);
-            this.panel7.TabIndex = 11;
-            // 
-            // pnlAdmin
-            // 
-            this.pnlAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlAdmin.Controls.Add(this.btnConnect);
-            this.pnlAdmin.Controls.Add(this.label17);
-            this.pnlAdmin.Controls.Add(this.nmrComputer);
-            this.pnlAdmin.Controls.Add(this.tableLayoutPanel1);
-            this.pnlAdmin.Enabled = false;
-            this.pnlAdmin.Location = new System.Drawing.Point(23, 31);
-            this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(263, 109);
-            this.pnlAdmin.TabIndex = 9;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(9, 6);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 13);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Số máy";
-            // 
-            // nmrComputer
-            // 
-            this.nmrComputer.Location = new System.Drawing.Point(57, 1);
-            this.nmrComputer.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.nmrComputer.Name = "nmrComputer";
-            this.nmrComputer.Size = new System.Drawing.Size(32, 20);
-            this.nmrComputer.TabIndex = 7;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtPortServer, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label20, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 36);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.83784F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.16216F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(232, 61);
-            this.tableLayoutPanel1.TabIndex = 5;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(50, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(17, 13);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "IP";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(150, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(37, 13);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "PORT";
-            // 
-            // txtIpServer
-            // 
-            this.txtIpServer.Location = new System.Drawing.Point(50, 26);
-            this.txtIpServer.Name = "txtIpServer";
-            this.txtIpServer.Size = new System.Drawing.Size(94, 20);
-            this.txtIpServer.TabIndex = 5;
-            this.txtIpServer.Text = "127.0.0.1";
-            // 
-            // txtPortServer
-            // 
-            this.txtPortServer.Location = new System.Drawing.Point(150, 26);
-            this.txtPortServer.Name = "txtPortServer";
-            this.txtPortServer.Size = new System.Drawing.Size(65, 20);
-            this.txtPortServer.TabIndex = 8;
-            this.txtPortServer.Text = "4569";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 23);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(38, 13);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Server";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(25, 7);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(62, 13);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "Pass Admin";
-            // 
-            // txtPassAdmin
-            // 
-            this.txtPassAdmin.Location = new System.Drawing.Point(93, 4);
-            this.txtPassAdmin.Name = "txtPassAdmin";
-            this.txtPassAdmin.PasswordChar = '●';
-            this.txtPassAdmin.Size = new System.Drawing.Size(100, 20);
-            this.txtPassAdmin.TabIndex = 8;
-            this.txtPassAdmin.TextChanged += new System.EventHandler(this.txtPassAdmin_TextChanged);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.txtRefereeName);
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Location = new System.Drawing.Point(116, 238);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 47);
-            this.panel6.TabIndex = 6;
-            // 
-            // txtRefereeName
-            // 
-            this.txtRefereeName.Location = new System.Drawing.Point(62, 14);
-            this.txtRefereeName.Name = "txtRefereeName";
-            this.txtRefereeName.Size = new System.Drawing.Size(100, 20);
-            this.txtRefereeName.TabIndex = 1;
-            this.txtRefereeName.Text = "TuanBT";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(4, 15);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(49, 13);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Trọng tài";
-            // 
-            // btnHideSetting
-            // 
-            this.btnHideSetting.BackColor = System.Drawing.Color.Green;
-            this.btnHideSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHideSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHideSetting.ForeColor = System.Drawing.Color.White;
-            this.btnHideSetting.Location = new System.Drawing.Point(116, 17);
-            this.btnHideSetting.Name = "btnHideSetting";
-            this.btnHideSetting.Size = new System.Drawing.Size(129, 42);
-            this.btnHideSetting.TabIndex = 1;
-            this.btnHideSetting.Text = "Chấm điểm";
-            this.btnHideSetting.UseVisualStyleBackColor = false;
-            this.btnHideSetting.Click += new System.EventHandler(this.btnHideSetting_Click);
+            this.picSetting.Image = global::Client.Properties.Resources.Menu;
+            this.picSetting.Location = new System.Drawing.Point(25, 3);
+            this.picSetting.Name = "picSetting";
+            this.picSetting.Size = new System.Drawing.Size(60, 60);
+            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSetting.TabIndex = 92;
+            this.picSetting.TabStop = false;
+            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
             // 
             // lblSec
             // 
@@ -435,6 +267,17 @@
             this.lblClock.TabIndex = 66;
             this.lblClock.Text = "99:99";
             this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::Client.Properties.Resources.fu_banner;
+            this.pictureBox1.Location = new System.Drawing.Point(111, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(336, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
             // 
             // btnDecMinusSec2Blue
             // 
@@ -1363,6 +1206,206 @@
             this.lineShape1.Y1 = 67;
             this.lineShape1.Y2 = 67;
             // 
+            // pnlSetting
+            // 
+            this.pnlSetting.BackColor = System.Drawing.Color.White;
+            this.pnlSetting.Controls.Add(this.comboBox1);
+            this.pnlSetting.Controls.Add(this.label21);
+            this.pnlSetting.Controls.Add(this.pnlAdmin);
+            this.pnlSetting.Controls.Add(this.label22);
+            this.pnlSetting.Controls.Add(this.txtPassAdmin);
+            this.pnlSetting.Controls.Add(this.pictureBox2);
+            this.pnlSetting.Controls.Add(this.txtRefereeName);
+            this.pnlSetting.Controls.Add(this.btnHideSetting);
+            this.pnlSetting.Location = new System.Drawing.Point(101, 5);
+            this.pnlSetting.Name = "pnlSetting";
+            this.pnlSetting.Size = new System.Drawing.Size(281, 136);
+            this.pnlSetting.TabIndex = 69;
+            this.pnlSetting.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSetting_Paint);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(400, 317);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(201, 33);
+            this.comboBox1.TabIndex = 2;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(302, 320);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(89, 25);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Trọng tài";
+            // 
+            // pnlAdmin
+            // 
+            this.pnlAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAdmin.Controls.Add(this.btnConnect);
+            this.pnlAdmin.Controls.Add(this.label17);
+            this.pnlAdmin.Controls.Add(this.nmrComputer);
+            this.pnlAdmin.Controls.Add(this.tableLayoutPanel1);
+            this.pnlAdmin.Location = new System.Drawing.Point(359, 27);
+            this.pnlAdmin.Name = "pnlAdmin";
+            this.pnlAdmin.Size = new System.Drawing.Size(263, 109);
+            this.pnlAdmin.TabIndex = 9;
+            this.pnlAdmin.Visible = false;
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(169, 4);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(75, 23);
+            this.btnConnect.TabIndex = 11;
+            this.btnConnect.Text = "Kết nối";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(11, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(42, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Số máy";
+            // 
+            // nmrComputer
+            // 
+            this.nmrComputer.Location = new System.Drawing.Point(59, 7);
+            this.nmrComputer.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.nmrComputer.Name = "nmrComputer";
+            this.nmrComputer.Size = new System.Drawing.Size(32, 20);
+            this.nmrComputer.TabIndex = 7;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
+            this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtPortServer, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label20, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 36);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.83784F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.16216F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(246, 51);
+            this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(53, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(19, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "IP";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(162, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 13);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "PORT";
+            // 
+            // txtIpServer
+            // 
+            this.txtIpServer.Location = new System.Drawing.Point(53, 22);
+            this.txtIpServer.Name = "txtIpServer";
+            this.txtIpServer.Size = new System.Drawing.Size(94, 20);
+            this.txtIpServer.TabIndex = 5;
+            this.txtIpServer.Text = "127.0.0.1";
+            // 
+            // txtPortServer
+            // 
+            this.txtPortServer.Location = new System.Drawing.Point(162, 22);
+            this.txtPortServer.Name = "txtPortServer";
+            this.txtPortServer.Size = new System.Drawing.Size(65, 20);
+            this.txtPortServer.TabIndex = 8;
+            this.txtPortServer.Text = "4569";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(3, 19);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(44, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Server";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.Location = new System.Drawing.Point(293, 163);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(92, 17);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "Pass Admin";
+            // 
+            // txtPassAdmin
+            // 
+            this.txtPassAdmin.ForeColor = System.Drawing.Color.Red;
+            this.txtPassAdmin.Location = new System.Drawing.Point(400, 160);
+            this.txtPassAdmin.Name = "txtPassAdmin";
+            this.txtPassAdmin.PasswordChar = '●';
+            this.txtPassAdmin.Size = new System.Drawing.Size(200, 20);
+            this.txtPassAdmin.TabIndex = 8;
+            this.txtPassAdmin.TextChanged += new System.EventHandler(this.txtPassAdmin_TextChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Client.Properties.Resources.Menu;
+            this.pictureBox2.Location = new System.Drawing.Point(25, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 93;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // txtRefereeName
+            // 
+            this.txtRefereeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRefereeName.Location = new System.Drawing.Point(607, 317);
+            this.txtRefereeName.Name = "txtRefereeName";
+            this.txtRefereeName.Size = new System.Drawing.Size(100, 30);
+            this.txtRefereeName.TabIndex = 1;
+            this.txtRefereeName.Text = "TuanBT";
+            // 
+            // btnHideSetting
+            // 
+            this.btnHideSetting.BackColor = System.Drawing.Color.Green;
+            this.btnHideSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHideSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHideSetting.ForeColor = System.Drawing.Color.White;
+            this.btnHideSetting.Location = new System.Drawing.Point(400, 200);
+            this.btnHideSetting.Name = "btnHideSetting";
+            this.btnHideSetting.Size = new System.Drawing.Size(200, 100);
+            this.btnHideSetting.TabIndex = 1;
+            this.btnHideSetting.Text = "Chấm điểm";
+            this.btnHideSetting.UseVisualStyleBackColor = false;
+            this.btnHideSetting.Click += new System.EventHandler(this.btnHideSetting_Click);
+            // 
             // lineShape5
             // 
             this.lineShape5.Name = "lineShape5";
@@ -1387,47 +1430,6 @@
             this.tmrClient.Interval = 500;
             this.tmrClient.Tick += new System.EventHandler(this.tmrClient_Tick);
             // 
-            // picSetting
-            // 
-            this.picSetting.Image = global::Client.Properties.Resources.Menu;
-            this.picSetting.Location = new System.Drawing.Point(25, 3);
-            this.picSetting.Name = "picSetting";
-            this.picSetting.Size = new System.Drawing.Size(60, 60);
-            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSetting.TabIndex = 92;
-            this.picSetting.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = global::Client.Properties.Resources.fu_banner;
-            this.pictureBox1.Location = new System.Drawing.Point(111, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(336, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 65;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Client.Properties.Resources.Menu;
-            this.pictureBox2.Location = new System.Drawing.Point(26, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 93;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnConnect
-            // 
-            this.btnConnect.Location = new System.Drawing.Point(169, 4);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(75, 23);
-            this.btnConnect.TabIndex = 11;
-            this.btnConnect.Text = "Kết nối";
-            this.btnConnect.UseVisualStyleBackColor = true;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
-            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1437,27 +1439,25 @@
             this.Controls.Add(this.pnlSetting);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientForm";
-            this.Text = "Form1";
+            this.Text = "Máy trọng tài phụ";
             this.Load += new System.EventHandler(this.ClientForm_Load);
             this.pnlMain.ResumeLayout(false);
-            this.pnlSetting.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.pnlAdmin.ResumeLayout(false);
-            this.pnlAdmin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlSetting.ResumeLayout(false);
+            this.pnlSetting.PerformLayout();
+            this.pnlAdmin.ResumeLayout(false);
+            this.pnlAdmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrComputer)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -1554,18 +1554,17 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtIpServer;
         private System.Windows.Forms.TextBox txtPortServer;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox txtRefereeName;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.NumericUpDown nmrComputer;
         private System.Windows.Forms.Panel pnlAdmin;
         private System.Windows.Forms.TextBox txtPassAdmin;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label lblSec;
         private System.Windows.Forms.PictureBox picSetting;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

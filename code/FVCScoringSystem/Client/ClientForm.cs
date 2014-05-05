@@ -39,7 +39,6 @@ namespace Client
             {
                 // MessageBox.Show("Mất kết nối với Server. Click OK để kết nối lại!");
             }
-            this.Text = "EndMath: " + Variable.ENDMATH;
         }
 
         public string getClientJsonString()
@@ -81,7 +80,7 @@ namespace Client
                 lblWeight.Text = serverInfo.Weight;
                 lblSex.Text = serverInfo.Sex;
                 lblNumberMatch.Text = serverInfo.Math.ToString();
-                this.Text = "Trận số: " + serverInfo.Math.ToString();
+                this.Text = "Máy: " + Variable.COMPUTER + "---Trận số: " + serverInfo.Math.ToString();
 
                 if (serverInfo.Sec == 1)
                 {
@@ -470,11 +469,11 @@ namespace Client
         {
             if (txtPassAdmin.Text == Variable.PASSADMIN)
             {
-                pnlAdmin.Enabled = true;
+                pnlAdmin.Visible = true;
             }
             else
             {
-                pnlAdmin.Enabled = false;
+                pnlAdmin.Visible = false;
             }
         }
 
@@ -484,12 +483,22 @@ namespace Client
             {
                 MessageBox.Show("Kết nối tới trọng tài chính thành công!");
                 txtPassAdmin.Text = "";
-                pnlAdmin.Enabled = false;
+                pnlAdmin.Visible = false;
             }
             else
             {
                 MessageBox.Show("Kết nối tới trọng tài chính thất bại!");
             }
+        }
+
+        private void picSetting_Click(object sender, EventArgs e)
+        {
+            pnlSetting.Visible = true;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            pnlSetting.Visible = false;
         }
 
 

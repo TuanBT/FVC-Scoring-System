@@ -32,7 +32,7 @@ namespace Server
 
             InitializeComponent();
 
-            this.Text = "Máy chính: " + Variable.IP + ":" + Variable.PORT;
+            this.Text = "Trọng tài chính: " + Variable.IP + ":" + Variable.PORT;
 
             tcpServers = new TcpServers(this);
             Variable.SERVERSERVICES = new List<ServerService>();
@@ -414,16 +414,16 @@ namespace Server
             lblRefereeMain.Text = txtRefereeMain.Text;
             lblSecretary.Text = txtSecretary.Text;
 
-            lblWeight.Text = txtWeight.Text;
-            lblSex.Text = txtSex.Text;
-            lblNumberMatch.Text = txtNumberMatch.Text;
+            lblWeight.Text = cbbWeight.Text;
+            lblSex.Text = cbbSex.Text;
+            lblNumberMatch.Text = cbbNumberMatch.Text;
 
-            lblNameRed.Text = txtNameRed.Text;
-            lblIdRed.Text = txtIdRed.Text;
-            lblClassRed.Text = txtClassRed.Text;
-            lblNameBlue.Text = txtNameBlue.Text;
-            lblIdBlue.Text = txtIdBlue.Text;
-            lblClassBlue.Text = txtClassBlue.Text;
+            lblNameRed.Text = cbbNameRed.Text;
+            lblIdRed.Text = cbbIdRed.Text;
+            lblClassRed.Text = cbbClassRed.Text;
+            lblNameBlue.Text = cbbNameBlue.Text;
+            lblIdBlue.Text = cbbIdBlue.Text;
+            lblClassBlue.Text = cbbClassBlue.Text;
         }
 
         private void btnIncBlueM1_Click(object sender, EventArgs e)
