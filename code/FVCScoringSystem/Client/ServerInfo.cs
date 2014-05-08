@@ -12,6 +12,7 @@ namespace Client
         public string Sex { get; set; }
         public string Time { get; set; }
         public int Sec { get; set; }
+        public string State { get; set; }
 
         public ServerInfo() { }
 
@@ -24,6 +25,7 @@ namespace Client
             Sex = (string)jClientInfo["Sex"];
             Time = (string)jClientInfo["Time"];
             Sec = (int)jClientInfo["Sec"];
+            State = (string)jClientInfo["State"];
         }
 
         public string getClientJson(ServerInfo serverInfo)

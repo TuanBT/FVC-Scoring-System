@@ -62,17 +62,26 @@ namespace Server
         {
             //Variable.RECEIVETEXT = text;
             //Console.WriteLine("---" + text);
-            ClientInfo clientInfo = new ClientInfo(text);
-            if(clientInfo.Computer == 1){
-                Variable.RECEIVETEXT1 = text;
-            }
-            if (clientInfo.Computer == 2)
+
+            if (text.IndexOf("ClientInfo") > 0)
             {
-                Variable.RECEIVETEXT2 = text;
+                ClientInfo clientInfo = new ClientInfo(text);
+                if (clientInfo.Computer == 1)
+                {
+                    Variable.RECEIVETEXT1 = text;
+                }
+                if (clientInfo.Computer == 2)
+                {
+                    Variable.RECEIVETEXT2 = text;
+                }
+                if (clientInfo.Computer == 3)
+                {
+                    Variable.RECEIVETEXT3 = text;
+                }
             }
-            if (clientInfo.Computer == 3)
+            else if (text.IndexOf("ClockInfo") > 0)
             {
-                Variable.RECEIVETEXT3 = text;
+               Variable.RECEIVETEXTCLOCK = text;
             }
         }
 
@@ -141,7 +150,7 @@ namespace Server
                     }
                 }
 
-            // Eat up exception....Hmmmm I'm loving eat!!!
+            // Eat up exception....Hmmmm I'm love FVC!!!
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.Message + "\n" + exception.StackTrace);

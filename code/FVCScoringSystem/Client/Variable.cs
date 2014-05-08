@@ -7,7 +7,7 @@ namespace Client
 {
     public static class Variable
     {
-        public static string RECEIVETEXT { get; set; }
+        public static string RECEIVETEXT = "-";
         public static string SENTTEXT { get; set; }
         public static string LASTSCORE { get; set; }
         public static int SEC { get; set; }

@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using System.Net;
+using System.Net.NetworkInformation;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,10 +22,34 @@ namespace Client
 
         private void ClientForm_Load(object sender, EventArgs e)
         {
-            pnlSetting.Left = pnlMain.Location.X;
-            pnlSetting.Top = pnlMain.Location.Y;
+            IPGlobalProperties network = IPGlobalProperties.GetIPGlobalProperties();
+            IPEndPoint[] connections = network.GetActiveTcpListeners();
+            if (connections.Length > 0)
+            {
+                foreach (var connection in connections)
+                {
+                    if (connection.Port == Variable.PORT)
+                    {
+                        Variable.IP = connection.Address.ToString();
+                    }
+                }
+                txtIpServer.Text = Variable.IP;
+                txtPortServer.Text = Variable.PORT.ToString();
+            }
+
+            pnlMain.Left = (this.Width - pnlMain.Width) / 2;
+            pnlMain.Top = (this.Height - pnlMain.Height) / 2;
+            pnlSetting.Left = 0;
+            pnlSetting.Top = 0;
             pnlSetting.Width = pnlMain.Width;
             pnlSetting.Height = pnlMain.Height;
+        }
+        private void ClientForm_Resize(object sender, EventArgs e)
+        {
+            pnlMain.Left = (this.Width - pnlMain.Width) / 2;
+            pnlMain.Top = (this.Height - pnlMain.Height) / 2;
+            pnlSetting.Left = 0;
+            pnlSetting.Top = 0;
         }
 
         private void tmrClient_Tick(object sender, EventArgs e)
@@ -69,6 +95,17 @@ namespace Client
 
         public void setFormFromServerJson(string serverJson)
         {
+            /*//Nếu nhận được chuỗi -. Tức là server có gửi dữ liệu, nhưng chưa cho chấm điểm
+            if(serverJson=="-")
+            {
+                resetNewMath();
+                Variable.ENDMATH = 0; //Chưa chấm
+                pnlSetting.Visible = true;
+                btnHideSetting.Enabled = false;
+                btnHideSetting.BackColor = Color.Gray;
+                return;
+            }*/
+            resetColorKeydown();
             ServerInfo serverInfo = new ServerInfo(serverJson);
             //Máy con đang được cấp phép chấm điểm trận
             if (serverInfo.Sec != -1)
@@ -80,18 +117,57 @@ namespace Client
                 lblWeight.Text = serverInfo.Weight;
                 lblSex.Text = serverInfo.Sex;
                 lblNumberMatch.Text = serverInfo.Math.ToString();
+                if (serverInfo.State == "Standing")
+                {
+                    lblClock.BackColor = Color.LightGray;
+                }
+                else if (serverInfo.State == "Running")
+                {
+                    lblClock.BackColor = Color.White;
+                }
+                else if (serverInfo.State == "Pausing")
+                {
+                    lblClock.BackColor = Color.Yellow;
+                }
+                else if (serverInfo.State == "Stopping")
+                {
+                    lblClock.BackColor = Color.Red;
+                }
                 this.Text = "Máy: " + Variable.COMPUTER + "---Trận số: " + serverInfo.Math.ToString();
 
                 if (serverInfo.Sec == 1)
                 {
+                    lblSec.Text = "Hiệp 1";
+
+                    lblSec1.ForeColor = Color.Green;
+                    lblTotalSec1Red.BackColor = Color.White;
+                    lblMinusSec1Red.BackColor = Color.White;
+                    //lblSec1.BackColor = Color.LightGreen;
+                    lblSec1Red.BackColor = Color.White;
+                    lblSec1Blue.BackColor = Color.White;
+                    lblMinusSec1Blue.BackColor = Color.White;
+                    lblTotalSec1Blue.BackColor = Color.White;
+
                     EndSec2();
                 }
                 else if (serverInfo.Sec == 2)
                 {
+                    lblSec.Text = "Hiệp 2";
+
+                    lblSec2.ForeColor = Color.Green;
+                    lblTotalSec2Red.BackColor = Color.White;
+                    lblMinusSec2Red.BackColor = Color.White;
+                    //lblSec2.BackColor = Color.LightGreen;
+                    lblSec2Red.BackColor = Color.White;
+                    lblSec2Blue.BackColor = Color.White;
+                    lblMinusSec2Blue.BackColor = Color.White;
+                    lblTotalSec2Blue.BackColor = Color.White;
+
                     EndSec1();
                 }
                 else if (serverInfo.Sec == 0)
                 {
+                    lblSec.Text = "Giải lao";
                     EndSec1();
                     EndSec2();
                 }
@@ -112,7 +188,8 @@ namespace Client
             lblTotalSec1Red.BackColor = Color.Silver;
             lblMinusSec1Red.BackColor = Color.Silver;
             lblSec1Red.BackColor = Color.Silver;
-            //label12.BackColor = Color.Silver;
+            lblSec1.BackColor = Color.Silver;
+            lblSec1.ForeColor = Color.Gray;
             lblSec1Blue.BackColor = Color.Silver;
             lblMinusSec1Blue.BackColor = Color.Silver;
             lblTotalSec1Blue.BackColor = Color.Silver;
@@ -122,7 +199,8 @@ namespace Client
             lblTotalSec2Blue.BackColor = Color.Silver;
             lblMinusSec2Blue.BackColor = Color.Silver;
             lblSec2Blue.BackColor = Color.Silver;
-            //label11.BackColor = Color.Silver;
+            lblSec2.BackColor = Color.Silver;
+            lblSec2.ForeColor = Color.Gray;
             lblSec2Red.BackColor = Color.Silver;
             lblMinusSec2Red.BackColor = Color.Silver;
             lblTotalSec2Red.BackColor = Color.Silver;
@@ -138,11 +216,16 @@ namespace Client
             lblSec2Blue.Text = "0";
             lblMinusSec2Blue.Text = "0";
             lblSec1Blue.Text = "0";
+            lblTotalScoreRed.Text = "0";
+            lblTotalScoreBlue.Text = "0";
+            btnWinRed.BackColor = Color.Silver;
+            btnWinBlue.BackColor = Color.Silver;
+            rdbWinPoint.Checked = true;
 
             //Variable.ENDMATH = 1;
             Variable.WIN = "";
 
-            UpdateScore(); 
+            //UpdateScore(); 
         }
 
         public string getWinform()
@@ -469,6 +552,20 @@ namespace Client
         {
             if (txtPassAdmin.Text == Variable.PASSADMIN)
             {
+                IPGlobalProperties network = IPGlobalProperties.GetIPGlobalProperties();
+                IPEndPoint[] connections = network.GetActiveTcpListeners();
+                if (connections.Length > 0)
+                {
+                    foreach (var connection in connections)
+                    {
+                        if (connection.Port == Variable.PORT)
+                        {
+                            Variable.IP = connection.Address.ToString();
+                        }
+                    }
+                    txtIpServer.Text = Variable.IP;
+                    txtPortServer.Text = Variable.PORT.ToString();
+                }
                 pnlAdmin.Visible = true;
             }
             else
@@ -479,11 +576,21 @@ namespace Client
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
+            Variable.IP = txtIpServer.Text;
+            try
+            {
+                Variable.PORT = Convert.ToInt32(txtPortServer.Text);
+            }
+            catch (Exception)
+            {
+            }
+            
             if (tcpClients.Connection())
             {
                 MessageBox.Show("Kết nối tới trọng tài chính thành công!");
                 txtPassAdmin.Text = "";
                 pnlAdmin.Visible = false;
+                tmrClient.Enabled = true;
             }
             else
             {
@@ -501,10 +608,63 @@ namespace Client
             pnlSetting.Visible = false;
         }
 
+        public void resetColorKeydown()
+        {
+            ServerInfo serverInfo = new ServerInfo(Variable.RECEIVETEXT);
+            if (serverInfo.Sec == 1)
+            {
+                lblSec1Red.BackColor = Color.White;
+                lblSec2Red.BackColor = Color.White;
+            }
+            if (serverInfo.Sec == 2)
+            {
+                lblSec1Blue.BackColor = Color.White;
+                lblSec2Blue.BackColor = Color.White;
+            }
+        }
 
-
-
-
+        private void ClientForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            ServerInfo serverInfo = new ServerInfo(Variable.RECEIVETEXT);
+            if (e.KeyCode == Keys.Left)
+            {
+               if(serverInfo.Sec==1)
+               {
+                   int score = Convert.ToInt32(lblSec1Red.Text);
+                   score++;
+                   lblSec1Red.Text = score.ToString();
+                   lblSec1Red.BackColor = Color.LightCoral;
+                   UpdateScore();
+               }
+               if (serverInfo.Sec == 2)
+               {
+                   int score = Convert.ToInt32(lblSec2Red.Text);
+                   score++;
+                   lblSec2Red.Text = score.ToString();
+                   lblSec2Red.BackColor = Color.LightCoral;
+                   UpdateScore();
+               }
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                if (serverInfo.Sec == 1)
+                {
+                    int score = Convert.ToInt32(lblSec1Blue.Text);
+                    score++;
+                    lblSec1Blue.Text = score.ToString();
+                    lblSec1Blue.BackColor = Color.LightBlue;
+                    UpdateScore();
+                }
+                if (serverInfo.Sec == 2)
+                {
+                    int score = Convert.ToInt32(lblSec2Blue.Text);
+                    score++;
+                    lblSec2Blue.Text = score.ToString();
+                    lblSec2Blue.BackColor = Color.LightBlue;
+                    UpdateScore();
+                }
+            }
+        }
 
     }
 }

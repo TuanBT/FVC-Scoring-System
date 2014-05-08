@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -15,6 +16,9 @@ namespace Server
         TcpServers tcpServers;
         public delegate void ChangedEventHandler(object sender, EventArgs e);
         public event ChangedEventHandler Changed;
+        private FillData fillData;
+        int s = 0;
+        int m = 0;
 
 
         public ServerForm()
@@ -28,7 +32,7 @@ namespace Server
                 }
             }
 
-            Variable.IP = "127.0.0.1";
+            //Variable.IP = "127.0.0.1";
 
             InitializeComponent();
 
@@ -42,15 +46,27 @@ namespace Server
             Changed += new ChangedEventHandler(tcpServers.ClientAdded);
 
             tcpServers.StartServer();
-            tmrServer.Enabled = true;
+            //tmrServer.Enabled = true;
         }
 
         private void ServerForm_Load(object sender, EventArgs e)
         {
+            pnlMain.Left = (this.Width - pnlMain.Width)/2;
+            pnlMain.Top = (this.Height - pnlMain.Height) / 2;
             pnlSetting.Width = pnlMain.Width;
             pnlSetting.Height = pnlMain.Height;
-            pnlSetting.Left = pnlMain.Location.X;
-            pnlSetting.Top = pnlMain.Location.Y;
+            pnlSetting.Left = 0;
+            pnlSetting.Top = 0;
+
+            fillData = new FillData(nmrNumberMatch, cbbSex, cbbWeight,
+                txtNameRed, txtNameBlue, txtIdRed, txtClassBlue, txtIdBlue, txtClassRed);
+        }
+        private void ServerForm_SizeChanged(object sender, EventArgs e)
+        {
+            pnlMain.Left = (this.Width - pnlMain.Width) / 2;
+            pnlMain.Top = (this.Height - pnlMain.Height) / 2;
+            pnlSetting.Left = 0;
+            pnlSetting.Top = 0;
         }
 
         private void ServerForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -60,19 +76,42 @@ namespace Server
 
         private void tmrServer_Tick(object sender, EventArgs e)
         {
-            lblClock.Text = DateTime.Now.Second.ToString();
+            //lblClock.Text = DateTime.Now.Second.ToString();
+            //setClockFormClockJson();
 
-            //Nếu máy con chưa được cấp quyền chấm điểm
-            if (Variable.SEC == -1)
+            //Nếu máy con chưa được cấp quyền chấm điểm.
+            btnSent.Visible = Variable.SEC == -1;
+
+            try
             {
-                btnSent.Visible = true;
+                foreach (var sv in Variable.SERVERSERVICES)
+                {
+                    Variable.SENTTEXT = getServerJsonString();
+                    sv.SentText(Variable.SENTTEXT);
+                }
             }
-            else
+            catch (Exception)
             {
-                btnSent.Visible = false;
+                //Không tồn tại kết nối nào
             }
 
             setFormFromClientJson();
+        }
+
+        private void tmrServerSent_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (var sv in Variable.SERVERSERVICES)
+                {
+                    //Variable.SENTTEXT = getServerJsonString();
+                    sv.SentText(Variable.SENTTEXT);
+                }
+            }
+            catch (Exception)
+            {
+                //Không tồn tại kết nối nào
+            }
         }
 
         public string getServerJsonString()
@@ -81,9 +120,10 @@ namespace Server
             {
                 Math = lblNumberMatch.Text,
                 Sex = lblSex.Text,
-                Time = DateTime.Now.Second.ToString(),
+                Time = (m / 10).ToString() + (m % 10).ToString() + ":" + (s / 10).ToString() + (s % 10).ToString(),
                 Weight = lblWeight.Text,
-                Sec = Variable.SEC
+                Sec = Variable.SEC,
+                State = Variable.STATE
             };
             return serverInfo.getClientJson(serverInfo);
         }
@@ -92,13 +132,6 @@ namespace Server
         {
             try
             {
-                foreach (var sv in Variable.SERVERSERVICES)
-                {
-                    Variable.SENTTEXT = getServerJsonString();
-                    sv.SentText(Variable.SENTTEXT);
-                }
-
-
                 if (Variable.RECEIVETEXT1 != null)
                 {
                     ClientInfo clientInfo1 = new ClientInfo(Variable.RECEIVETEXT1);
@@ -126,7 +159,7 @@ namespace Server
                             lblPlusRedM1.Visible = false;
                             lblPlusBlueM1.Visible = true;
                         }
-                        Variable.RECEIVETEXT1 = null;
+                       //Variable.RECEIVETEXT1 = null;
                     }
                     //clientInfo1.EndMath == 0
                     else
@@ -177,7 +210,7 @@ namespace Server
                             lblPlusRedM2.Visible = false;
                             lblPlusBlueM2.Visible = true;
                         }
-                        Variable.RECEIVETEXT2 = null;
+                        //Variable.RECEIVETEXT2 = null;
                     }
                     else
                     {
@@ -224,7 +257,7 @@ namespace Server
                             lblPlusRedM3.Visible = false;
                             lblPlusBlueM3.Visible = true;
                         }
-                        Variable.RECEIVETEXT3 = null;
+                        //Variable.RECEIVETEXT3 = null;
                     }
                     else
                     {
@@ -247,9 +280,78 @@ namespace Server
                     lblStatusScoreM3.Visible = false;
                 }
 
+                if(Variable.RECEIVETEXTCLOCK!=null)
+                {
+                    setClockFormClockJson();
+                }
+                else
+                {
+                    lblClock.Text = "00:00";
+                   lblClock.BackColor = Color.LightGray;
+                }
+
                 UpdateScore();
             }
             catch (Exception ex) { }
+        }
+
+        public void setClockFormClockJson()
+        {
+            try
+            {
+                ClockInfo clockInfo = new ClockInfo(Variable.RECEIVETEXTCLOCK);
+                if (clockInfo.State == "Standing")
+                {
+                    lblClock.BackColor = Color.LightGray;
+                    Variable.STATE = "Standing";
+                }
+                else if (clockInfo.State == "Running")
+                {
+                    lblClock.BackColor = Color.White;
+                    Variable.STATE = "Running";
+                }
+                else if (clockInfo.State == "Pausing")
+                {
+                    lblClock.BackColor = Color.Yellow;
+                    Variable.STATE = "Pausing";
+                }
+                else if (clockInfo.State == "Stopping")
+                {
+                    lblClock.BackColor = Color.Red;
+                    Variable.STATE = "Stopping";
+                }
+
+                if (clockInfo.Type == "H1")
+                {
+                    lblSec.Text = "Hiệp 1";
+                    Variable.SEC = 1;
+                }
+                else if (clockInfo.Type == "GL")
+                {
+                    lblSec.Text = "Giải lao";
+                    Variable.SEC = 0;
+                }
+                else if (clockInfo.Type == "H2")
+                {
+                    lblSec.Text = "Hiệp 2";
+                    Variable.SEC = 2;
+                }
+
+                if (clockInfo.TimeState == "Decrease ")
+                {
+
+                }
+                else if (clockInfo.TimeState == "Increase")
+                {
+
+                }
+                s = clockInfo.S;
+                m = clockInfo.M;
+                lblClock.Text = (m / 10).ToString() + (m % 10).ToString() + ":" + (s / 10).ToString() + (s % 10).ToString();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         public void ChangeStatus(Label label, bool status)
@@ -357,55 +459,50 @@ namespace Server
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            //Lấy từ database trận đấu tiếp theo
+            //Nếu như màu sắc của 1 trong 2 không phải bạc. Tức là có được 1 người thắng.
+            if (btnWinBlue.BackColor != Color.Silver || btnWinRed.BackColor != Color.Silver)
+            {
+                //Save kết quả vào database
+                fillData.SaveMath(lblWinId.Text);
 
-            //ChangeStatus(lblStatusM1, false);
-            lblScoreRedM1.Text = "0";
-            lblScoreBlueM1.Text = "0";
-            lblRefereeM1.Text = "-";
-            lblWinFormM1.Text = "-";
-            lblPlusRedM1.Visible = false;
-            lblPlusBlueM1.Visible = false;
-            lblStatusScoreM1.Visible = false;
-            //btnIncRedM1.Visible = false;
-            //btnDecRedM1.Visible = false;
-            //btnIncBlueM1.Visible = false;
-            //btnDecBlueM1.Visible = false;
+                nmrNumberMatch.Value = nmrNumberMatch.Value + 1;
+                //fillData.FillFromMatch(nmrNumberMatch);
 
-            //ChangeStatus(lblStatusM2, false);
-            lblScoreRedM2.Text = "0";
-            lblScoreBlueM2.Text = "0";
-            lblRefereeM2.Text = "-";
-            lblWinFormM2.Text = "-";
-            lblPlusRedM2.Visible = false;
-            lblPlusBlueM2.Visible = false;
-            lblStatusScoreM2.Visible = false;
-            //btnIncRedM2.Visible = false;
-            //btnDecRedM2.Visible = false;
-            //btnIncBlueM2.Visible = false;
-            //btnDecBlueM2.Visible = false;
+                /*cbbNameRed.Text = "";
+                cbbNameBlue.Text = "";
+                cbbIdRed.Text = "";
+                cbbIdBlue.Text = "";
+                cbbClassRed.Text = "";
+                cbbClassBlue.Text = "";*/
 
-            //ChangeStatus(lblStatusM3, false);
-            lblScoreRedM3.Text = "0";
-            lblScoreBlueM3.Text = "0";
-            lblRefereeM3.Text = "-";
-            lblWinFormM3.Text = "-";
-            lblPlusRedM3.Visible = false;
-            lblPlusBlueM3.Visible = false;
-            lblStatusScoreM3.Visible = false;
-            //btnIncRedM3.Visible = false;
-            //btnDecRedM3.Visible = false;
-            //btnIncBlueM3.Visible = false;
-            //btnDecBlueM3.Visible = false;
+                pnlSetting.Visible = true;
 
-            UpdateScore();
+                //Tạm chưa cho máy con chấm điểm
+                tmrServerReceive.Enabled = false;
+                Variable.SEC = -1;
+                //Variable.SENTTEXT = "-";
+               // tmrServerSent.Enabled = true;
 
-            setFormSetting();
+                //Gửi chuỗi -1 qua cho client để reset lại điểm
+                try
+                {
+                    foreach (var sv in Variable.SERVERSERVICES)
+                    {
+                        Variable.SENTTEXT = getServerJsonString();
+                        sv.SentText(Variable.SENTTEXT);
+                    }
+                }
+                catch (Exception)
+                {
+                    //Không có kết nối với bất kỳ client nào
+                }
 
-            //Tạm chưa cho máy con chấm điểm
-            Variable.SEC = -1;
-
-            //tmrServer.Enabled = true;
+            }
+            //Chưa chọn được ai thắng cả
+            else
+            {
+                MessageBox.Show("Phải chọn một người chiến thắng!");
+            }
         }
 
         //Từ khung setting, đổ các dữ liệu về lại form chính
@@ -416,14 +513,16 @@ namespace Server
 
             lblWeight.Text = cbbWeight.Text;
             lblSex.Text = cbbSex.Text;
-            lblNumberMatch.Text = cbbNumberMatch.Text;
+            lblNumberMatch.Text = nmrNumberMatch.Value.ToString();
 
-            lblNameRed.Text = cbbNameRed.Text;
-            lblIdRed.Text = cbbIdRed.Text;
-            lblClassRed.Text = cbbClassRed.Text;
-            lblNameBlue.Text = cbbNameBlue.Text;
-            lblIdBlue.Text = cbbIdBlue.Text;
-            lblClassBlue.Text = cbbClassBlue.Text;
+            lblNameRed.Text = txtNameRed.Text;
+            lblIdRed.Text = txtIdRed.Text;
+            lblClassRed.Text = txtClassRed.Text;
+            lblNameBlue.Text = txtNameBlue.Text;
+            lblIdBlue.Text = txtIdBlue.Text;
+            lblClassBlue.Text = txtClassBlue.Text;
+
+            btnSent.Visible = true;
         }
 
         private void btnIncBlueM1_Click(object sender, EventArgs e)
@@ -453,6 +552,8 @@ namespace Server
         private void btnSent_Click(object sender, EventArgs e)
         {
             Variable.SEC = 1;
+            tmrServer.Enabled = false;
+            tmrServerReceive.Enabled = true;
         }
 
         private void btnWinBlue_Click(object sender, EventArgs e)
@@ -466,7 +567,8 @@ namespace Server
             lblWinId.ForeColor = Color.Blue;
             lblWinClass.ForeColor = Color.Blue;
 
-            tmrServer.Enabled = false;
+            tmrServerReceive.Enabled = false;
+            //tmrServerSent.Enabled = true;
         }
 
         private void btnWinRed_Click(object sender, EventArgs e)
@@ -480,9 +582,11 @@ namespace Server
             lblWinId.ForeColor = Color.Red;
             lblWinClass.ForeColor = Color.Red;
 
-            tmrServer.Enabled = false;
+            tmrServerReceive.Enabled = false;
+            //tmrServerSent.Enabled = true;
         }
 
+        #region setting event
         private void btnSetting_Click(object sender, EventArgs e)
         {
             pnlSetting.Visible = true;
@@ -505,9 +609,135 @@ namespace Server
             pnlSetting.Visible = false;
         }
 
-        private void picSetting_MouseDown(object sender, MouseEventArgs e)
+        private void nmrNumberMatch_ValueChanged(object sender, EventArgs e)
+        {
+            fillData.FillFromMatch(nmrNumberMatch);
+        }
+
+        private void cbbSex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*if (cbbSex.Text == "Nữ")
+            {
+                cbbWeight.Items.Clear();
+                cbbWeight.Items.Add(">50");
+                cbbWeight.Items.Add("<50");
+                cbbWeight.Text = "<50";
+
+            }
+            if (cbbSex.Text == "Nam")
+            {
+                cbbWeight.Items.Clear();
+
+                cbbWeight.Items.Add("51");
+                cbbWeight.Items.Add("54");
+                cbbWeight.Items.Add("57");
+                cbbWeight.Items.Add("60");
+                cbbWeight.Items.Add("64");
+                cbbWeight.Items.Add("68");
+                cbbWeight.Items.Add("72");
+                cbbWeight.Items.Add("<48");
+                cbbWeight.Items.Add(">72");
+
+                cbbWeight.Text = "51";
+
+            }
+            fillData.FillFromSexAndWeight(cbbSex, cbbWeight);*/
+        }
+
+        private void cbbWeight_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //fillData.FillFromSexAndWeight(cbbSex, cbbWeight);
+        }
+
+
+        private void btnSettingOk_Click(object sender, EventArgs e)
+        {
+            //Nếu 1 trong 2 tên chưa được điền thì bỏ qua
+            if (txtNameRed.Text == "" || txtNameBlue.Text == "")
+            {
+                MessageBox.Show("Phải chọn cả hai vận động viên để thi đấu!");
+            }
+            //Nếu trùng tên thì bỏ qua
+            else if (txtNameRed.Text == txtNameBlue.Text)
+            {
+                MessageBox.Show("Phải chọn 2 vận động viên khác nhau!");
+            }
+            else
+            {
+                pnlSetting.Visible = false;
+                //ChangeStatus(lblStatusM1, false);
+                lblScoreRedM1.Text = "0";
+                lblScoreBlueM1.Text = "0";
+                lblRefereeM1.Text = "-";
+                lblWinFormM1.Text = "-";
+                lblPlusRedM1.Visible = false;
+                lblPlusBlueM1.Visible = false;
+                lblStatusScoreM1.Visible = false;
+                //btnIncRedM1.Visible = false;
+                //btnDecRedM1.Visible = false;
+                //btnIncBlueM1.Visible = false;
+                //btnDecBlueM1.Visible = false;
+
+                //ChangeStatus(lblStatusM2, false);
+                lblScoreRedM2.Text = "0";
+                lblScoreBlueM2.Text = "0";
+                lblRefereeM2.Text = "-";
+                lblWinFormM2.Text = "-";
+                lblPlusRedM2.Visible = false;
+                lblPlusBlueM2.Visible = false;
+                lblStatusScoreM2.Visible = false;
+                //btnIncRedM2.Visible = false;
+                //btnDecRedM2.Visible = false;
+                //btnIncBlueM2.Visible = false;
+                //btnDecBlueM2.Visible = false;
+
+                //ChangeStatus(lblStatusM3, false);
+                lblScoreRedM3.Text = "0";
+                lblScoreBlueM3.Text = "0";
+                lblRefereeM3.Text = "-";
+                lblWinFormM3.Text = "-";
+                lblPlusRedM3.Visible = false;
+                lblPlusBlueM3.Visible = false;
+                lblStatusScoreM3.Visible = false;
+                //btnIncRedM3.Visible = false;
+                //btnDecRedM3.Visible = false;
+                //btnIncBlueM3.Visible = false;
+                //btnDecBlueM3.Visible = false;
+
+                lblClock.Text = "00:00";
+                lblClock.BackColor = Color.LightGray;
+
+                UpdateScore();
+
+                setFormSetting();
+                Variable.SEC = -1;
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            int numMatch = Convert.ToInt32(nmrNumberMatch.Value);
+            if(numMatch==100)
+                return;
+            nmrNumberMatch.Value = numMatch + 1;
+            fillData.FillFromMatch(nmrNumberMatch);
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            int numMatch = Convert.ToInt32(nmrNumberMatch.Value);
+            if(numMatch==0)
+                return;
+            nmrNumberMatch.Value = numMatch - 1;
+            fillData.FillFromMatch(nmrNumberMatch);
+        }
+        #endregion
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+
     }
 }

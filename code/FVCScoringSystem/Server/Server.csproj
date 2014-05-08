@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientInfo.cs" />
+    <Compile Include="ClockInfo.cs" />
     <Compile Include="FillData.cs" />
     <Compile Include="MyEventArgs.cs" />
     <Compile Include="ServerForm.cs">
