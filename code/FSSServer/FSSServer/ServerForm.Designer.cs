@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServerForm));
             this.pnlSetting = new System.Windows.Forms.Panel();
             this.btnSettingOk = new System.Windows.Forms.Button();
-            this.picHideSetting = new System.Windows.Forms.PictureBox();
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -127,7 +126,6 @@
             this.pnlMain = new System.Windows.Forms.Panel();
             this.lblTotalWinBlue = new System.Windows.Forms.Label();
             this.lblTotalWinRed = new System.Windows.Forms.Label();
-            this.picSetting = new System.Windows.Forms.PictureBox();
             this.lblNameBlue = new System.Windows.Forms.Label();
             this.lblIdBlue = new System.Windows.Forms.Label();
             this.lblTotalScoreRed = new System.Windows.Forms.Label();
@@ -141,9 +139,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblNumberMatch = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.picHideSetting = new System.Windows.Forms.PictureBox();
+            this.picSetting = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tmrTimeout = new System.Windows.Forms.Timer(this.components);
             this.pnlSetting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHideSetting)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrNumberMatch)).BeginInit();
@@ -153,6 +153,7 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHideSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -169,7 +170,7 @@
             this.pnlSetting.Controls.Add(this.tableLayoutPanel1);
             this.pnlSetting.Location = new System.Drawing.Point(6, 18);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(705, 335);
+            this.pnlSetting.Size = new System.Drawing.Size(103, 80);
             this.pnlSetting.TabIndex = 71;
             // 
             // btnSettingOk
@@ -186,17 +187,6 @@
             this.btnSettingOk.Text = "Bắt đầu trận đấu mới";
             this.btnSettingOk.UseVisualStyleBackColor = false;
             this.btnSettingOk.Click += new System.EventHandler(this.btnSettingOk_Click);
-            // 
-            // picHideSetting
-            // 
-            this.picHideSetting.Image = global::FSSServer.Properties.Resources.Menu_Click;
-            this.picHideSetting.Location = new System.Drawing.Point(25, 3);
-            this.picHideSetting.Name = "picHideSetting";
-            this.picHideSetting.Size = new System.Drawing.Size(60, 60);
-            this.picHideSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picHideSetting.TabIndex = 92;
-            this.picHideSetting.TabStop = false;
-            this.picHideSetting.Click += new System.EventHandler(this.picHideSetting_Click);
             // 
             // btnPrev
             // 
@@ -1084,7 +1074,7 @@
             this.lblStatusM1.Name = "lblStatusM1";
             this.lblStatusM1.Size = new System.Drawing.Size(99, 50);
             this.lblStatusM1.TabIndex = 58;
-            this.lblStatusM1.Text = "Chờ...";
+            this.lblStatusM1.Text = "...";
             this.lblStatusM1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
@@ -1105,7 +1095,7 @@
             this.lblStatusM3.Name = "lblStatusM3";
             this.lblStatusM3.Size = new System.Drawing.Size(99, 50);
             this.lblStatusM3.TabIndex = 60;
-            this.lblStatusM3.Text = "Chờ...";
+            this.lblStatusM3.Text = "...";
             this.lblStatusM3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblStatusM2
@@ -1117,7 +1107,7 @@
             this.lblStatusM2.Name = "lblStatusM2";
             this.lblStatusM2.Size = new System.Drawing.Size(99, 50);
             this.lblStatusM2.TabIndex = 59;
-            this.lblStatusM2.Text = "Chờ...";
+            this.lblStatusM2.Text = "...";
             this.lblStatusM2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
@@ -1387,7 +1377,7 @@
             this.pnlMain.Controls.Add(this.lblTitle);
             this.pnlMain.Controls.Add(this.pictureBox1);
             this.pnlMain.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlMain.Location = new System.Drawing.Point(12, 12);
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1000, 500);
             this.pnlMain.TabIndex = 2;
@@ -1415,17 +1405,6 @@
             this.lblTotalWinRed.TabIndex = 93;
             this.lblTotalWinRed.Text = "0";
             this.lblTotalWinRed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picSetting
-            // 
-            this.picSetting.Image = global::FSSServer.Properties.Resources.Menu_Click;
-            this.picSetting.Location = new System.Drawing.Point(25, 3);
-            this.picSetting.Name = "picSetting";
-            this.picSetting.Size = new System.Drawing.Size(60, 60);
-            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSetting.TabIndex = 91;
-            this.picSetting.TabStop = false;
-            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
             // 
             // lblNameBlue
             // 
@@ -1506,7 +1485,7 @@
             // 
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(671, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 49);
@@ -1556,7 +1535,7 @@
             // 
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(671, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 63);
@@ -1590,6 +1569,28 @@
             this.lblTitle.Text = "TỔNG HỢP\r\nTHI ĐẤU ĐỐI KHÁNG";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // picHideSetting
+            // 
+            this.picHideSetting.Image = global::FSSServer.Properties.Resources.Menu;
+            this.picHideSetting.Location = new System.Drawing.Point(25, 3);
+            this.picHideSetting.Name = "picHideSetting";
+            this.picHideSetting.Size = new System.Drawing.Size(60, 60);
+            this.picHideSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picHideSetting.TabIndex = 92;
+            this.picHideSetting.TabStop = false;
+            this.picHideSetting.Click += new System.EventHandler(this.picHideSetting_Click);
+            // 
+            // picSetting
+            // 
+            this.picSetting.Image = global::FSSServer.Properties.Resources.Menu;
+            this.picSetting.Location = new System.Drawing.Point(25, 3);
+            this.picSetting.Name = "picSetting";
+            this.picSetting.Size = new System.Drawing.Size(60, 60);
+            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSetting.TabIndex = 91;
+            this.picSetting.TabStop = false;
+            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
@@ -1601,21 +1602,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // tmrTimeout
+            // 
+            this.tmrTimeout.Interval = 5000;
+            this.tmrTimeout.Tick += new System.EventHandler(this.tmrTimeout_Tick);
+            // 
             // ServerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1030, 530);
+            this.ClientSize = new System.Drawing.Size(1000, 500);
             this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ServerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.pnlSetting.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picHideSetting)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -1628,6 +1634,7 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picHideSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -1748,6 +1755,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTotalWinBlue;
         private System.Windows.Forms.Label lblTotalWinRed;
+        private System.Windows.Forms.Timer tmrTimeout;
     }
 }
 

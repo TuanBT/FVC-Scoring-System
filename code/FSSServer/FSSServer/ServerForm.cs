@@ -51,8 +51,8 @@ namespace FSSServer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pnlMain.Left = (this.Width - pnlMain.Width) / 2;
-            pnlMain.Top = (this.Height - pnlMain.Height) / 2;
+            //pnlMain.Left = (this.Width - pnlMain.Width) / 2;
+            //pnlMain.Top = (this.Height - pnlMain.Height) / 2;
             pnlSetting.Width = pnlMain.Width;
             pnlSetting.Height = pnlMain.Height;
             pnlSetting.Left = 0;
@@ -64,10 +64,18 @@ namespace FSSServer
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            pnlMain.Left = (this.Width - pnlMain.Width) / 2;
-            pnlMain.Top = (this.Height - pnlMain.Height) / 2;
-            pnlSetting.Left = 0;
-            pnlSetting.Top = 0;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                //this.FormBorderStyle = FormBorderStyle.None;
+                this.Left = 0;
+                this.Top = 0;
+                this.Bounds = Screen.PrimaryScreen.Bounds;
+                this.TopMost = true;
+            }
+            pnlMain.Left = (this.ClientSize.Width - pnlMain.Width) / 2;
+            pnlMain.Top = (this.ClientSize.Height - pnlMain.Height) / 2;
+            //pnlSetting.Left = 0;
+            //pnlSetting.Top = 0;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -124,6 +132,27 @@ namespace FSSServer
             }
         }
 
+        private void tmrTimeout_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                Variable.RECEIVETEXT1 = Variable.RECEIVETEXT1.Replace("\"EndMath\":1", "\"EndMath\":-1");
+                Variable.RECEIVETEXT1 = Variable.RECEIVETEXT1.Replace("\"EndMath\":0", "\"EndMath\":-1");
+
+                Variable.RECEIVETEXT2 = Variable.RECEIVETEXT2.Replace("\"EndMath\":1", "\"EndMath\":-1");
+                Variable.RECEIVETEXT2 = Variable.RECEIVETEXT2.Replace("\"EndMath\":0", "\"EndMath\":-1");
+
+                Variable.RECEIVETEXT3 = Variable.RECEIVETEXT3.Replace("\"EndMath\":1", "\"EndMath\":-1");
+                Variable.RECEIVETEXT3 = Variable.RECEIVETEXT3.Replace("\"EndMath\":0", "\"EndMath\":-1");
+            }
+            catch (Exception){}
+           
+            
+            //Variable.RECEIVETEXT2 = "";
+            //Variable.RECEIVETEXT3= "";
+            //Variable.RECEIVETEXTCLOCK = "";
+        }
+
         public string getServerJsonString()
         {
             ServerInfo serverInfo = new ServerInfo
@@ -142,7 +171,7 @@ namespace FSSServer
         {
             try
             {
-                if (Variable.RECEIVETEXT1 != null)
+                if (Variable.RECEIVETEXT1 != "")
                 {
                     
                     try
@@ -175,15 +204,19 @@ namespace FSSServer
                             //Variable.RECEIVETEXT1 = null;
                         }
                         //clientInfo1.EndMath == 0
-                        else
+                        else if (clientInfo1.EndMath == 0)
                         {
                             //Đã chấm xong
                             ChangeSatusMath(lblStatusScoreM1, false);
-
+                            ChangeStatus(lblStatusM1, true);
                             // btnIncRedM1.Visible = true;
                             //btnDecRedM1.Visible = true;
                             // btnIncBlueM1.Visible = true;
                             // btnDecBlueM1.Visible = true;
+                        }
+                        else if (clientInfo1.EndMath == -1)
+                        {
+                            ChangeStatus(lblStatusM1,false);
                         }
                     }
                     catch (Exception){}
@@ -194,6 +227,7 @@ namespace FSSServer
                     ChangeStatus(lblStatusM1, false);
                     lblScoreRedM1.Text = "0";
                     lblScoreBlueM1.Text = "0";
+                    lblWinFormM1.Text = "-";
                     lblRefereeM1.Text = "-";
                     lblPlusRedM1.Visible = false;
                     lblPlusBlueM1.Visible = false;
@@ -201,7 +235,7 @@ namespace FSSServer
                 }
 
                 //Máy 2
-                if (Variable.RECEIVETEXT2 != null)
+                if (Variable.RECEIVETEXT2 != "")
                 {
                     try
                     {
@@ -229,14 +263,18 @@ namespace FSSServer
                             }
                             //Variable.RECEIVETEXT2 = null;
                         }
-                        else
+                        else if (clientInfo2.EndMath == 0)
                         {
                             ChangeSatusMath(lblStatusScoreM2, false);
-
+                            ChangeStatus(lblStatusM2, true);
                             // btnIncRedM2.Visible = true;
                             //  btnDecRedM2.Visible = true;
                             //  btnIncBlueM2.Visible = true;
                             // btnDecBlueM2.Visible = true;
+                        }
+                        else if (clientInfo2.EndMath == -1)
+                        {
+                            ChangeStatus(lblStatusM2,false);
                         }
                     }
                     catch (Exception){}
@@ -247,6 +285,7 @@ namespace FSSServer
                     ChangeStatus(lblStatusM2, false);
                     lblScoreRedM2.Text = "0";
                     lblScoreBlueM2.Text = "0";
+                    lblWinFormM2.Text = "-";
                     lblRefereeM2.Text = "-";
                     lblPlusRedM2.Visible = false;
                     lblPlusBlueM2.Visible = false;
@@ -254,7 +293,7 @@ namespace FSSServer
                 }
 
                 //Máy 3
-                if (Variable.RECEIVETEXT3 != null)
+                if (Variable.RECEIVETEXT3 != "")
                 {
                     try
                     {
@@ -281,14 +320,18 @@ namespace FSSServer
                             }
                             //Variable.RECEIVETEXT3 = null;
                         }
-                        else
+                        else if (clientInfo3.EndMath == 0)
                         {
                             ChangeSatusMath(lblStatusScoreM3, false);
-
+                            ChangeStatus(lblStatusM3, true);
                             //btnIncRedM3.Visible = true;
                             //btnDecRedM3.Visible = true;
                             //btnIncBlueM3.Visible = true;
                             //btnDecBlueM3.Visible = true;
+                        }
+                        else if (clientInfo3.EndMath == -1)
+                        {
+                            ChangeStatus(lblStatusM3,false);
                         }
                     }
                     catch (Exception){}
@@ -298,6 +341,7 @@ namespace FSSServer
                     ChangeStatus(lblStatusM3, false);
                     lblScoreRedM3.Text = "0";
                     lblScoreBlueM3.Text = "0";
+                    lblWinFormM3.Text = "-";
                     lblRefereeM3.Text = "-";
                     lblPlusRedM3.Visible = false;
                     lblPlusBlueM3.Visible = false;
@@ -387,7 +431,7 @@ namespace FSSServer
             }
             else if (!status)
             {
-                label.Text = "Chờ...";
+                label.Text = "...";
                 label.BackColor = Color.FromArgb(255, 128, 0);
             }
         }
@@ -586,6 +630,7 @@ namespace FSSServer
         {
             Variable.SEC = 1;
             tmrServer.Enabled = true;
+            tmrTimeout.Enabled = true;
             //tmrServerReceive.Enabled = true;
         }
 
@@ -694,7 +739,6 @@ namespace FSSServer
         {
             pnlSetting.Visible = false;
         }
-
 
     }
 }

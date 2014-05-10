@@ -141,7 +141,6 @@ namespace Server
 
             ((Thread)(Variable.THREADS[counter])).Abort();
             Variable.THREADS.RemoveAt(counter);
-
         }
         #endregion
     }

@@ -783,7 +783,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(54, 0);
+            this.label18.Location = new System.Drawing.Point(53, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(19, 13);
             this.label18.TabIndex = 0;
@@ -793,7 +793,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(163, 0);
+            this.label19.Location = new System.Drawing.Point(162, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 1;
@@ -823,14 +823,14 @@
             // 
             // txtIpServer
             // 
-            this.txtIpServer.Location = new System.Drawing.Point(54, 22);
+            this.txtIpServer.Location = new System.Drawing.Point(53, 22);
             this.txtIpServer.Name = "txtIpServer";
             this.txtIpServer.Size = new System.Drawing.Size(94, 20);
             this.txtIpServer.TabIndex = 5;
             // 
             // txtPortServer
             // 
-            this.txtPortServer.Location = new System.Drawing.Point(163, 22);
+            this.txtPortServer.Location = new System.Drawing.Point(162, 22);
             this.txtPortServer.Name = "txtPortServer";
             this.txtPortServer.Size = new System.Drawing.Size(65, 20);
             this.txtPortServer.TabIndex = 8;
@@ -894,7 +894,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
@@ -921,7 +921,7 @@
             this.pnlSetting.Controls.Add(this.btnHideSetting);
             this.pnlSetting.Location = new System.Drawing.Point(54, 38);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(772, 321);
+            this.pnlSetting.Size = new System.Drawing.Size(109, 81);
             this.pnlSetting.TabIndex = 69;
             // 
             // pictureBox2
@@ -997,7 +997,7 @@
             this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Controls.Add(this.lblNumberMatch);
             this.pnlMain.Controls.Add(this.lblTitle);
-            this.pnlMain.Location = new System.Drawing.Point(17, 27);
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1000, 500);
             this.pnlMain.TabIndex = 1;
@@ -1369,10 +1369,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnReset;
-            this.ClientSize = new System.Drawing.Size(1035, 555);
+            this.ClientSize = new System.Drawing.Size(1000, 500);
             this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Máy trọng tài phụ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);

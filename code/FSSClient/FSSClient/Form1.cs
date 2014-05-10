@@ -24,8 +24,8 @@ namespace FSSClient
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pnlMain.Left = (this.Width - pnlMain.Width) / 2;
-            pnlMain.Top = (this.Height - pnlMain.Height) / 2;
+            //pnlMain.Left = (this.Width - pnlMain.Width) / 2;
+            //pnlMain.Top = (this.Height - pnlMain.Height) / 2;
             pnlSetting.Left = 0;
             pnlSetting.Top = 0;
             pnlSetting.Width = pnlMain.Width;
@@ -34,10 +34,18 @@ namespace FSSClient
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            pnlMain.Left = (this.Width - pnlMain.Width) / 2;
-            pnlMain.Top = (this.Height - pnlMain.Height) / 2;
-            pnlSetting.Left = 0;
-            pnlSetting.Top = 0;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                //this.FormBorderStyle = FormBorderStyle.None;
+                this.Left = 0;
+                this.Top = 0;
+                this.Bounds = Screen.PrimaryScreen.Bounds;
+                this.TopMost = true;
+            }
+            pnlMain.Left = (this.ClientSize.Width - pnlMain.Width) / 2;
+            pnlMain.Top = (this.ClientSize.Height - pnlMain.Height) / 2;
+            //pnlSetting.Left = 0;
+            //pnlSetting.Top = 0;
         }
 
         private void tmrClient_Tick(object sender, EventArgs e)
@@ -449,7 +457,6 @@ namespace FSSClient
             if (dialogResult == DialogResult.Yes)
             {
                 pnlSetting.Visible = true;
-
                 //Kết thúc chấm điểm. Đã chấm.
                 Variable.ENDMATH = 0;
             }

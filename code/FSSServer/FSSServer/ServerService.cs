@@ -66,19 +66,24 @@ namespace Server
 
             if (text.IndexOf("ClientInfo") > 0)
             {
-                ClientInfo clientInfo = new ClientInfo(text);
-                if (clientInfo.Computer == 1)
+                try
                 {
-                    Variable.RECEIVETEXT1 = text;
+                    ClientInfo clientInfo = new ClientInfo(text);
+                    if (clientInfo.Computer == 1)
+                    {
+                        Variable.RECEIVETEXT1 = text;
+                    }
+                    if (clientInfo.Computer == 2)
+                    {
+                        Variable.RECEIVETEXT2 = text;
+                    }
+                    if (clientInfo.Computer == 3)
+                    {
+                        Variable.RECEIVETEXT3 = text;
+                    }
                 }
-                if (clientInfo.Computer == 2)
-                {
-                    Variable.RECEIVETEXT2 = text;
-                }
-                if (clientInfo.Computer == 3)
-                {
-                    Variable.RECEIVETEXT3 = text;
-                }
+                catch (Exception){}
+               
             }
             else if (text.IndexOf("ClockInfo") > 0)
             {
