@@ -18,14 +18,22 @@ namespace Client
 
         public ServerInfo(string json)
         {
-            JObject jObject = JObject.Parse(json);
-            JToken jClientInfo = jObject["ServerInfo"];
-            Math = (string)jClientInfo["Math"];
-            Weight = (string)jClientInfo["Weight"];
-            Sex = (string)jClientInfo["Sex"];
-            Time = (string)jClientInfo["Time"];
-            Sec = (int)jClientInfo["Sec"];
-            State = (string)jClientInfo["State"];
+            try
+            {
+                JObject jObject = JObject.Parse(json);
+                JToken jClientInfo = jObject["ServerInfo"];
+                Math = (string)jClientInfo["Math"];
+                Weight = (string)jClientInfo["Weight"];
+                Sex = (string)jClientInfo["Sex"];
+                Time = (string)jClientInfo["Time"];
+                Sec = (int)jClientInfo["Sec"];
+                State = (string)jClientInfo["State"];
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
 
         public string getClientJson(ServerInfo serverInfo)

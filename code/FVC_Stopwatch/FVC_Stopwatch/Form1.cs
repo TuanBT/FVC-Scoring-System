@@ -34,20 +34,8 @@ namespace FVC_Stopwatch
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            IPGlobalProperties network = IPGlobalProperties.GetIPGlobalProperties();
-            IPEndPoint[] connections = network.GetActiveTcpListeners();
-            if (connections.Length > 0)
-            {
-                foreach (var connection in connections)
-                {
-                    if (connection.Port == Variable.PORT)
-                    {
-                        Variable.IP = connection.Address.ToString();
-                    }
-                }
-                txtIP.Text = Variable.IP;
-                txtPort.Text = Variable.PORT.ToString();
-            }
+            txtIP.Text = Variable.IP;
+            txtPort.Text = Variable.PORT.ToString();
             setObject();
             setDeafaultTime();
             setFormTime();
@@ -1050,16 +1038,16 @@ namespace FVC_Stopwatch
         private void btnConnect_Click(object sender, EventArgs e)
         {
             Variable.IP = txtIP.Text;
-            Variable.PORT =Convert.ToInt32(txtPort.Text);
-             if (tcpClients.Connection())
-             {
-                 tmrClock.Enabled = true;
-                 MessageBox.Show("Kết nối thành công tới máy trọng tài chính!");
-             }
-             else
-             {
-                 MessageBox.Show("Kết nối tới máy trọng tài chính thất bại!");
-             }
+            Variable.PORT = Convert.ToInt32(txtPort.Text);
+            if (tcpClients.Connection())
+            {
+                tmrClock.Enabled = true;
+                MessageBox.Show("Kết nối thành công tới máy trọng tài chính!");
+            }
+            else
+            {
+                MessageBox.Show("Kết nối tới máy trọng tài chính thất bại!");
+            }
         }
 
         #endregion
@@ -1114,6 +1102,25 @@ namespace FVC_Stopwatch
                 {
                     pibMenuSubClick();
                 }
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                if(type=="H1")
+                    pibH2Click();
+                else if(type=="GL")
+                    pibH1Click();
+                else if(type=="H2")
+                    pibGLClick();
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                if (type == "H1")
+                    pibGLClick();
+                else if (type == "GL")
+                    pibH2Click();
+                else if (type == "H2")
+                    pibH1Click();
+                    
             }
         }
         #endregion

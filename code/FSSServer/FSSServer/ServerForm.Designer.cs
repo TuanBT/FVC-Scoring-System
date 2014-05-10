@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServerForm));
             this.pnlSetting = new System.Windows.Forms.Panel();
             this.btnSettingOk = new System.Windows.Forms.Button();
             this.picHideSetting = new System.Windows.Forms.PictureBox();
@@ -124,6 +125,8 @@
             this.lblClassBlue = new System.Windows.Forms.Label();
             this.lblNameRed = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.lblTotalWinBlue = new System.Windows.Forms.Label();
+            this.lblTotalWinRed = new System.Windows.Forms.Label();
             this.picSetting = new System.Windows.Forms.PictureBox();
             this.lblNameBlue = new System.Windows.Forms.Label();
             this.lblIdBlue = new System.Windows.Forms.Label();
@@ -166,7 +169,7 @@
             this.pnlSetting.Controls.Add(this.tableLayoutPanel1);
             this.pnlSetting.Location = new System.Drawing.Point(6, 18);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(103, 81);
+            this.pnlSetting.Size = new System.Drawing.Size(705, 335);
             this.pnlSetting.TabIndex = 71;
             // 
             // btnSettingOk
@@ -1315,6 +1318,8 @@
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.Controls.Add(this.pnlSetting);
+            this.pnlMain.Controls.Add(this.lblTotalWinBlue);
+            this.pnlMain.Controls.Add(this.lblTotalWinRed);
             this.pnlMain.Controls.Add(this.picSetting);
             this.pnlMain.Controls.Add(this.lblSec);
             this.pnlMain.Controls.Add(this.lblClock);
@@ -1386,6 +1391,30 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1000, 500);
             this.pnlMain.TabIndex = 2;
+            // 
+            // lblTotalWinBlue
+            // 
+            this.lblTotalWinBlue.BackColor = System.Drawing.Color.Blue;
+            this.lblTotalWinBlue.Font = new System.Drawing.Font("Times New Roman", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalWinBlue.ForeColor = System.Drawing.Color.White;
+            this.lblTotalWinBlue.Location = new System.Drawing.Point(707, 380);
+            this.lblTotalWinBlue.Name = "lblTotalWinBlue";
+            this.lblTotalWinBlue.Size = new System.Drawing.Size(80, 37);
+            this.lblTotalWinBlue.TabIndex = 94;
+            this.lblTotalWinBlue.Text = "0";
+            this.lblTotalWinBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalWinRed
+            // 
+            this.lblTotalWinRed.BackColor = System.Drawing.Color.Red;
+            this.lblTotalWinRed.Font = new System.Drawing.Font("Times New Roman", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalWinRed.ForeColor = System.Drawing.Color.White;
+            this.lblTotalWinRed.Location = new System.Drawing.Point(216, 379);
+            this.lblTotalWinRed.Name = "lblTotalWinRed";
+            this.lblTotalWinRed.Size = new System.Drawing.Size(80, 37);
+            this.lblTotalWinRed.TabIndex = 93;
+            this.lblTotalWinRed.Text = "0";
+            this.lblTotalWinRed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picSetting
             // 
@@ -1576,8 +1605,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1030, 530);
             this.Controls.Add(this.pnlMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ServerForm";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -1715,6 +1746,8 @@
         private System.Windows.Forms.Label lblNumberMatch;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblTotalWinBlue;
+        private System.Windows.Forms.Label lblTotalWinRed;
     }
 }
 

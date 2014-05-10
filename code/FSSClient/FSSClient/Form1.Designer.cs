@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblMinusSec2Blue = new System.Windows.Forms.Label();
             this.lblTotalSec1Blue = new System.Windows.Forms.Label();
             this.lblTotalSec2Blue = new System.Windows.Forms.Label();
@@ -294,6 +295,7 @@
             this.btnWinRed.Name = "btnWinRed";
             this.btnWinRed.Size = new System.Drawing.Size(100, 100);
             this.btnWinRed.TabIndex = 3;
+            this.btnWinRed.TabStop = false;
             this.btnWinRed.Text = "Đỏ thắng";
             this.btnWinRed.UseVisualStyleBackColor = false;
             this.btnWinRed.Click += new System.EventHandler(this.btnWinRed_Click);
@@ -330,6 +332,7 @@
             this.btnWinBlue.Name = "btnWinBlue";
             this.btnWinBlue.Size = new System.Drawing.Size(100, 100);
             this.btnWinBlue.TabIndex = 4;
+            this.btnWinBlue.TabStop = false;
             this.btnWinBlue.Text = "Xanh thắng";
             this.btnWinBlue.UseVisualStyleBackColor = false;
             this.btnWinBlue.Click += new System.EventHandler(this.btnWinBlue_Click);
@@ -383,6 +386,7 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(59, 28);
             this.btnReset.TabIndex = 1;
+            this.btnReset.TabStop = false;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -397,6 +401,7 @@
             this.btnSentResult.Name = "btnSentResult";
             this.btnSentResult.Size = new System.Drawing.Size(127, 72);
             this.btnSentResult.TabIndex = 0;
+            this.btnSentResult.TabStop = false;
             this.btnSentResult.Text = "Gửi kết quả";
             this.btnSentResult.UseVisualStyleBackColor = false;
             this.btnSentResult.Click += new System.EventHandler(this.btnSentResult_Click);
@@ -753,11 +758,10 @@
             // txtRefereeName
             // 
             this.txtRefereeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRefereeName.Location = new System.Drawing.Point(607, 317);
+            this.txtRefereeName.Location = new System.Drawing.Point(400, 317);
             this.txtRefereeName.Name = "txtRefereeName";
-            this.txtRefereeName.Size = new System.Drawing.Size(100, 30);
+            this.txtRefereeName.Size = new System.Drawing.Size(198, 30);
             this.txtRefereeName.TabIndex = 1;
-            this.txtRefereeName.Text = "TuanBT";
             // 
             // btnHideSetting
             // 
@@ -770,6 +774,7 @@
             this.btnHideSetting.Name = "btnHideSetting";
             this.btnHideSetting.Size = new System.Drawing.Size(200, 100);
             this.btnHideSetting.TabIndex = 1;
+            this.btnHideSetting.TabStop = false;
             this.btnHideSetting.Text = "Chấm điểm";
             this.btnHideSetting.UseVisualStyleBackColor = false;
             this.btnHideSetting.Click += new System.EventHandler(this.btnHideSetting_Click);
@@ -778,7 +783,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(56, 0);
+            this.label18.Location = new System.Drawing.Point(54, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(19, 13);
             this.label18.TabIndex = 0;
@@ -788,7 +793,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(169, 0);
+            this.label19.Location = new System.Drawing.Point(163, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 1;
@@ -814,17 +819,18 @@
             this.nmrComputer.Name = "nmrComputer";
             this.nmrComputer.Size = new System.Drawing.Size(32, 20);
             this.nmrComputer.TabIndex = 7;
+            this.nmrComputer.ValueChanged += new System.EventHandler(this.nmrComputer_ValueChanged);
             // 
             // txtIpServer
             // 
-            this.txtIpServer.Location = new System.Drawing.Point(56, 22);
+            this.txtIpServer.Location = new System.Drawing.Point(54, 22);
             this.txtIpServer.Name = "txtIpServer";
             this.txtIpServer.Size = new System.Drawing.Size(94, 20);
             this.txtIpServer.TabIndex = 5;
             // 
             // txtPortServer
             // 
-            this.txtPortServer.Location = new System.Drawing.Point(169, 22);
+            this.txtPortServer.Location = new System.Drawing.Point(163, 22);
             this.txtPortServer.Name = "txtPortServer";
             this.txtPortServer.Size = new System.Drawing.Size(65, 20);
             this.txtPortServer.TabIndex = 8;
@@ -845,6 +851,7 @@
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 11;
+            this.btnConnect.TabStop = false;
             this.btnConnect.Text = "Kết nối";
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
@@ -853,10 +860,11 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(400, 317);
+            this.comboBox1.Location = new System.Drawing.Point(101, 314);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(201, 33);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.Visible = false;
             // 
             // label21
             // 
@@ -886,7 +894,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
             this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
@@ -913,7 +921,7 @@
             this.pnlSetting.Controls.Add(this.btnHideSetting);
             this.pnlSetting.Location = new System.Drawing.Point(54, 38);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(110, 81);
+            this.pnlSetting.Size = new System.Drawing.Size(772, 321);
             this.pnlSetting.TabIndex = 69;
             // 
             // pictureBox2
@@ -1062,6 +1070,7 @@
             this.btnDecMinusSec2Blue.Name = "btnDecMinusSec2Blue";
             this.btnDecMinusSec2Blue.Size = new System.Drawing.Size(20, 20);
             this.btnDecMinusSec2Blue.TabIndex = 55;
+            this.btnDecMinusSec2Blue.TabStop = false;
             this.btnDecMinusSec2Blue.Text = "˅";
             this.btnDecMinusSec2Blue.UseVisualStyleBackColor = false;
             this.btnDecMinusSec2Blue.Click += new System.EventHandler(this.btnDecMinusSec2Blue_Click);
@@ -1077,6 +1086,7 @@
             this.btnIncMinusSec2Blue.Name = "btnIncMinusSec2Blue";
             this.btnIncMinusSec2Blue.Size = new System.Drawing.Size(20, 20);
             this.btnIncMinusSec2Blue.TabIndex = 54;
+            this.btnIncMinusSec2Blue.TabStop = false;
             this.btnIncMinusSec2Blue.Text = "˄";
             this.btnIncMinusSec2Blue.UseVisualStyleBackColor = false;
             this.btnIncMinusSec2Blue.Click += new System.EventHandler(this.btnIncMinusSec2Blue_Click);
@@ -1092,6 +1102,7 @@
             this.btnDecMinusSec1Blue.Name = "btnDecMinusSec1Blue";
             this.btnDecMinusSec1Blue.Size = new System.Drawing.Size(20, 20);
             this.btnDecMinusSec1Blue.TabIndex = 53;
+            this.btnDecMinusSec1Blue.TabStop = false;
             this.btnDecMinusSec1Blue.Text = "˅";
             this.btnDecMinusSec1Blue.UseVisualStyleBackColor = false;
             this.btnDecMinusSec1Blue.Click += new System.EventHandler(this.btnDecMinusSec1Blue_Click);
@@ -1107,6 +1118,7 @@
             this.btnIncMinusSec1Blue.Name = "btnIncMinusSec1Blue";
             this.btnIncMinusSec1Blue.Size = new System.Drawing.Size(20, 20);
             this.btnIncMinusSec1Blue.TabIndex = 52;
+            this.btnIncMinusSec1Blue.TabStop = false;
             this.btnIncMinusSec1Blue.Text = "˄";
             this.btnIncMinusSec1Blue.UseVisualStyleBackColor = false;
             this.btnIncMinusSec1Blue.Click += new System.EventHandler(this.btnIncMinusSec1Blue_Click);
@@ -1120,8 +1132,9 @@
             this.btnDecSec2Blue.ForeColor = System.Drawing.Color.White;
             this.btnDecSec2Blue.Location = new System.Drawing.Point(632, 339);
             this.btnDecSec2Blue.Name = "btnDecSec2Blue";
-            this.btnDecSec2Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnDecSec2Blue.Size = new System.Drawing.Size(35, 30);
             this.btnDecSec2Blue.TabIndex = 51;
+            this.btnDecSec2Blue.TabStop = false;
             this.btnDecSec2Blue.Text = "˅";
             this.btnDecSec2Blue.UseVisualStyleBackColor = false;
             this.btnDecSec2Blue.Click += new System.EventHandler(this.btnDecSec2Blue_Click);
@@ -1133,10 +1146,11 @@
             this.btnIncSec2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncSec2Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIncSec2Blue.ForeColor = System.Drawing.Color.White;
-            this.btnIncSec2Blue.Location = new System.Drawing.Point(632, 320);
+            this.btnIncSec2Blue.Location = new System.Drawing.Point(632, 310);
             this.btnIncSec2Blue.Name = "btnIncSec2Blue";
-            this.btnIncSec2Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnIncSec2Blue.Size = new System.Drawing.Size(35, 30);
             this.btnIncSec2Blue.TabIndex = 50;
+            this.btnIncSec2Blue.TabStop = false;
             this.btnIncSec2Blue.Text = "˄";
             this.btnIncSec2Blue.UseVisualStyleBackColor = false;
             this.btnIncSec2Blue.Click += new System.EventHandler(this.btnIncSec2Blue_Click);
@@ -1150,8 +1164,9 @@
             this.btnDecSec1Blue.ForeColor = System.Drawing.Color.White;
             this.btnDecSec1Blue.Location = new System.Drawing.Point(632, 262);
             this.btnDecSec1Blue.Name = "btnDecSec1Blue";
-            this.btnDecSec1Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnDecSec1Blue.Size = new System.Drawing.Size(35, 30);
             this.btnDecSec1Blue.TabIndex = 49;
+            this.btnDecSec1Blue.TabStop = false;
             this.btnDecSec1Blue.Text = "˅";
             this.btnDecSec1Blue.UseVisualStyleBackColor = false;
             this.btnDecSec1Blue.Click += new System.EventHandler(this.btnDecSec1Blue_Click);
@@ -1163,10 +1178,11 @@
             this.btnIncSec1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncSec1Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIncSec1Blue.ForeColor = System.Drawing.Color.White;
-            this.btnIncSec1Blue.Location = new System.Drawing.Point(632, 243);
+            this.btnIncSec1Blue.Location = new System.Drawing.Point(632, 233);
             this.btnIncSec1Blue.Name = "btnIncSec1Blue";
-            this.btnIncSec1Blue.Size = new System.Drawing.Size(20, 20);
+            this.btnIncSec1Blue.Size = new System.Drawing.Size(35, 30);
             this.btnIncSec1Blue.TabIndex = 48;
+            this.btnIncSec1Blue.TabStop = false;
             this.btnIncSec1Blue.Text = "˄";
             this.btnIncSec1Blue.UseVisualStyleBackColor = false;
             this.btnIncSec1Blue.Click += new System.EventHandler(this.btnIncSec1Blue_Click);
@@ -1182,6 +1198,7 @@
             this.btnDecMinusSec2Red.Name = "btnDecMinusSec2Red";
             this.btnDecMinusSec2Red.Size = new System.Drawing.Size(20, 20);
             this.btnDecMinusSec2Red.TabIndex = 47;
+            this.btnDecMinusSec2Red.TabStop = false;
             this.btnDecMinusSec2Red.Text = "˅";
             this.btnDecMinusSec2Red.UseVisualStyleBackColor = false;
             this.btnDecMinusSec2Red.Click += new System.EventHandler(this.btnDecMinusSec2Red_Click);
@@ -1197,6 +1214,7 @@
             this.btnIncMinusSec2Red.Name = "btnIncMinusSec2Red";
             this.btnIncMinusSec2Red.Size = new System.Drawing.Size(20, 20);
             this.btnIncMinusSec2Red.TabIndex = 46;
+            this.btnIncMinusSec2Red.TabStop = false;
             this.btnIncMinusSec2Red.Text = "˄";
             this.btnIncMinusSec2Red.UseVisualStyleBackColor = false;
             this.btnIncMinusSec2Red.Click += new System.EventHandler(this.btnIncMinusSec2Red_Click);
@@ -1212,6 +1230,7 @@
             this.btnDecMinusSec1Red.Name = "btnDecMinusSec1Red";
             this.btnDecMinusSec1Red.Size = new System.Drawing.Size(20, 20);
             this.btnDecMinusSec1Red.TabIndex = 45;
+            this.btnDecMinusSec1Red.TabStop = false;
             this.btnDecMinusSec1Red.Text = "˅";
             this.btnDecMinusSec1Red.UseVisualStyleBackColor = false;
             this.btnDecMinusSec1Red.Click += new System.EventHandler(this.btnDecMinusSec1Red_Click);
@@ -1227,6 +1246,7 @@
             this.btnIncMinusSec1Red.Name = "btnIncMinusSec1Red";
             this.btnIncMinusSec1Red.Size = new System.Drawing.Size(20, 20);
             this.btnIncMinusSec1Red.TabIndex = 44;
+            this.btnIncMinusSec1Red.TabStop = false;
             this.btnIncMinusSec1Red.Text = "˄";
             this.btnIncMinusSec1Red.UseVisualStyleBackColor = false;
             this.btnIncMinusSec1Red.Click += new System.EventHandler(this.btnIncMinusSec1Red_Click);
@@ -1238,10 +1258,11 @@
             this.btnDecSec2Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDecSec2Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecSec2Red.ForeColor = System.Drawing.Color.White;
-            this.btnDecSec2Red.Location = new System.Drawing.Point(350, 339);
+            this.btnDecSec2Red.Location = new System.Drawing.Point(335, 339);
             this.btnDecSec2Red.Name = "btnDecSec2Red";
-            this.btnDecSec2Red.Size = new System.Drawing.Size(20, 20);
+            this.btnDecSec2Red.Size = new System.Drawing.Size(35, 30);
             this.btnDecSec2Red.TabIndex = 43;
+            this.btnDecSec2Red.TabStop = false;
             this.btnDecSec2Red.Text = "˅";
             this.btnDecSec2Red.UseVisualStyleBackColor = false;
             this.btnDecSec2Red.Click += new System.EventHandler(this.btnDecSec2Red_Click);
@@ -1253,10 +1274,11 @@
             this.btnIncSec2Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncSec2Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIncSec2Red.ForeColor = System.Drawing.Color.White;
-            this.btnIncSec2Red.Location = new System.Drawing.Point(350, 320);
+            this.btnIncSec2Red.Location = new System.Drawing.Point(335, 310);
             this.btnIncSec2Red.Name = "btnIncSec2Red";
-            this.btnIncSec2Red.Size = new System.Drawing.Size(20, 20);
+            this.btnIncSec2Red.Size = new System.Drawing.Size(35, 30);
             this.btnIncSec2Red.TabIndex = 42;
+            this.btnIncSec2Red.TabStop = false;
             this.btnIncSec2Red.Text = "˄";
             this.btnIncSec2Red.UseVisualStyleBackColor = false;
             this.btnIncSec2Red.Click += new System.EventHandler(this.btnIncSec2Red_Click);
@@ -1268,10 +1290,11 @@
             this.btnDecSec1Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDecSec1Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecSec1Red.ForeColor = System.Drawing.Color.White;
-            this.btnDecSec1Red.Location = new System.Drawing.Point(350, 262);
+            this.btnDecSec1Red.Location = new System.Drawing.Point(335, 262);
             this.btnDecSec1Red.Name = "btnDecSec1Red";
-            this.btnDecSec1Red.Size = new System.Drawing.Size(20, 20);
+            this.btnDecSec1Red.Size = new System.Drawing.Size(35, 30);
             this.btnDecSec1Red.TabIndex = 41;
+            this.btnDecSec1Red.TabStop = false;
             this.btnDecSec1Red.Text = "˅";
             this.btnDecSec1Red.UseVisualStyleBackColor = false;
             this.btnDecSec1Red.Click += new System.EventHandler(this.btnDecSec1Red_Click);
@@ -1283,10 +1306,11 @@
             this.btnIncSec1Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncSec1Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIncSec1Red.ForeColor = System.Drawing.Color.White;
-            this.btnIncSec1Red.Location = new System.Drawing.Point(350, 243);
+            this.btnIncSec1Red.Location = new System.Drawing.Point(335, 233);
             this.btnIncSec1Red.Name = "btnIncSec1Red";
-            this.btnIncSec1Red.Size = new System.Drawing.Size(20, 20);
+            this.btnIncSec1Red.Size = new System.Drawing.Size(35, 30);
             this.btnIncSec1Red.TabIndex = 36;
+            this.btnIncSec1Red.TabStop = false;
             this.btnIncSec1Red.Text = "˄";
             this.btnIncSec1Red.UseVisualStyleBackColor = false;
             this.btnIncSec1Red.Click += new System.EventHandler(this.btnIncSec1Red_Click);
@@ -1344,11 +1368,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.CancelButton = this.btnReset;
             this.ClientSize = new System.Drawing.Size(1035, 555);
             this.Controls.Add(this.pnlMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Máy trọng tài phụ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

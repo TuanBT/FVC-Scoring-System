@@ -32,26 +32,34 @@ namespace Server
 
         public ClientInfo(string json)
         {
-            JObject jObject = JObject.Parse(json);
-            JToken jClientInfo = jObject["ClientInfo"];
-            Computer = (int)jClientInfo["Computer"];
-            Math = (int)jClientInfo["Math"];
-            Weight = (string)jClientInfo["Weight"];
-            Sex = (string)jClientInfo["Sex"];
-            ScoreRedSec1 = (int)jClientInfo["ScoreRedSec1"];
-            ScoreRedSec2 = (int)jClientInfo["ScoreRedSec2"];
-            MinusRedSec1 = (int)jClientInfo["MinusRedSec1"];
-            MinusRedSec2 = (int)jClientInfo["MinusRedSec2"];
-            ScoreBlueSec1 = (int)jClientInfo["ScoreBlueSec1"];
-            ScoreBlueSec2 = (int)jClientInfo["ScoreBlueSec2"];
-            MinusBlueSec1 = (int)jClientInfo["MinusBlueSec1"];
-            MinusBlueSec2 = (int)jClientInfo["MinusBlueSec2"];
-            ScoreRed = (int)jClientInfo["ScoreRed"];
-            ScoreBlue = (int)jClientInfo["ScoreBlue"];
-            Win = (string)jClientInfo["Win"];
-            WinForm = (string)jClientInfo["WinForm"];
-            Referee = (string)jClientInfo["Referee"];
-            EndMath = (int)jClientInfo["EndMath"];
+            try
+            {
+                JObject jObject = JObject.Parse(json);
+                JToken jClientInfo = jObject["ClientInfo"];
+                Computer = (int)jClientInfo["Computer"];
+                Math = (int)jClientInfo["Math"];
+                Weight = (string)jClientInfo["Weight"];
+                Sex = (string)jClientInfo["Sex"];
+                ScoreRedSec1 = (int)jClientInfo["ScoreRedSec1"];
+                ScoreRedSec2 = (int)jClientInfo["ScoreRedSec2"];
+                MinusRedSec1 = (int)jClientInfo["MinusRedSec1"];
+                MinusRedSec2 = (int)jClientInfo["MinusRedSec2"];
+                ScoreBlueSec1 = (int)jClientInfo["ScoreBlueSec1"];
+                ScoreBlueSec2 = (int)jClientInfo["ScoreBlueSec2"];
+                MinusBlueSec1 = (int)jClientInfo["MinusBlueSec1"];
+                MinusBlueSec2 = (int)jClientInfo["MinusBlueSec2"];
+                ScoreRed = (int)jClientInfo["ScoreRed"];
+                ScoreBlue = (int)jClientInfo["ScoreBlue"];
+                Win = (string)jClientInfo["Win"];
+                WinForm = (string)jClientInfo["WinForm"];
+                Referee = (string)jClientInfo["Referee"];
+                EndMath = (int)jClientInfo["EndMath"];
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
 
         public string getClientJson(ClientInfo clientInfo)

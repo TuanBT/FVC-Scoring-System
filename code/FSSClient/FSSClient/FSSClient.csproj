@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Second.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\Resource\LibararyJson\Net35\Newtonsoft.Json.dll</HintPath>
@@ -92,6 +95,7 @@
     <Content Include="Resources\CircledArrowLeft.png" />
     <Content Include="Resources\Second.ico" />
     <Content Include="Resources\Second.png" />
+    <Content Include="Second.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

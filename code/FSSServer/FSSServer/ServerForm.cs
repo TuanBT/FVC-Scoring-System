@@ -72,7 +72,15 @@ namespace FSSServer
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            tcpServers.StopServer();
+            DialogResult dialogResult = MessageBox.Show("Bạn có thực sự muốn tắt phần mềm?", "Tắt phần mềm!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                tcpServers.StopServer();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void tmrServer_Tick(object sender, EventArgs e)
@@ -82,7 +90,7 @@ namespace FSSServer
             if (Variable.SEC == -1)
                 btnSent.Visible = true;
             else
-            btnSent.Visible = false;
+                btnSent.Visible = false;
 
             try
             {
@@ -136,44 +144,49 @@ namespace FSSServer
             {
                 if (Variable.RECEIVETEXT1 != null)
                 {
-                    ClientInfo clientInfo1 = new ClientInfo(Variable.RECEIVETEXT1);
-                    //Kiểm tra việc có đang chấm hay không?
-                    if (clientInfo1.EndMath == 1)
+                    
+                    try
                     {
-                        //Đang chấm
-                        ChangeSatusMath(lblStatusScoreM1, true);
-
-                        lblStatusScoreM1.Visible = true;
-                        lblRefereeM1.Text = clientInfo1.Referee;
-                        lblScoreRedM1.Text = clientInfo1.ScoreRed.ToString();
-                        lblScoreBlueM1.Text = clientInfo1.ScoreBlue.ToString();
-                        lblWinFormM1.Text = clientInfo1.WinForm;
-                        ChangeStatus(lblStatusM1, true);
-
-                        //Kiểm tra thắng
-                        if (clientInfo1.Win == "RED")
+                        ClientInfo clientInfo1 = new ClientInfo(Variable.RECEIVETEXT1);
+                        //Kiểm tra việc có đang chấm hay không?
+                        if (clientInfo1.EndMath == 1)
                         {
-                            lblPlusRedM1.Visible = true;
-                            lblPlusBlueM1.Visible = false;
-                        }
-                        if (clientInfo1.Win == "BLUE")
-                        {
-                            lblPlusRedM1.Visible = false;
-                            lblPlusBlueM1.Visible = true;
-                        }
-                        //Variable.RECEIVETEXT1 = null;
-                    }
-                    //clientInfo1.EndMath == 0
-                    else
-                    {
-                        //Đã chấm xong
-                        ChangeSatusMath(lblStatusScoreM1, false);
+                            //Đang chấm
+                            ChangeSatusMath(lblStatusScoreM1, true);
 
-                        // btnIncRedM1.Visible = true;
-                        //btnDecRedM1.Visible = true;
-                        // btnIncBlueM1.Visible = true;
-                        // btnDecBlueM1.Visible = true;
+                            lblStatusScoreM1.Visible = true;
+                            lblRefereeM1.Text = clientInfo1.Referee;
+                            lblScoreRedM1.Text = clientInfo1.ScoreRed.ToString();
+                            lblScoreBlueM1.Text = clientInfo1.ScoreBlue.ToString();
+                            lblWinFormM1.Text = clientInfo1.WinForm;
+                            ChangeStatus(lblStatusM1, true);
+
+                            //Kiểm tra thắng
+                            if (clientInfo1.Win == "RED")
+                            {
+                                lblPlusRedM1.Visible = true;
+                                lblPlusBlueM1.Visible = false;
+                            }
+                            if (clientInfo1.Win == "BLUE")
+                            {
+                                lblPlusRedM1.Visible = false;
+                                lblPlusBlueM1.Visible = true;
+                            }
+                            //Variable.RECEIVETEXT1 = null;
+                        }
+                        //clientInfo1.EndMath == 0
+                        else
+                        {
+                            //Đã chấm xong
+                            ChangeSatusMath(lblStatusScoreM1, false);
+
+                            // btnIncRedM1.Visible = true;
+                            //btnDecRedM1.Visible = true;
+                            // btnIncBlueM1.Visible = true;
+                            // btnDecBlueM1.Visible = true;
+                        }
                     }
+                    catch (Exception){}
                 }
                 //Không nhận được dữ liệu nữa
                 else
@@ -190,39 +203,44 @@ namespace FSSServer
                 //Máy 2
                 if (Variable.RECEIVETEXT2 != null)
                 {
-                    ClientInfo clientInfo2 = new ClientInfo(Variable.RECEIVETEXT2);
-                    if (clientInfo2.EndMath == 1)
+                    try
                     {
-                        ChangeSatusMath(lblStatusScoreM2, true);
-
-                        lblStatusScoreM2.Visible = true;
-                        lblRefereeM2.Text = clientInfo2.Referee;
-                        lblScoreRedM2.Text = clientInfo2.ScoreRed.ToString();
-                        lblScoreBlueM2.Text = clientInfo2.ScoreBlue.ToString();
-                        lblWinFormM2.Text = clientInfo2.WinForm;
-                        ChangeStatus(lblStatusM2, true);
-
-                        if (clientInfo2.Win == "RED")
+                        ClientInfo clientInfo2 = new ClientInfo(Variable.RECEIVETEXT2);
+                        if (clientInfo2.EndMath == 1)
                         {
-                            lblPlusRedM2.Visible = true;
-                            lblPlusBlueM2.Visible = false;
-                        }
-                        if (clientInfo2.Win == "BLUE")
-                        {
-                            lblPlusRedM2.Visible = false;
-                            lblPlusBlueM2.Visible = true;
-                        }
-                        //Variable.RECEIVETEXT2 = null;
-                    }
-                    else
-                    {
-                        ChangeSatusMath(lblStatusScoreM2, false);
+                            ChangeSatusMath(lblStatusScoreM2, true);
 
-                        // btnIncRedM2.Visible = true;
-                        //  btnDecRedM2.Visible = true;
-                        //  btnIncBlueM2.Visible = true;
-                        // btnDecBlueM2.Visible = true;
+                            lblStatusScoreM2.Visible = true;
+                            lblRefereeM2.Text = clientInfo2.Referee;
+                            lblScoreRedM2.Text = clientInfo2.ScoreRed.ToString();
+                            lblScoreBlueM2.Text = clientInfo2.ScoreBlue.ToString();
+                            lblWinFormM2.Text = clientInfo2.WinForm;
+                            ChangeStatus(lblStatusM2, true);
+
+                            if (clientInfo2.Win == "RED")
+                            {
+                                lblPlusRedM2.Visible = true;
+                                lblPlusBlueM2.Visible = false;
+                            }
+                            if (clientInfo2.Win == "BLUE")
+                            {
+                                lblPlusRedM2.Visible = false;
+                                lblPlusBlueM2.Visible = true;
+                            }
+                            //Variable.RECEIVETEXT2 = null;
+                        }
+                        else
+                        {
+                            ChangeSatusMath(lblStatusScoreM2, false);
+
+                            // btnIncRedM2.Visible = true;
+                            //  btnDecRedM2.Visible = true;
+                            //  btnIncBlueM2.Visible = true;
+                            // btnDecBlueM2.Visible = true;
+                        }
                     }
+                    catch (Exception){}
+                    
                 }
                 else
                 {
@@ -238,38 +256,42 @@ namespace FSSServer
                 //Máy 3
                 if (Variable.RECEIVETEXT3 != null)
                 {
-                    ClientInfo clientInfo3 = new ClientInfo(Variable.RECEIVETEXT3);
-                    if (clientInfo3.EndMath == 1)
+                    try
                     {
-                        ChangeSatusMath(lblStatusScoreM3, true);
-                        lblStatusScoreM3.Visible = true;
-                        lblRefereeM3.Text = clientInfo3.Referee;
-                        lblScoreRedM3.Text = clientInfo3.ScoreRed.ToString();
-                        lblScoreBlueM3.Text = clientInfo3.ScoreBlue.ToString();
-                        lblWinFormM3.Text = clientInfo3.WinForm;
-                        ChangeStatus(lblStatusM3, true);
-
-                        if (clientInfo3.Win == "RED")
+                        ClientInfo clientInfo3 = new ClientInfo(Variable.RECEIVETEXT3);
+                        if (clientInfo3.EndMath == 1)
                         {
-                            lblPlusRedM3.Visible = true;
-                            lblPlusBlueM3.Visible = false;
-                        }
-                        if (clientInfo3.Win == "BLUE")
-                        {
-                            lblPlusRedM3.Visible = false;
-                            lblPlusBlueM3.Visible = true;
-                        }
-                        //Variable.RECEIVETEXT3 = null;
-                    }
-                    else
-                    {
-                        ChangeSatusMath(lblStatusScoreM3, false);
+                            ChangeSatusMath(lblStatusScoreM3, true);
+                            lblStatusScoreM3.Visible = true;
+                            lblRefereeM3.Text = clientInfo3.Referee;
+                            lblScoreRedM3.Text = clientInfo3.ScoreRed.ToString();
+                            lblScoreBlueM3.Text = clientInfo3.ScoreBlue.ToString();
+                            lblWinFormM3.Text = clientInfo3.WinForm;
+                            ChangeStatus(lblStatusM3, true);
 
-                        //btnIncRedM3.Visible = true;
-                        //btnDecRedM3.Visible = true;
-                        //btnIncBlueM3.Visible = true;
-                        //btnDecBlueM3.Visible = true;
+                            if (clientInfo3.Win == "RED")
+                            {
+                                lblPlusRedM3.Visible = true;
+                                lblPlusBlueM3.Visible = false;
+                            }
+                            if (clientInfo3.Win == "BLUE")
+                            {
+                                lblPlusRedM3.Visible = false;
+                                lblPlusBlueM3.Visible = true;
+                            }
+                            //Variable.RECEIVETEXT3 = null;
+                        }
+                        else
+                        {
+                            ChangeSatusMath(lblStatusScoreM3, false);
+
+                            //btnIncRedM3.Visible = true;
+                            //btnDecRedM3.Visible = true;
+                            //btnIncBlueM3.Visible = true;
+                            //btnDecBlueM3.Visible = true;
+                        }
                     }
+                    catch (Exception){}
                 }
                 else
                 {
@@ -406,6 +428,9 @@ namespace FSSServer
             if (lblPlusBlueM3.Visible)
                 blueWin++;
 
+            lblTotalWinRed.Text = redWin.ToString();
+            lblTotalWinBlue.Text = blueWin.ToString();
+
             if (redWin > blueWin)
             {
                 Variable.WIN = "RED";
@@ -505,47 +530,56 @@ namespace FSSServer
             if (txtNameRed.Text == "" || txtNameBlue.Text == "")
             {
                 MessageBox.Show("Phải chọn cả hai vận động viên để thi đấu!");
+                return;
             }
             //Nếu trùng tên thì bỏ qua
-            else if (txtNameRed.Text == txtNameBlue.Text)
+            if (txtNameRed.Text == txtNameBlue.Text)
             {
                 MessageBox.Show("Phải chọn 2 vận động viên khác nhau!");
+                return;
             }
-            else
+            //Nếu trận đấu đã được chấm
+           if(fillData.isFighted(nmrNumberMatch.Value.ToString()))
             {
-                pnlSetting.Visible = false;
-                lblScoreRedM1.Text = "0";
-                lblScoreBlueM1.Text = "0";
-                lblRefereeM1.Text = "-";
-                lblWinFormM1.Text = "-";
-                lblPlusRedM1.Visible = false;
-                lblPlusBlueM1.Visible = false;
-                lblStatusScoreM1.Visible = false;
-
-                lblScoreRedM2.Text = "0";
-                lblScoreBlueM2.Text = "0";
-                lblRefereeM2.Text = "-";
-                lblWinFormM2.Text = "-";
-                lblPlusRedM2.Visible = false;
-                lblPlusBlueM2.Visible = false;
-                lblStatusScoreM2.Visible = false;
-
-                lblScoreRedM3.Text = "0";
-                lblScoreBlueM3.Text = "0";
-                lblRefereeM3.Text = "-";
-                lblWinFormM3.Text = "-";
-                lblPlusRedM3.Visible = false;
-                lblPlusBlueM3.Visible = false;
-                lblStatusScoreM3.Visible = false;
-
-                lblClock.Text = "00:00";
-                lblClock.BackColor = Color.LightGray;
-
-                UpdateScore();
-
-                setFormSetting();
-                Variable.SEC = -1;
+                DialogResult dialogResult = MessageBox.Show("Trận đấu đã được chấm điểm, bạn thực sự muốn chấm lại?", "Tiếp tục chấm?", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
             }
+
+            pnlSetting.Visible = false;
+            lblScoreRedM1.Text = "0";
+            lblScoreBlueM1.Text = "0";
+            lblRefereeM1.Text = "-";
+            lblWinFormM1.Text = "-";
+            lblPlusRedM1.Visible = false;
+            lblPlusBlueM1.Visible = false;
+            lblStatusScoreM1.Visible = false;
+
+            lblScoreRedM2.Text = "0";
+            lblScoreBlueM2.Text = "0";
+            lblRefereeM2.Text = "-";
+            lblWinFormM2.Text = "-";
+            lblPlusRedM2.Visible = false;
+            lblPlusBlueM2.Visible = false;
+            lblStatusScoreM2.Visible = false;
+
+            lblScoreRedM3.Text = "0";
+            lblScoreBlueM3.Text = "0";
+            lblRefereeM3.Text = "-";
+            lblWinFormM3.Text = "-";
+            lblPlusRedM3.Visible = false;
+            lblPlusBlueM3.Visible = false;
+            lblStatusScoreM3.Visible = false;
+
+            lblClock.Text = "00:00";
+            lblClock.BackColor = Color.LightGray;
+
+            UpdateScore();
+
+            setFormSetting();
+            Variable.SEC = -1;
         }
 
         private void btnSent_Click(object sender, EventArgs e)
@@ -557,30 +591,54 @@ namespace FSSServer
 
         private void btnWinBlue_Click(object sender, EventArgs e)
         {
-            btnWinRed.BackColor = Color.Silver;
-            btnWinBlue.BackColor = Color.Blue;
-            lblWinName.Text = lblNameBlue.Text;
-            lblWinId.Text = lblIdBlue.Text;
-            lblWinClass.Text = lblClassBlue.Text;
-            lblWinName.ForeColor = Color.Blue;
-            lblWinId.ForeColor = Color.Blue;
-            lblWinClass.ForeColor = Color.Blue;
+            DialogResult dialogResult = MessageBox.Show("Bạn thực sự muốn dừng chấm điểm và để XANH thắng?", "Xanh thắng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                btnWinRed.BackColor = Color.Silver;
+                btnWinBlue.BackColor = Color.Blue;
+                lblWinName.Text = lblNameBlue.Text;
+                lblWinId.Text = lblIdBlue.Text;
+                lblWinClass.Text = lblClassBlue.Text;
+                lblWinName.ForeColor = Color.Blue;
+                lblWinId.ForeColor = Color.Blue;
+                lblWinClass.ForeColor = Color.Blue;
 
-            tmrServerReceive.Enabled = false;
+                //tmrServerReceive.Enabled = false;
+                tmrServer.Enabled = false;
+                Variable.SEC = -1;
+                foreach (var sv in Variable.SERVERSERVICES)
+                {
+                    Variable.SENTTEXT = getServerJsonString();
+                    sv.SentText(Variable.SENTTEXT);
+                }
+            }
+            else if (dialogResult == DialogResult.No) { }
         }
 
         private void btnWinRed_Click(object sender, EventArgs e)
         {
-            btnWinRed.BackColor = Color.Red;
-            btnWinBlue.BackColor = Color.Silver;
-            lblWinName.Text = lblNameRed.Text;
-            lblWinId.Text = lblIdRed.Text;
-            lblWinClass.Text = lblClassRed.Text;
-            lblWinName.ForeColor = Color.Red;
-            lblWinId.ForeColor = Color.Red;
-            lblWinClass.ForeColor = Color.Red;
+            DialogResult dialogResult = MessageBox.Show("Bạn thực sự muốn dừng chấm điểm và để XANH thắng?", "Xanh thắng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                btnWinRed.BackColor = Color.Red;
+                btnWinBlue.BackColor = Color.Silver;
+                lblWinName.Text = lblNameRed.Text;
+                lblWinId.Text = lblIdRed.Text;
+                lblWinClass.Text = lblClassRed.Text;
+                lblWinName.ForeColor = Color.Red;
+                lblWinId.ForeColor = Color.Red;
+                lblWinClass.ForeColor = Color.Red;
 
-            tmrServerReceive.Enabled = false;
+                //tmrServerReceive.Enabled = false;
+                tmrServer.Enabled = false;
+                Variable.SEC = -1;
+                foreach (var sv in Variable.SERVERSERVICES)
+                {
+                    Variable.SENTTEXT = getServerJsonString();
+                    sv.SentText(Variable.SENTTEXT);
+                }
+            }
+            else if (dialogResult == DialogResult.No) { }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -588,32 +646,37 @@ namespace FSSServer
             //Nếu như màu sắc của 1 trong 2 không phải bạc. Tức là có được 1 người thắng.
             if (btnWinBlue.BackColor != Color.Silver || btnWinRed.BackColor != Color.Silver)
             {
-                //Save kết quả vào database
-                fillData.SaveMath(lblWinId.Text);
-
-                nmrNumberMatch.Value = nmrNumberMatch.Value + 1;
-
-
-                pnlSetting.Visible = true;
-
-                //Tạm chưa cho máy con chấm điểm
-                tmrServerReceive.Enabled = false;
-                Variable.SEC = -1;
-
-                //Gửi chuỗi -1 qua cho client để reset lại điểm
-                try
+                DialogResult dialogResult = MessageBox.Show("Bạn thực sự muốn lưu kết quả và chuyển tới trận kế tiếp?", "Lưu kết quả", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    foreach (var sv in Variable.SERVERSERVICES)
+                    //Save kết quả vào database
+                    fillData.SaveMath(lblWinId.Text);
+
+                    nmrNumberMatch.Value = nmrNumberMatch.Value + 1;
+
+
+                    pnlSetting.Visible = true;
+
+                    //Tạm chưa cho máy con chấm điểm
+                   // tmrServerReceive.Enabled = false;
+                    tmrServer.Enabled = false;
+                    Variable.SEC = -1;
+
+                    //Gửi chuỗi -1 qua cho client để reset lại điểm
+                    try
                     {
-                        Variable.SENTTEXT = getServerJsonString();
-                        sv.SentText(Variable.SENTTEXT);
+                        foreach (var sv in Variable.SERVERSERVICES)
+                        {
+                            Variable.SENTTEXT = getServerJsonString();
+                            sv.SentText(Variable.SENTTEXT);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        //Không có kết nối với bất kỳ client nào
                     }
                 }
-                catch (Exception)
-                {
-                    //Không có kết nối với bất kỳ client nào
-                }
-
+                else if (dialogResult == DialogResult.No) { }
             }
             //Chưa chọn được ai thắng cả
             else

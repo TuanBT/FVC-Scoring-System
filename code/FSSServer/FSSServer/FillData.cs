@@ -223,6 +223,7 @@ namespace Server
             }
         }
 
+        //Kiểm tra xem trận đấu có hay không
         public Boolean checkMatchExist(string match)
         {
             try
@@ -244,6 +245,7 @@ namespace Server
 
         }
 
+        //Lưu trận đấu
         public void SaveMath(string winId)
         {
             var db = new SQLiteDatabase();
@@ -267,6 +269,33 @@ namespace Server
             {
                 MessageBox.Show(crap.Message);
             }
+        }
+
+        //Kiểm tra xem trận đấu đã được chấm chưa. True là đã chấm tức là có dữ liệu != ""
+        public Boolean isFighted(string match)
+        {
+            string figWinId = "";
+            try
+            {
+                var db = new SQLiteDatabase();
+                DataTable recipe;
+                String query = "SELECT * FROM Match WHERE (MatId=" + match + ")";
+                recipe = db.GetDataTable(query);
+                if (recipe.Rows.Count > 0)
+                {
+                    foreach (DataRow r in recipe.Rows)
+                    {
+                        figWinId = r["FigIdWin"].ToString();
+                    }
+                }
+                if (figWinId != "")
+                    return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return false;
         }
     }
 }

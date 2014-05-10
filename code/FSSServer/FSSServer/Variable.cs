@@ -19,6 +19,6 @@ namespace Server
         public static int SEC = 1; //4 kiểu: 1 sec 1, 2 sec 2, -1 không chấm, 0 sec giải lao
         public static string STATE = "Standing"; //Trạng thái của đồng hồ. Standing, Running, Pausing, Stopping
         public static int PORT = 4569;
-        public static string IP = "127.0.0.2";
+        public static string IP = "192.168.0.5";
     }
 }
