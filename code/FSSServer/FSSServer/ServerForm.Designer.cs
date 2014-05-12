@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServerForm));
             this.pnlSetting = new System.Windows.Forms.Panel();
             this.btnSettingOk = new System.Windows.Forms.Button();
+            this.picHideSetting = new System.Windows.Forms.PictureBox();
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -126,6 +127,7 @@
             this.pnlMain = new System.Windows.Forms.Panel();
             this.lblTotalWinBlue = new System.Windows.Forms.Label();
             this.lblTotalWinRed = new System.Windows.Forms.Label();
+            this.picSetting = new System.Windows.Forms.PictureBox();
             this.lblNameBlue = new System.Windows.Forms.Label();
             this.lblIdBlue = new System.Windows.Forms.Label();
             this.lblTotalScoreRed = new System.Windows.Forms.Label();
@@ -139,11 +141,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblNumberMatch = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.picHideSetting = new System.Windows.Forms.PictureBox();
-            this.picSetting = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tmrTimeout = new System.Windows.Forms.Timer(this.components);
             this.pnlSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHideSetting)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrNumberMatch)).BeginInit();
@@ -153,7 +154,6 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHideSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -187,6 +187,17 @@
             this.btnSettingOk.Text = "Bắt đầu trận đấu mới";
             this.btnSettingOk.UseVisualStyleBackColor = false;
             this.btnSettingOk.Click += new System.EventHandler(this.btnSettingOk_Click);
+            // 
+            // picHideSetting
+            // 
+            this.picHideSetting.Image = global::FSSServer.Properties.Resources.Menu;
+            this.picHideSetting.Location = new System.Drawing.Point(25, 3);
+            this.picHideSetting.Name = "picHideSetting";
+            this.picHideSetting.Size = new System.Drawing.Size(60, 60);
+            this.picHideSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picHideSetting.TabIndex = 92;
+            this.picHideSetting.TabStop = false;
+            this.picHideSetting.Click += new System.EventHandler(this.picHideSetting_Click);
             // 
             // btnPrev
             // 
@@ -1406,6 +1417,17 @@
             this.lblTotalWinRed.Text = "0";
             this.lblTotalWinRed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // picSetting
+            // 
+            this.picSetting.Image = global::FSSServer.Properties.Resources.Menu;
+            this.picSetting.Location = new System.Drawing.Point(25, 3);
+            this.picSetting.Name = "picSetting";
+            this.picSetting.Size = new System.Drawing.Size(60, 60);
+            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSetting.TabIndex = 91;
+            this.picSetting.TabStop = false;
+            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
+            // 
             // lblNameBlue
             // 
             this.lblNameBlue.BackColor = System.Drawing.Color.Blue;
@@ -1569,28 +1591,6 @@
             this.lblTitle.Text = "TỔNG HỢP\r\nTHI ĐẤU ĐỐI KHÁNG";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // picHideSetting
-            // 
-            this.picHideSetting.Image = global::FSSServer.Properties.Resources.Menu;
-            this.picHideSetting.Location = new System.Drawing.Point(25, 3);
-            this.picHideSetting.Name = "picHideSetting";
-            this.picHideSetting.Size = new System.Drawing.Size(60, 60);
-            this.picHideSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picHideSetting.TabIndex = 92;
-            this.picHideSetting.TabStop = false;
-            this.picHideSetting.Click += new System.EventHandler(this.picHideSetting_Click);
-            // 
-            // picSetting
-            // 
-            this.picSetting.Image = global::FSSServer.Properties.Resources.Menu;
-            this.picSetting.Location = new System.Drawing.Point(25, 3);
-            this.picSetting.Name = "picSetting";
-            this.picSetting.Size = new System.Drawing.Size(60, 60);
-            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSetting.TabIndex = 91;
-            this.picSetting.TabStop = false;
-            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
@@ -1622,6 +1622,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.pnlSetting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picHideSetting)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -1634,7 +1635,6 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picHideSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

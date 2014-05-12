@@ -39,7 +39,7 @@ namespace FSSClient
                 //this.FormBorderStyle = FormBorderStyle.None;
                 this.Left = 0;
                 this.Top = 0;
-                this.Bounds = Screen.PrimaryScreen.Bounds;
+                //this.Bounds = Screen.PrimaryScreen.Bounds;
                 this.TopMost = true;
             }
             pnlMain.Left = (this.ClientSize.Width - pnlMain.Width) / 2;
