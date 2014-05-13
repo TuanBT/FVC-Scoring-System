@@ -128,7 +128,7 @@ namespace FSSClient
                 {
                     lblClock.BackColor = Color.Red;
                 }
-                this.Text = "Máy: " + Variable.COMPUTER + "---Trận số: " + serverInfo.Math.ToString();
+                this.Text = "Giám định: " + Variable.COMPUTER + "        Trận số: " + serverInfo.Math.ToString();
 
                 if (serverInfo.Sec == 1)
                 {
@@ -365,7 +365,7 @@ namespace FSSClient
             if (tcpClients.Connection())
             {
                 MessageBox.Show("Kết nối tới trọng tài chính thành công!");
-                this.Text = "Máy " + nmrComputer.Value;
+                this.Text = "Giám định " + nmrComputer.Value;
                 Variable.COMPUTER = Convert.ToInt32(nmrComputer.Value);
                 txtPassAdmin.Text = "";
                 pnlAdmin.Visible = false;
@@ -480,12 +480,14 @@ namespace FSSClient
         private void btnIncMinusSec1Red_Click(object sender, EventArgs e)
         {
             lblMinusSec1Red.Text = (Int32.Parse(lblMinusSec1Red.Text) + 1).ToString();
+            Variable.LASTSCORE = "BLUE";
             UpdateScore();
         }
 
         private void btnIncMinusSec2Red_Click(object sender, EventArgs e)
         {
             lblMinusSec2Red.Text = (Int32.Parse(lblMinusSec2Red.Text) + 1).ToString();
+            Variable.LASTSCORE = "BLUE";
             UpdateScore();
         }
 
@@ -539,6 +541,7 @@ namespace FSSClient
         private void btnIncMinusSec1Blue_Click(object sender, EventArgs e)
         {
             lblMinusSec1Blue.Text = (Int32.Parse(lblMinusSec1Blue.Text) + 1).ToString();
+            Variable.LASTSCORE = "RED";
             UpdateScore();
         }
 
@@ -552,6 +555,7 @@ namespace FSSClient
         private void btnIncMinusSec2Blue_Click(object sender, EventArgs e)
         {
             lblMinusSec2Blue.Text = (Int32.Parse(lblMinusSec2Blue.Text) + 1).ToString();
+            Variable.LASTSCORE = "RED";
             UpdateScore();
         }
 
@@ -568,6 +572,7 @@ namespace FSSClient
         private void btnDecMinusSec1Blue_Click(object sender, EventArgs e)
         {
             int number = Int32.Parse(lblMinusSec1Blue.Text) - 1;
+
             if (number < 0)
                 lblMinusSec1Blue.Text = "0";
             else

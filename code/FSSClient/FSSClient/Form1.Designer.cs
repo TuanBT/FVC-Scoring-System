@@ -485,7 +485,7 @@
             // 
             this.lblSec1.BackColor = System.Drawing.Color.White;
             this.lblSec1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSec1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSec1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSec1.ForeColor = System.Drawing.Color.Gray;
             this.lblSec1.Location = new System.Drawing.Point(376, 225);
             this.lblSec1.Name = "lblSec1";
@@ -498,7 +498,7 @@
             // 
             this.lblSec2.BackColor = System.Drawing.Color.White;
             this.lblSec2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSec2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSec2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSec2.ForeColor = System.Drawing.Color.Gray;
             this.lblSec2.Location = new System.Drawing.Point(376, 303);
             this.lblSec2.Name = "lblSec2";
@@ -729,8 +729,8 @@
             this.lblSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSec.Location = new System.Drawing.Point(0, 63);
             this.lblSec.Name = "lblSec";
-            this.lblSec.Size = new System.Drawing.Size(63, 63);
-            this.lblSec.TabIndex = 70;
+            this.lblSec.Size = new System.Drawing.Size(71, 63);
+            this.lblSec.TabIndex = 66;
             this.lblSec.Text = "Hiệp 1";
             this.lblSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -793,7 +793,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(162, 0);
+            this.label19.Location = new System.Drawing.Point(161, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 1;
@@ -804,13 +804,13 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(11, 9);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 13);
+            this.label17.Size = new System.Drawing.Size(55, 13);
             this.label17.TabIndex = 2;
-            this.label17.Text = "Số máy";
+            this.label17.Text = "Giám định";
             // 
             // nmrComputer
             // 
-            this.nmrComputer.Location = new System.Drawing.Point(59, 7);
+            this.nmrComputer.Location = new System.Drawing.Point(72, 7);
             this.nmrComputer.Maximum = new decimal(new int[] {
             3,
             0,
@@ -830,7 +830,7 @@
             // 
             // txtPortServer
             // 
-            this.txtPortServer.Location = new System.Drawing.Point(162, 22);
+            this.txtPortServer.Location = new System.Drawing.Point(161, 22);
             this.txtPortServer.Name = "txtPortServer";
             this.txtPortServer.Size = new System.Drawing.Size(65, 20);
             this.txtPortServer.TabIndex = 8;
@@ -894,7 +894,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
@@ -919,9 +919,9 @@
             this.pnlSetting.Controls.Add(this.pictureBox2);
             this.pnlSetting.Controls.Add(this.txtRefereeName);
             this.pnlSetting.Controls.Add(this.btnHideSetting);
-            this.pnlSetting.Location = new System.Drawing.Point(54, 38);
+            this.pnlSetting.Location = new System.Drawing.Point(49, 21);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(109, 81);
+            this.pnlSetting.Size = new System.Drawing.Size(106, 84);
             this.pnlSetting.TabIndex = 69;
             // 
             // pictureBox2
@@ -1022,16 +1022,16 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 49);
             this.label5.TabIndex = 68;
-            this.label5.Text = "Máy";
+            this.label5.Text = "Giám định:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label35
             // 
             this.label35.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.Red;
-            this.label35.Location = new System.Drawing.Point(217, 63);
+            this.label35.Location = new System.Drawing.Point(218, 63);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(230, 63);
+            this.label35.Size = new System.Drawing.Size(229, 63);
             this.label35.TabIndex = 67;
             this.label35.Text = "Cóc vương 2014";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1041,10 +1041,10 @@
             this.lblClock.BackColor = System.Drawing.Color.White;
             this.lblClock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClock.Location = new System.Drawing.Point(69, 63);
+            this.lblClock.Location = new System.Drawing.Point(70, 63);
             this.lblClock.Name = "lblClock";
             this.lblClock.Size = new System.Drawing.Size(148, 63);
-            this.lblClock.TabIndex = 66;
+            this.lblClock.TabIndex = 70;
             this.lblClock.Text = "00:00";
             this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

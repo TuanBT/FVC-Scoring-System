@@ -662,7 +662,7 @@ namespace FSSServer
 
         private void btnWinRed_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn thực sự muốn dừng chấm điểm và để XANH thắng?", "Xanh thắng", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Bạn thực sự muốn dừng chấm điểm và để Đỏ thắng?", "Đỏ thắng", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 btnWinRed.BackColor = Color.Red;

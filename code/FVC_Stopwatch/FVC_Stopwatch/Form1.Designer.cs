@@ -329,7 +329,7 @@
             this.gbTime.Controls.Add(this.cbSecondH);
             this.gbTime.Location = new System.Drawing.Point(111, 15);
             this.gbTime.Name = "gbTime";
-            this.gbTime.Size = new System.Drawing.Size(231, 149);
+            this.gbTime.Size = new System.Drawing.Size(255, 185);
             this.gbTime.TabIndex = 10;
             this.gbTime.TabStop = false;
             this.gbTime.Text = "Thời gian đối kháng";
@@ -439,7 +439,7 @@
             this.cbMinuteG.Name = "cbMinuteG";
             this.cbMinuteG.Size = new System.Drawing.Size(45, 21);
             this.cbMinuteG.TabIndex = 5;
-            this.cbMinuteG.Text = "1";
+            this.cbMinuteG.Text = "0";
             // 
             // label7
             // 
@@ -518,7 +518,7 @@
             this.cbSecondG.Name = "cbSecondG";
             this.cbSecondG.Size = new System.Drawing.Size(45, 21);
             this.cbSecondG.TabIndex = 6;
-            this.cbSecondG.Text = "0";
+            this.cbSecondG.Text = "30";
             // 
             // label4
             // 
