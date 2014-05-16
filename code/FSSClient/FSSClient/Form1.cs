@@ -115,18 +115,22 @@ namespace FSSClient
                 if (serverInfo.State == "Standing")
                 {
                     lblClock.BackColor = Color.LightGray;
+                    lblSec.BackColor = Color.LightGray;
                 }
                 else if (serverInfo.State == "Running")
                 {
                     lblClock.BackColor = Color.White;
+                    lblSec.BackColor = Color.White;
                 }
                 else if (serverInfo.State == "Pausing")
                 {
                     lblClock.BackColor = Color.Yellow;
+                    lblSec.BackColor = Color.Yellow;
                 }
                 else if (serverInfo.State == "Stopping")
                 {
                     lblClock.BackColor = Color.Red;
+                    lblSec.BackColor = Color.Red;
                 }
                 this.Text = "Giám định: " + Variable.COMPUTER + "        Trận số: " + serverInfo.Math.ToString();
 

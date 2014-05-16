@@ -297,5 +297,45 @@ namespace Server
             }
             return false;
         }
+
+        //Điền tên người thắng
+        public string FillWinname(NumericUpDown nmrNumberMatch)
+        {
+            string match = nmrNumberMatch.Value.ToString();
+            string name = "";
+            string figWinId = "";
+
+            try
+            {
+                var db = new SQLiteDatabase();
+                DataTable recipe;
+                String query = "SELECT * FROM Match WHERE (MatId=" + match + ")";
+                recipe = db.GetDataTable(query);
+                if (recipe.Rows.Count > 0)
+                {
+                    foreach (DataRow r in recipe.Rows)
+                    {
+                        figWinId = r["FigIdWin"].ToString();
+                    }
+                }
+
+                if(figWinId!="")
+                {
+                    try
+                    {
+                        query = "SELECT * FROM Fighter WHERE (FigId='" + figWinId + "')";
+                        recipe = db.GetDataTable(query);
+                        foreach (DataRow r in recipe.Rows)
+                        {
+                            name = r["FigName"].ToString();
+                        }
+                    }
+                    catch (Exception){}
+                }
+            }
+            catch (Exception){}
+
+            return name;
+        }
     }
 }

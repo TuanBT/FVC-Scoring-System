@@ -145,9 +145,9 @@ namespace FSSServer
                 Variable.RECEIVETEXT3 = Variable.RECEIVETEXT3.Replace("\"EndMath\":1", "\"EndMath\":-1");
                 Variable.RECEIVETEXT3 = Variable.RECEIVETEXT3.Replace("\"EndMath\":0", "\"EndMath\":-1");
             }
-            catch (Exception){}
-           
-            
+            catch (Exception) { }
+
+
             //Variable.RECEIVETEXT2 = "";
             //Variable.RECEIVETEXT3= "";
             //Variable.RECEIVETEXTCLOCK = "";
@@ -173,7 +173,7 @@ namespace FSSServer
             {
                 if (Variable.RECEIVETEXT1 != "")
                 {
-                    
+
                     try
                     {
                         ClientInfo clientInfo1 = new ClientInfo(Variable.RECEIVETEXT1);
@@ -216,10 +216,10 @@ namespace FSSServer
                         }
                         else if (clientInfo1.EndMath == -1)
                         {
-                            ChangeStatus(lblStatusM1,false);
+                            ChangeStatus(lblStatusM1, false);
                         }
                     }
-                    catch (Exception){}
+                    catch (Exception) { }
                 }
                 //Không nhận được dữ liệu nữa
                 else
@@ -274,11 +274,11 @@ namespace FSSServer
                         }
                         else if (clientInfo2.EndMath == -1)
                         {
-                            ChangeStatus(lblStatusM2,false);
+                            ChangeStatus(lblStatusM2, false);
                         }
                     }
-                    catch (Exception){}
-                    
+                    catch (Exception) { }
+
                 }
                 else
                 {
@@ -331,10 +331,10 @@ namespace FSSServer
                         }
                         else if (clientInfo3.EndMath == -1)
                         {
-                            ChangeStatus(lblStatusM3,false);
+                            ChangeStatus(lblStatusM3, false);
                         }
                     }
-                    catch (Exception){}
+                    catch (Exception) { }
                 }
                 else
                 {
@@ -371,21 +371,25 @@ namespace FSSServer
                 if (clockInfo.State == "Standing")
                 {
                     lblClock.BackColor = Color.LightGray;
+                    lblSec.BackColor = Color.LightGray;
                     Variable.STATE = "Standing";
                 }
                 else if (clockInfo.State == "Running")
                 {
                     lblClock.BackColor = Color.White;
+                    lblSec.BackColor = Color.White;
                     Variable.STATE = "Running";
                 }
                 else if (clockInfo.State == "Pausing")
                 {
                     lblClock.BackColor = Color.Yellow;
+                    lblSec.BackColor = Color.Yellow;
                     Variable.STATE = "Pausing";
                 }
                 else if (clockInfo.State == "Stopping")
                 {
                     lblClock.BackColor = Color.Red;
+                    lblSec.BackColor = Color.Red;
                     Variable.STATE = "Stopping";
                 }
 
@@ -548,6 +552,7 @@ namespace FSSServer
         private void nmrNumberMatch_ValueChanged(object sender, EventArgs e)
         {
             fillData.FillFromMatch(nmrNumberMatch);
+            lblNameWin.Text = fillData.FillWinname(nmrNumberMatch);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -557,6 +562,7 @@ namespace FSSServer
                 return;
             nmrNumberMatch.Value = numMatch + 1;
             fillData.FillFromMatch(nmrNumberMatch);
+            lblNameWin.Text = fillData.FillWinname(nmrNumberMatch);
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
@@ -566,6 +572,7 @@ namespace FSSServer
                 return;
             nmrNumberMatch.Value = numMatch - 1;
             fillData.FillFromMatch(nmrNumberMatch);
+            lblNameWin.Text = fillData.FillWinname(nmrNumberMatch);
         }
 
         private void btnSettingOk_Click(object sender, EventArgs e)
@@ -583,7 +590,7 @@ namespace FSSServer
                 return;
             }
             //Nếu trận đấu đã được chấm
-           if(fillData.isFighted(nmrNumberMatch.Value.ToString()))
+            if (fillData.isFighted(nmrNumberMatch.Value.ToString()))
             {
                 DialogResult dialogResult = MessageBox.Show("Trận đấu đã được chấm điểm, bạn thực sự muốn chấm lại?", "Tiếp tục chấm?", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
@@ -703,7 +710,7 @@ namespace FSSServer
                     pnlSetting.Visible = true;
 
                     //Tạm chưa cho máy con chấm điểm
-                   // tmrServerReceive.Enabled = false;
+                    // tmrServerReceive.Enabled = false;
                     tmrServer.Enabled = false;
                     Variable.SEC = -1;
 

@@ -629,9 +629,9 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(666, 73);
+            this.label3.Location = new System.Drawing.Point(856, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 49);
+            this.label3.Size = new System.Drawing.Size(81, 31);
             this.label3.TabIndex = 9;
             this.label3.Text = "Giới tính:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -641,9 +641,9 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(832, 0);
+            this.label1.Location = new System.Drawing.Point(856, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 63);
+            this.label1.Size = new System.Drawing.Size(81, 31);
             this.label1.TabIndex = 8;
             this.label1.Text = "Trận số:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -654,9 +654,9 @@
             this.lblNumberClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblNumberClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumberClient.ForeColor = System.Drawing.Color.Red;
-            this.lblNumberClient.Location = new System.Drawing.Point(912, 73);
+            this.lblNumberClient.Location = new System.Drawing.Point(938, 95);
             this.lblNumberClient.Name = "lblNumberClient";
-            this.lblNumberClient.Size = new System.Drawing.Size(88, 49);
+            this.lblNumberClient.Size = new System.Drawing.Size(62, 31);
             this.lblNumberClient.TabIndex = 7;
             this.lblNumberClient.Text = "-";
             this.lblNumberClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -667,9 +667,9 @@
             this.lblWeight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWeight.ForeColor = System.Drawing.Color.Red;
-            this.lblWeight.Location = new System.Drawing.Point(746, 0);
+            this.lblWeight.Location = new System.Drawing.Point(938, 31);
             this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(80, 63);
+            this.lblWeight.Size = new System.Drawing.Size(62, 31);
             this.lblWeight.TabIndex = 6;
             this.lblWeight.Text = "-";
             this.lblWeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -680,9 +680,9 @@
             this.lblSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSex.ForeColor = System.Drawing.Color.Red;
-            this.lblSex.Location = new System.Drawing.Point(746, 73);
+            this.lblSex.Location = new System.Drawing.Point(938, 62);
             this.lblSex.Name = "lblSex";
-            this.lblSex.Size = new System.Drawing.Size(80, 49);
+            this.lblSex.Size = new System.Drawing.Size(62, 31);
             this.lblSex.TabIndex = 5;
             this.lblSex.Text = "-";
             this.lblSex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -692,9 +692,9 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(666, 0);
+            this.label2.Location = new System.Drawing.Point(856, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 63);
+            this.label2.Size = new System.Drawing.Size(81, 31);
             this.label2.TabIndex = 4;
             this.label2.Text = "Hạng cân:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -705,9 +705,9 @@
             this.lblNumberMatch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblNumberMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumberMatch.ForeColor = System.Drawing.Color.Red;
-            this.lblNumberMatch.Location = new System.Drawing.Point(906, 0);
+            this.lblNumberMatch.Location = new System.Drawing.Point(938, 0);
             this.lblNumberMatch.Name = "lblNumberMatch";
-            this.lblNumberMatch.Size = new System.Drawing.Size(94, 63);
+            this.lblNumberMatch.Size = new System.Drawing.Size(62, 31);
             this.lblNumberMatch.TabIndex = 3;
             this.lblNumberMatch.Text = "-";
             this.lblNumberMatch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -726,12 +726,12 @@
             // lblSec
             // 
             this.lblSec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSec.Location = new System.Drawing.Point(0, 63);
+            this.lblSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSec.Location = new System.Drawing.Point(389, 0);
             this.lblSec.Name = "lblSec";
-            this.lblSec.Size = new System.Drawing.Size(71, 63);
+            this.lblSec.Size = new System.Drawing.Size(222, 76);
             this.lblSec.TabIndex = 66;
-            this.lblSec.Text = "Hiệp 1";
+            this.lblSec.Text = "-";
             this.lblSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label22
@@ -793,7 +793,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(161, 0);
+            this.label19.Location = new System.Drawing.Point(160, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 1;
@@ -830,7 +830,7 @@
             // 
             // txtPortServer
             // 
-            this.txtPortServer.Location = new System.Drawing.Point(161, 22);
+            this.txtPortServer.Location = new System.Drawing.Point(160, 22);
             this.txtPortServer.Name = "txtPortServer";
             this.txtPortServer.Size = new System.Drawing.Size(65, 20);
             this.txtPortServer.TabIndex = 8;
@@ -894,7 +894,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel1.Controls.Add(this.label18, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtIpServer, 1, 1);
@@ -919,17 +919,17 @@
             this.pnlSetting.Controls.Add(this.pictureBox2);
             this.pnlSetting.Controls.Add(this.txtRefereeName);
             this.pnlSetting.Controls.Add(this.btnHideSetting);
-            this.pnlSetting.Location = new System.Drawing.Point(49, 21);
+            this.pnlSetting.Location = new System.Drawing.Point(90, 95);
             this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(106, 84);
+            this.pnlSetting.Size = new System.Drawing.Size(160, 168);
             this.pnlSetting.TabIndex = 69;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::FSSClient.Properties.Resources.Menu;
-            this.pictureBox2.Location = new System.Drawing.Point(25, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox2.Size = new System.Drawing.Size(120, 120);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 93;
             this.pictureBox2.TabStop = false;
@@ -1005,9 +1005,9 @@
             // picSetting
             // 
             this.picSetting.Image = global::FSSClient.Properties.Resources.Menu;
-            this.picSetting.Location = new System.Drawing.Point(25, 3);
+            this.picSetting.Location = new System.Drawing.Point(3, 3);
             this.picSetting.Name = "picSetting";
-            this.picSetting.Size = new System.Drawing.Size(60, 60);
+            this.picSetting.Size = new System.Drawing.Size(120, 120);
             this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSetting.TabIndex = 92;
             this.picSetting.TabStop = false;
@@ -1018,9 +1018,9 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(832, 70);
+            this.label5.Location = new System.Drawing.Point(856, 95);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 49);
+            this.label5.Size = new System.Drawing.Size(81, 31);
             this.label5.TabIndex = 68;
             this.label5.Text = "Giám định:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1029,9 +1029,9 @@
             // 
             this.label35.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.Red;
-            this.label35.Location = new System.Drawing.Point(218, 63);
+            this.label35.Location = new System.Drawing.Point(124, 64);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(229, 63);
+            this.label35.Size = new System.Drawing.Size(265, 59);
             this.label35.TabIndex = 67;
             this.label35.Text = "Cóc vương 2014";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1040,10 +1040,10 @@
             // 
             this.lblClock.BackColor = System.Drawing.Color.White;
             this.lblClock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClock.Location = new System.Drawing.Point(70, 63);
+            this.lblClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClock.Location = new System.Drawing.Point(389, 76);
             this.lblClock.Name = "lblClock";
-            this.lblClock.Size = new System.Drawing.Size(148, 63);
+            this.lblClock.Size = new System.Drawing.Size(222, 50);
             this.lblClock.TabIndex = 70;
             this.lblClock.Text = "00:00";
             this.lblClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1052,9 +1052,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = global::FSSClient.Properties.Resources.fu_banner;
-            this.pictureBox1.Location = new System.Drawing.Point(111, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(124, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(336, 63);
+            this.pictureBox1.Size = new System.Drawing.Size(265, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 65;
             this.pictureBox1.TabStop = false;
@@ -1356,9 +1356,9 @@
             this.lblTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblTitle.Location = new System.Drawing.Point(446, 0);
+            this.lblTitle.Location = new System.Drawing.Point(611, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(220, 126);
+            this.lblTitle.Size = new System.Drawing.Size(247, 126);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "THI ĐẤU \r\nĐỐI KHÁNG";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
