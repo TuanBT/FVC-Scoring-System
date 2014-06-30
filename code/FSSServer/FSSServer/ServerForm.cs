@@ -8,6 +8,8 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.Xml;
+using FSSServer.Data;
 using Server;
 
 namespace FSSServer
@@ -47,6 +49,10 @@ namespace FSSServer
 
             tcpServers.StartServer();
             //tmrServer.Enabled = true;
+
+            //Chuẩn bị database
+            Server.Variable.FIGHTERS = TextDataUltil.ReadFighterText();
+            Server.Variable.MATCHES = TextDataUltil.ReadMatchText();
         }
 
         private void Form1_Load(object sender, EventArgs e)

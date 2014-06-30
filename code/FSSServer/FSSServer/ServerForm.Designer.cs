@@ -102,6 +102,7 @@
             this.lblTotalWinRed = new System.Windows.Forms.Label();
             this.lblTotalWinBlue = new System.Windows.Forms.Label();
             this.pnlSetting = new System.Windows.Forms.Panel();
+            this.lblNameWin = new System.Windows.Forms.Label();
             this.btnSettingOk = new System.Windows.Forms.Button();
             this.picHideSetting = new System.Windows.Forms.PictureBox();
             this.btnPrev = new System.Windows.Forms.Button();
@@ -143,7 +144,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.lblTotalScoreRed = new System.Windows.Forms.Label();
             this.lblTotalScoreBlue = new System.Windows.Forms.Label();
-            this.lblNameWin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -1038,6 +1038,15 @@
             this.pnlSetting.Size = new System.Drawing.Size(919, 475);
             this.pnlSetting.TabIndex = 71;
             // 
+            // lblNameWin
+            // 
+            this.lblNameWin.Location = new System.Drawing.Point(392, 415);
+            this.lblNameWin.Name = "lblNameWin";
+            this.lblNameWin.Size = new System.Drawing.Size(231, 29);
+            this.lblNameWin.TabIndex = 94;
+            this.lblNameWin.Text = "-";
+            this.lblNameWin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnSettingOk
             // 
             this.btnSettingOk.BackColor = System.Drawing.Color.Blue;
@@ -1608,15 +1617,6 @@
             this.lblTotalScoreBlue.TabIndex = 13;
             this.lblTotalScoreBlue.Text = "0";
             this.lblTotalScoreBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblNameWin
-            // 
-            this.lblNameWin.Location = new System.Drawing.Point(392, 415);
-            this.lblNameWin.Name = "lblNameWin";
-            this.lblNameWin.Size = new System.Drawing.Size(231, 29);
-            this.lblNameWin.TabIndex = 94;
-            this.lblNameWin.Text = "-";
-            this.lblNameWin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ServerForm
             // 

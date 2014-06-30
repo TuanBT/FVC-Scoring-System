@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using FSSServer.Data;
 
 namespace Server
 {
@@ -20,5 +21,7 @@ namespace Server
         public static string STATE = "Standing"; //Trạng thái của đồng hồ. Standing, Running, Pausing, Stopping
         public static int PORT = 4569;
         public static string IP = "192.168.0.100";
+        public static List<Fighter> FIGHTERS { get; set; }
+        public static List<Match> MATCHES { get; set; }
     }
 }
